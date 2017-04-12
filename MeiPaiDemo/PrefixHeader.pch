@@ -1,0 +1,59 @@
+//
+//  PrefixHeader.pch
+//  MeiPaiDemo
+//
+//  Created by dongxiaowei on 2017/4/12.
+//  Copyright © 2017年 UTOUU. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#if TARGET_IPHONE_SIMULATOR
+#define SIMULATOR 1
+#elif TARGET_OS_IPHONE
+#define SIMULATOR 0
+#endif
+
+//屏幕宽高
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+
+//iOS 系统版本
+#define IOS_VERSION ([[[UIDevice currentDevice] systemVersion] floatValue])
+#define CurrentSystemVersion ([[UIDevice currentDevice] systemVersion])
+
+//当前语言
+#define CurrentLanguage ([[NSLocale preferredLanguages] objectAtIndex:0])
+
+//屏幕比例
+#define AUTO_X SCREEN_WIDTH/320
+#define AUTO_Y (SCREEN_HEIGHT>568?SCREEN_HEIGHT/568*0.95:1.0)
+
+//RGB 颜色
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+#define UIColorFromRGBA(rgbValue,alphaNum) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:alphaNum]
+
+//统默认字体
+#define SYSTEM_FONT(x) [UIFont systemFontOfSize:x]
+
+//获取具体手机型号
+#define IPHONE_VERSION [PassportService getIphoneParticularVersion]
+
+
+#ifdef DEBUG
+#define D_Log(...) NSLog(__VA_ARGS__)
+#else
+#define D_Log(...)
+#endif
+#define JHLogFunc D_Log(@"%s---%zd", __func__,__LINE__)
+
+
+
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */

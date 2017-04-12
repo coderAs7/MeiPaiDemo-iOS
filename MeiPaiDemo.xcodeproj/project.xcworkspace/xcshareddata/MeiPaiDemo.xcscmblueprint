@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "AF897CA76D3B4BCA20816FC2DA70BFEB90C7A499",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "AF897CA76D3B4BCA20816FC2DA70BFEB90C7A499" : 9223372036854775807,
+    "F1685C53F038A854174C85EC5A3C82910AF103F9" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2AC8618B-7CBB-4A8F-B30B-FA9A2DC6276D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "AF897CA76D3B4BCA20816FC2DA70BFEB90C7A499" : "MeiPaiDemo-iOS\/",
+    "F1685C53F038A854174C85EC5A3C82910AF103F9" : "MeiPaiDemo-iOS\/MeiPaiDemo\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MeiPaiDemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MeiPaiDemo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/iOSDongxiaowei\/MeiPaiDemo-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AF897CA76D3B4BCA20816FC2DA70BFEB90C7A499"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/iOSDongxiaowei\/MeiPaiDemo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F1685C53F038A854174C85EC5A3C82910AF103F9"
+    }
+  ]
+}
