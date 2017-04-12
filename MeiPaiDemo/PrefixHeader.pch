@@ -9,6 +9,8 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#import "Masonry.h"
+#import "MJExtension.h"
 
 #if TARGET_IPHONE_SIMULATOR
 #define SIMULATOR 1
