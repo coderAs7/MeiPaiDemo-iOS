@@ -82,6 +82,7 @@
 		52B25B1A1E9F2BE2006909B0 /* MPTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B191E9F2BE2006909B0 /* MPTabBar.m */; };
 		52B25B1D1E9F2CC4006909B0 /* MPTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B1C1E9F2CC4006909B0 /* MPTabBarButton.m */; };
 		52B25B201E9F40B3006909B0 /* MPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B1F1E9F40B3006909B0 /* MPBadgeView.m */; };
+		52B25B231E9F6185006909B0 /* MPShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B221E9F6185006909B0 /* MPShootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -265,6 +266,8 @@
 		52B25B1C1E9F2CC4006909B0 /* MPTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTabBarButton.m; sourceTree = "<group>"; };
 		52B25B1E1E9F40B3006909B0 /* MPBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPBadgeView.h; sourceTree = "<group>"; };
 		52B25B1F1E9F40B3006909B0 /* MPBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBadgeView.m; sourceTree = "<group>"; };
+		52B25B211E9F6185006909B0 /* MPShootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPShootViewController.h; sourceTree = "<group>"; };
+		52B25B221E9F6185006909B0 /* MPShootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPShootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -550,6 +553,8 @@
 		52B25AD61E9E2BDD006909B0 /* Shoot(拍摄) */ = {
 			isa = PBXGroup;
 			children = (
+				52B25B211E9F6185006909B0 /* MPShootViewController.h */,
+				52B25B221E9F6185006909B0 /* MPShootViewController.m */,
 			);
 			name = "Shoot(拍摄)";
 			path = Shoot;
@@ -804,6 +809,7 @@
 				52B25B0A1E9F1CB7006909B0 /* ASValueTrackingSlider.m in Sources */,
 				52B25A5C1E9E2840006909B0 /* MJExtensionConst.m in Sources */,
 				52B25A651E9E2840006909B0 /* NSString+MJExtension.m in Sources */,
+				52B25B231E9F6185006909B0 /* MPShootViewController.m in Sources */,
 				52B25A681E9E2840006909B0 /* RJCircularLoaderView.m in Sources */,
 				52B25B091E9F1CB7006909B0 /* ASValuePopUpView.m in Sources */,
 				52B25A5E1E9E2840006909B0 /* MJProperty.m in Sources */,
@@ -916,7 +922,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -958,7 +964,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

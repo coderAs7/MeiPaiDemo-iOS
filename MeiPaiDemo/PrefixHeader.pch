@@ -36,6 +36,14 @@
 //RGB 颜色
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define UIColorFromRGBA(rgbValue,alphaNum) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:alphaNum]
+
+#define MPColor_VCBackgroundGray [UIColor colorWithRed:32.0/255.0 green:30.0/255.0 blue:42.0/255.0 alpha:1.0]
+#define MPColor_VCForgroundGray [UIColor colorWithRed:26.0/255.0 green:24.0/255.0 blue:34.0/255.0 alpha:1.0]
+#define MPColor_Purple [UIColor colorWithRed:109.0/255.0 green:41.0/255.0 blue:237.0/255.0 alpha:1.0]
+#define MPColor_Pink [UIColor colorWithRed:251.0/255.0 green:0.0/255.0 blue:92.0/255.0 alpha:1.0]
+#define MPColor_Gray [UIColor colorWithRed:149.0/255.0 green:148.0/255.0 blue:152.0/255.0 alpha:1.0]
+
+
 //#define RGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 //#define RGBA(rgbValue,alphaNum) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:alphaNum]
 
