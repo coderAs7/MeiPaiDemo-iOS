@@ -9,12 +9,9 @@
 #import "AppDelegate.h"
 
 #import "MPTabBarController.h"
-#import "MPMainViewController.h"
-#import "MPMyFollowViewController.h"
-#import "MPChannelsViewController.h"
-#import "MPUserCenterViewController.h"
 
-@interface AppDelegate ()
+
+@interface AppDelegate () <UITabBarControllerDelegate>
 
 @property(nonatomic,strong)MPTabBarController * tabBarC;
 
@@ -37,20 +34,14 @@
 - (BOOL)insertApplication:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     MPTabBarController * tabBarC = [[MPTabBarController alloc]init];
-    tabBarC.viewControllers = @[[self createNCWithClass:[MPMainViewController class] title:@"美拍"],
-                                [self createNCWithClass:[MPMyFollowViewController class] title:@"我的关注"],
-                                [self createNCWithClass:[MPChannelsViewController class] title:@"频道"],
-                                [self createNCWithClass:[MPUserCenterViewController class] title:@"我"]];
+    tabBarC.delegate = self;
     self.window.rootViewController = tabBarC;
     return YES;
 }
 
--(UINavigationController *)createNCWithClass:(Class)class title:(NSString *)title
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
-    UIViewController * VC = [[class alloc]init];
-    UINavigationController * NC = [[UINavigationController alloc]initWithRootViewController:VC];
-    NC.title = title;
-    return NC;
+    return ![viewController isEqual:tabBarController.viewControllers[2]];
 }
 
 

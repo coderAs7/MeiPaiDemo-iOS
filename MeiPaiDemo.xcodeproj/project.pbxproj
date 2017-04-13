@@ -79,6 +79,9 @@
 		52B25B151E9F1CB7006909B0 /* ZFPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B031E9F1CB7006909B0 /* ZFPlayerControlView.m */; };
 		52B25B161E9F1CB7006909B0 /* ZFPlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B061E9F1CB7006909B0 /* ZFPlayerModel.m */; };
 		52B25B171E9F1CB7006909B0 /* ZFPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B081E9F1CB7006909B0 /* ZFPlayerView.m */; };
+		52B25B1A1E9F2BE2006909B0 /* MPTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B191E9F2BE2006909B0 /* MPTabBar.m */; };
+		52B25B1D1E9F2CC4006909B0 /* MPTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B1C1E9F2CC4006909B0 /* MPTabBarButton.m */; };
+		52B25B201E9F40B3006909B0 /* MPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B1F1E9F40B3006909B0 /* MPBadgeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -256,6 +259,12 @@
 		52B25B061E9F1CB7006909B0 /* ZFPlayerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerModel.m; sourceTree = "<group>"; };
 		52B25B071E9F1CB7006909B0 /* ZFPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerView.h; sourceTree = "<group>"; };
 		52B25B081E9F1CB7006909B0 /* ZFPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerView.m; sourceTree = "<group>"; };
+		52B25B181E9F2BE2006909B0 /* MPTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTabBar.h; sourceTree = "<group>"; };
+		52B25B191E9F2BE2006909B0 /* MPTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTabBar.m; sourceTree = "<group>"; };
+		52B25B1B1E9F2CC4006909B0 /* MPTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTabBarButton.h; sourceTree = "<group>"; };
+		52B25B1C1E9F2CC4006909B0 /* MPTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTabBarButton.m; sourceTree = "<group>"; };
+		52B25B1E1E9F40B3006909B0 /* MPBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPBadgeView.h; sourceTree = "<group>"; };
+		52B25B1F1E9F40B3006909B0 /* MPBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBadgeView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -561,6 +570,12 @@
 			children = (
 				52B25AD91E9E2C67006909B0 /* MPTabBarController.h */,
 				52B25ADA1E9E2C67006909B0 /* MPTabBarController.m */,
+				52B25B181E9F2BE2006909B0 /* MPTabBar.h */,
+				52B25B191E9F2BE2006909B0 /* MPTabBar.m */,
+				52B25B1B1E9F2CC4006909B0 /* MPTabBarButton.h */,
+				52B25B1C1E9F2CC4006909B0 /* MPTabBarButton.m */,
+				52B25B1E1E9F40B3006909B0 /* MPBadgeView.h */,
+				52B25B1F1E9F40B3006909B0 /* MPBadgeView.m */,
 			);
 			name = "TabBar(标签栏)";
 			path = TabBar;
@@ -751,6 +766,7 @@
 				52B25A611E9E2840006909B0 /* NSObject+MJClass.m in Sources */,
 				52B25A571E9E2840006909B0 /* NSArray+MASAdditions.m in Sources */,
 				52B25A6B1E9E2840006909B0 /* SDWebImageCompat.m in Sources */,
+				52B25B1D1E9F2CC4006909B0 /* MPTabBarButton.m in Sources */,
 				52B25A581E9E2840006909B0 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				52B25AE41E9F0A5F006909B0 /* MPChannelsViewController.m in Sources */,
 				52B25A5F1E9E2840006909B0 /* MJPropertyKey.m in Sources */,
@@ -775,6 +791,8 @@
 				52B25A6E1E9E2840006909B0 /* SDWebImageDownloaderOperation.m in Sources */,
 				52B25A621E9E2840006909B0 /* NSObject+MJCoding.m in Sources */,
 				52B25A561E9E2840006909B0 /* MASViewConstraint.m in Sources */,
+				52B25B201E9F40B3006909B0 /* MPBadgeView.m in Sources */,
+				52B25B1A1E9F2BE2006909B0 /* MPTabBar.m in Sources */,
 				52B25B0C1E9F1CB7006909B0 /* UIImageView+ZFCache.m in Sources */,
 				52B25A4C1E9E2840006909B0 /* AFSecurityPolicy.m in Sources */,
 				52B25A4A1E9E2840006909B0 /* AFHTTPSessionManager.m in Sources */,
