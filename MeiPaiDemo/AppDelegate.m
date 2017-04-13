@@ -10,8 +10,13 @@
 
 #import "MPTabBarController.h"
 #import "MPMainViewController.h"
+#import "MPMyFollowViewController.h"
+#import "MPChannelsViewController.h"
+#import "MPUserCenterViewController.h"
 
 @interface AppDelegate ()
+
+@property(nonatomic,strong)MPTabBarController * tabBarC;
 
 @end
 
@@ -21,10 +26,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [self insertApplication:application didFinishLaunchingWithOptions:launchOptions];
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    
+    [self insertApplication:application didFinishLaunchingWithOptions:launchOptions];
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -32,13 +36,21 @@
 
 - (BOOL)insertApplication:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    MPMainViewController * mainVC = [[MPMainViewController alloc]init];
-    UINavigationController * mainNC = [[UINavigationController alloc]initWithRootViewController:mainVC];
     MPTabBarController * tabBarC = [[MPTabBarController alloc]init];
-
+    tabBarC.viewControllers = @[[self createNCWithClass:[MPMainViewController class] title:@"美拍"],
+                                [self createNCWithClass:[MPMyFollowViewController class] title:@"我的关注"],
+                                [self createNCWithClass:[MPChannelsViewController class] title:@"频道"],
+                                [self createNCWithClass:[MPUserCenterViewController class] title:@"我"]];
     self.window.rootViewController = tabBarC;
-    
     return YES;
+}
+
+-(UINavigationController *)createNCWithClass:(Class)class title:(NSString *)title
+{
+    UIViewController * VC = [[class alloc]init];
+    UINavigationController * NC = [[UINavigationController alloc]initWithRootViewController:VC];
+    NC.title = title;
+    return NC;
 }
 
 
