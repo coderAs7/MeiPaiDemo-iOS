@@ -21,21 +21,21 @@
     self.title = @"我的关注";
     self.view.backgroundColor = RGB(45, 47, 55);
     
-    __weak typeof(self)weakSelf = self;
-    NotFollowView *notView = [[NotFollowView alloc]initWithFrame:self.view.frame];
-    notView.block = ^(){
-        dispatch_async(dispatch_get_main_queue(), ^{
-            WantFollowViewController *vc = [[WantFollowViewController alloc]init];
-            vc.hidesBottomBarWhenPushed = YES;
-            [weakSelf.navigationController pushViewController:vc animated:YES];
-        });
-    };
-    [self.view addSubview:notView];
-     
+//    __weak typeof(self)weakSelf = self;
+//    NotFollowView *notView = [[NotFollowView alloc]initWithFrame:self.view.frame];
+//    notView.block = ^(){
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            WantFollowViewController *vc = [[WantFollowViewController alloc]init];
+//            vc.hidesBottomBarWhenPushed = YES;
+//            [weakSelf.navigationController pushViewController:vc animated:YES];
+//        });
+//    };
+//    [self.view addSubview:notView];
     
-//    
-//    FollowTableView *followView = [[FollowTableView alloc]initWithFrame:self.view.frame];
-//    [self.view addSubview:followView];
+    
+    
+    FollowTableView *followView = [[FollowTableView alloc]initWithFrame:self.view.frame];
+    [self.view addSubview:followView];
 }
 
 

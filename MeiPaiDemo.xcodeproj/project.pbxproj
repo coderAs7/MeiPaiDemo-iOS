@@ -674,9 +674,9 @@
 		98A826B11EA0745400B931F0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				98A826B21EA0745400B931F0 /*   WantFollow【你可能想关注的人】 */,
 				98A826BA1EA0745400B931F0 /* MPMyFollowViewController.h */,
 				98A826BB1EA0745400B931F0 /* MPMyFollowViewController.m */,
+				98A826B21EA0745400B931F0 /*   WantFollow【你可能想关注的人】 */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
