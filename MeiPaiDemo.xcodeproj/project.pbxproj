@@ -83,6 +83,7 @@
 		52B25B1D1E9F2CC4006909B0 /* MPTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B1C1E9F2CC4006909B0 /* MPTabBarButton.m */; };
 		52B25B201E9F40B3006909B0 /* MPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B1F1E9F40B3006909B0 /* MPBadgeView.m */; };
 		52B25B231E9F6185006909B0 /* MPShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B221E9F6185006909B0 /* MPShootViewController.m */; };
+		52B25B261EA062FE006909B0 /* CollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B251EA062FE006909B0 /* CollectionViewLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -268,6 +269,8 @@
 		52B25B1F1E9F40B3006909B0 /* MPBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBadgeView.m; sourceTree = "<group>"; };
 		52B25B211E9F6185006909B0 /* MPShootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPShootViewController.h; sourceTree = "<group>"; };
 		52B25B221E9F6185006909B0 /* MPShootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPShootViewController.m; sourceTree = "<group>"; };
+		52B25B241EA062FE006909B0 /* CollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewLayout.h; sourceTree = "<group>"; };
+		52B25B251EA062FE006909B0 /* CollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,6 +363,8 @@
 		52B259101E9E283F006909B0 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				52B25B241EA062FE006909B0 /* CollectionViewLayout.h */,
+				52B25B251EA062FE006909B0 /* CollectionViewLayout.m */,
 				52B25AE81E9F1CB7006909B0 /* ZFPlayer */,
 				52B259111E9E283F006909B0 /* AFNetworking */,
 				52B259251E9E283F006909B0 /* Masonry */,
@@ -811,6 +816,7 @@
 				52B25A651E9E2840006909B0 /* NSString+MJExtension.m in Sources */,
 				52B25B231E9F6185006909B0 /* MPShootViewController.m in Sources */,
 				52B25A681E9E2840006909B0 /* RJCircularLoaderView.m in Sources */,
+				52B25B261EA062FE006909B0 /* CollectionViewLayout.m in Sources */,
 				52B25B091E9F1CB7006909B0 /* ASValuePopUpView.m in Sources */,
 				52B25A5E1E9E2840006909B0 /* MJProperty.m in Sources */,
 				52B25A671E9E2840006909B0 /* NSData+ImageContentType.m in Sources */,
