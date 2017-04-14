@@ -1,24 +1,22 @@
 //
-//  MPChannelsViewController.m
+//  MPNavigationController.m
 //  MeiPaiDemo
 //
-//  Created by dongxiaowei on 2017/4/13.
+//  Created by dongxiaowei on 2017/4/14.
 //  Copyright © 2017年 UTOUU. All rights reserved.
 //
 
-#import "MPChannelsViewController.h"
+#import "MPNavigationController.h"
 
-@interface MPChannelsViewController ()
+@interface MPNavigationController ()
 
 @end
 
-@implementation MPChannelsViewController
+@implementation MPNavigationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-   
 }
 
 - (void)didReceiveMemoryWarning {

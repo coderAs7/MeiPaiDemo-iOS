@@ -7,8 +7,13 @@
 //
 
 #import "MPUserCenterViewController.h"
+#import "MPUserCenterHeaderTableViewCell.h"
+#import "MPUserCenterTableViewCell.h"
 
-@interface MPUserCenterViewController ()
+
+@interface MPUserCenterViewController () <UITableViewDelegate,UITableViewDataSource>
+
+@property(nonatomic,strong)UITableView * tableView;
 
 @end
 
@@ -17,7 +22,94 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //
+    
+    
+}
+
+NSString * MPUserCenterCellIndetifier = @"MPUserCenterCellIndetifier";
+NSString * MPUserCenterHeaderCellIndetifier = @"MPUserCenterHeaderCellIndetifier";
+
+-(void)insertViewController
+{
+    self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    [self.view addSubview:self.tableView];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    
+    
+    if (indexPath.section == 0)
+    {
+        MPUserCenterHeaderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MPUserCenterHeaderCellIndetifier];
+        if (cell == nil)
+        {
+            cell = [[MPUserCenterHeaderTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MPUserCenterHeaderCellIndetifier];
+        }
+        
+        return cell;
+    }
+    else
+    {
+        MPUserCenterTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MPUserCenterCellIndetifier];
+        if (cell == nil)
+        {
+            cell = [[MPUserCenterTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MPUserCenterCellIndetifier];
+        }
+        
+        return cell;
+    }
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0)
+    {
+        return 360;
+    }
+    else
+    {
+        return 65;
+    }
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 6;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    NSInteger number = 0;
+    switch (section)
+    {
+        case 0:
+            number = 1;
+            break;
+        case 1:
+            number = 3;
+            break;
+        case 2:
+            number = 1;
+            break;
+        case 3:
+            number = 2;
+            break;
+        case 4:
+            number = 1;
+            break;
+        case 5:
+            number = 1;
+            break;
+            
+        default:
+            break;
+    }
+    return number;
 }
 
 - (void)didReceiveMemoryWarning {

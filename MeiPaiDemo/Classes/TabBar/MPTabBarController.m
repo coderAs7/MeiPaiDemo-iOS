@@ -13,6 +13,7 @@
 #import "MPChannelsViewController.h"
 #import "MPUserCenterViewController.h"
 #import "MPShootViewController.h"
+#import "MPNavigationBar.h"
 
 @interface MPTabBarController () <MPTabBarDelegate>
 
@@ -90,8 +91,9 @@
     NC.tabBarItem.image = image;
     NC.tabBarItem.selectedImage = selectedImage;
     NC.navigationBarHidden = YES;
-    NC.navigationBar.barStyle = UIStatusBarStyleLightContent;
-    [VC setNeedsStatusBarAppearanceUpdate];
+    [MPNavigationBar navigationBarInViewController:VC];
+    //NC.navigationBar.barStyle = UIStatusBarStyleLightContent;
+    //[VC setNeedsStatusBarAppearanceUpdate];
     return NC;
 }
 
