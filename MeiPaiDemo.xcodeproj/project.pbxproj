@@ -84,6 +84,7 @@
 		52B25B201E9F40B3006909B0 /* MPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B1F1E9F40B3006909B0 /* MPBadgeView.m */; };
 		52B25B231E9F6185006909B0 /* MPShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B221E9F6185006909B0 /* MPShootViewController.m */; };
 		52B25B261EA062FE006909B0 /* CollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B251EA062FE006909B0 /* CollectionViewLayout.m */; };
+		98A826AB1EA06DCF00B931F0 /* MPMainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826AA1EA06DCF00B931F0 /* MPMainViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -271,6 +272,8 @@
 		52B25B221E9F6185006909B0 /* MPShootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPShootViewController.m; sourceTree = "<group>"; };
 		52B25B241EA062FE006909B0 /* CollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewLayout.h; sourceTree = "<group>"; };
 		52B25B251EA062FE006909B0 /* CollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewLayout.m; sourceTree = "<group>"; };
+		98A826A91EA06DCF00B931F0 /* MPMainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMainViewCell.h; sourceTree = "<group>"; };
+		98A826AA1EA06DCF00B931F0 /* MPMainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMainViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -550,6 +553,8 @@
 			children = (
 				52B25ADC1E9E2CC7006909B0 /* MPMainViewController.h */,
 				52B25ADD1E9E2CC7006909B0 /* MPMainViewController.m */,
+				98A826A91EA06DCF00B931F0 /* MPMainViewCell.h */,
+				98A826AA1EA06DCF00B931F0 /* MPMainViewCell.m */,
 			);
 			name = "Main(主页)";
 			path = Main;
@@ -802,6 +807,7 @@
 				52B25A621E9E2840006909B0 /* NSObject+MJCoding.m in Sources */,
 				52B25A561E9E2840006909B0 /* MASViewConstraint.m in Sources */,
 				52B25B201E9F40B3006909B0 /* MPBadgeView.m in Sources */,
+				98A826AB1EA06DCF00B931F0 /* MPMainViewCell.m in Sources */,
 				52B25B1A1E9F2BE2006909B0 /* MPTabBar.m in Sources */,
 				52B25B0C1E9F1CB7006909B0 /* UIImageView+ZFCache.m in Sources */,
 				52B25A4C1E9E2840006909B0 /* AFSecurityPolicy.m in Sources */,

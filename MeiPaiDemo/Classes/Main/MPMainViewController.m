@@ -21,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //注释
 
     CollectionViewLayout *layout = [[CollectionViewLayout alloc] init];
     layout.delegate = self;
