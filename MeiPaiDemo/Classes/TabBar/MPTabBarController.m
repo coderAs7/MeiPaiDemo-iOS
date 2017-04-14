@@ -13,6 +13,7 @@
 #import "MPChannelsViewController.h"
 #import "MPUserCenterViewController.h"
 #import "MPShootViewController.h"
+#import "MPNavigationBar.h"
 
 @interface MPTabBarController () <MPTabBarDelegate>
 
@@ -89,15 +90,17 @@
     NC.title = title;
     NC.tabBarItem.image = image;
     NC.tabBarItem.selectedImage = selectedImage;
-    NC.navigationBarHidden = YES;
-    NC.navigationBar.barStyle = UIStatusBarStyleLightContent;
-    [VC setNeedsStatusBarAppearanceUpdate];
+    NC.navigationBarHidden = NO;
+    //NC.navigationBar.barStyle = UIStatusBarStyleLightContent;
+    //[VC setNeedsStatusBarAppearanceUpdate];
+    [NC.navigationBar addSubview:[MPNavigationBar navigationBarInViewController:VC]];
     return NC;
 }
 
 - (void)tabBarDidClickPlusButton
 {
     MPShootViewController * shootVC = [[MPShootViewController alloc]init];
+    shootVC.modalPresentationStyle=UIModalPresentationOverCurrentContext;
     [self presentViewController:shootVC animated:NO completion:nil];
 }
 

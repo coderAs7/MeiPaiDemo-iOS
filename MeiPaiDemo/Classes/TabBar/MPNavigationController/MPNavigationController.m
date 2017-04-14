@@ -1,22 +1,23 @@
 //
-//  MPMyFollowViewController.m
+//  MPNavigationController.m
 //  MeiPaiDemo
 //
-//  Created by dongxiaowei on 2017/4/13.
+//  Created by dongxiaowei on 2017/4/14.
 //  Copyright © 2017年 UTOUU. All rights reserved.
 //
 
-#import "MPMyFollowViewController.h"
+#import "MPNavigationController.h"
 
-@interface MPMyFollowViewController ()
+@interface MPNavigationController ()
 
 @end
 
-@implementation MPMyFollowViewController
+@implementation MPNavigationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning {
