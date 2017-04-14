@@ -87,6 +87,9 @@
 		52B25B3A1EA0A12D006909B0 /* MPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B381EA0A12D006909B0 /* MPNavigationController.m */; };
 		52B25B3F1EA0A178006909B0 /* MPUserCenterHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B3C1EA0A178006909B0 /* MPUserCenterHeaderTableViewCell.m */; };
 		52B25B401EA0A178006909B0 /* MPUserCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B3E1EA0A178006909B0 /* MPUserCenterTableViewCell.m */; };
+		52B25B431EA0AFCC006909B0 /* MPTopNameButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B421EA0AFCC006909B0 /* MPTopNameButtonView.m */; };
+		52B25B471EA0B76C006909B0 /* MPDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B461EA0B76C006909B0 /* MPDataManager.m */; };
+		52B25B4A1EA0C34F006909B0 /* MPUserCenterSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B491EA0C34F006909B0 /* MPUserCenterSectionHeaderView.m */; };
 		98A826AB1EA06DCF00B931F0 /* MPMainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826AA1EA06DCF00B931F0 /* MPMainViewCell.m */; };
 		98A826C41EA0745400B931F0 /* WantFollowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826B41EA0745400B931F0 /* WantFollowTableViewCell.m */; };
 		98A826C51EA0745400B931F0 /* WantFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826B61EA0745400B931F0 /* WantFollowViewController.m */; };
@@ -292,6 +295,12 @@
 		52B25B3C1EA0A178006909B0 /* MPUserCenterHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPUserCenterHeaderTableViewCell.m; sourceTree = "<group>"; };
 		52B25B3D1EA0A178006909B0 /* MPUserCenterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPUserCenterTableViewCell.h; sourceTree = "<group>"; };
 		52B25B3E1EA0A178006909B0 /* MPUserCenterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPUserCenterTableViewCell.m; sourceTree = "<group>"; };
+		52B25B411EA0AFCC006909B0 /* MPTopNameButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTopNameButtonView.h; sourceTree = "<group>"; };
+		52B25B421EA0AFCC006909B0 /* MPTopNameButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTopNameButtonView.m; sourceTree = "<group>"; };
+		52B25B451EA0B76C006909B0 /* MPDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPDataManager.h; sourceTree = "<group>"; };
+		52B25B461EA0B76C006909B0 /* MPDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPDataManager.m; sourceTree = "<group>"; };
+		52B25B481EA0C34F006909B0 /* MPUserCenterSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPUserCenterSectionHeaderView.h; sourceTree = "<group>"; };
+		52B25B491EA0C34F006909B0 /* MPUserCenterSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPUserCenterSectionHeaderView.m; sourceTree = "<group>"; };
 		98A826A91EA06DCF00B931F0 /* MPMainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMainViewCell.h; sourceTree = "<group>"; };
 		98A826AA1EA06DCF00B931F0 /* MPMainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMainViewCell.m; sourceTree = "<group>"; };
 		98A826B31EA0745400B931F0 /* WantFollowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WantFollowTableViewCell.h; sourceTree = "<group>"; };
@@ -564,6 +573,7 @@
 				52B25AD41E9E2BDD006909B0 /* Follow(关注) */,
 				52B25AD51E9E2BDD006909B0 /* Main(主页) */,
 				52B25AD61E9E2BDD006909B0 /* Shoot(拍摄) */,
+				52B25B441EA0B755006909B0 /* MPDataManager(数据管理) */,
 				52B25AD71E9E2BDD006909B0 /* UserCenter(个人中心) */,
 			);
 			path = Classes;
@@ -616,10 +626,14 @@
 			children = (
 				52B25B3B1EA0A178006909B0 /* MPUserCenterHeaderTableViewCell.h */,
 				52B25B3C1EA0A178006909B0 /* MPUserCenterHeaderTableViewCell.m */,
+				52B25B411EA0AFCC006909B0 /* MPTopNameButtonView.h */,
+				52B25B421EA0AFCC006909B0 /* MPTopNameButtonView.m */,
 				52B25B3D1EA0A178006909B0 /* MPUserCenterTableViewCell.h */,
 				52B25B3E1EA0A178006909B0 /* MPUserCenterTableViewCell.m */,
 				52B25AE51E9F0A73006909B0 /* MPUserCenterViewController.h */,
 				52B25AE61E9F0A73006909B0 /* MPUserCenterViewController.m */,
+				52B25B481EA0C34F006909B0 /* MPUserCenterSectionHeaderView.h */,
+				52B25B491EA0C34F006909B0 /* MPUserCenterSectionHeaderView.m */,
 			);
 			name = "UserCenter(个人中心)";
 			path = UserCenter;
@@ -697,6 +711,16 @@
 				52B25B381EA0A12D006909B0 /* MPNavigationController.m */,
 			);
 			path = MPNavigationController;
+			sourceTree = "<group>";
+		};
+		52B25B441EA0B755006909B0 /* MPDataManager(数据管理) */ = {
+			isa = PBXGroup;
+			children = (
+				52B25B451EA0B76C006909B0 /* MPDataManager.h */,
+				52B25B461EA0B76C006909B0 /* MPDataManager.m */,
+			);
+			name = "MPDataManager(数据管理)";
+			path = MPDataManager;
 			sourceTree = "<group>";
 		};
 		98A826B11EA0745400B931F0 /* Controller */ = {
@@ -888,6 +912,7 @@
 				98A826C51EA0745400B931F0 /* WantFollowViewController.m in Sources */,
 				52B25B3A1EA0A12D006909B0 /* MPNavigationController.m in Sources */,
 				98A826D21EA0748100B931F0 /* LHScaleTool.m in Sources */,
+				52B25B431EA0AFCC006909B0 /* MPTopNameButtonView.m in Sources */,
 				52B25B171E9F1CB7006909B0 /* ZFPlayerView.m in Sources */,
 				52B25B131E9F1CB7006909B0 /* ZFBrightnessView.m in Sources */,
 				52B25A611E9E2840006909B0 /* NSObject+MJClass.m in Sources */,
@@ -899,6 +924,7 @@
 				52B25AE41E9F0A5F006909B0 /* MPChannelsViewController.m in Sources */,
 				52B25A5F1E9E2840006909B0 /* MJPropertyKey.m in Sources */,
 				52B25A711E9E2840006909B0 /* UIButton+WebCache.m in Sources */,
+				52B25B471EA0B76C006909B0 /* MPDataManager.m in Sources */,
 				52B25B0F1E9F1CB7006909B0 /* UIView+CustomControlView.m in Sources */,
 				52B25A601E9E2840006909B0 /* MJPropertyType.m in Sources */,
 				52B25B121E9F1CB7006909B0 /* MMMaterialDesignSpinner.m in Sources */,
@@ -914,6 +940,7 @@
 				52B25A541E9E2840006909B0 /* MASLayoutConstraint.m in Sources */,
 				52B25A6C1E9E2840006909B0 /* SDWebImageDecoder.m in Sources */,
 				52B25A631E9E2840006909B0 /* NSObject+MJKeyValue.m in Sources */,
+				52B25B4A1EA0C34F006909B0 /* MPUserCenterSectionHeaderView.m in Sources */,
 				52B25A511E9E2840006909B0 /* MASCompositeConstraint.m in Sources */,
 				52B25A4F1E9E2840006909B0 /* AFURLResponseSerialization.m in Sources */,
 				52B25A4D1E9E2840006909B0 /* AFURLConnectionOperation.m in Sources */,
