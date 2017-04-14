@@ -21,7 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //注释123  忽略文件qwe
 
     CollectionViewLayout *layout = [[CollectionViewLayout alloc] init];
     layout.delegate = self;
