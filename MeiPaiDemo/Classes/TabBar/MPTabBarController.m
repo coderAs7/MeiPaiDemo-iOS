@@ -67,11 +67,11 @@
 - (void)setUpAllChildViewController{
     
     self.viewControllers = @[
-    [self createNCWithClass:[MPMainViewController class] title:@"美拍" image:[UIImage imageNamed:@"ARWatermark"] selectedImage:[UIImage imageNamed:@"ARWatermark"]],
-    [self createNCWithClass:[MPMyFollowViewController class] title:@"我的关注" image:[UIImage imageNamed:@"ARWatermark"] selectedImage:[UIImage imageNamed:@"ARWatermark"]],
+    [self createNCWithClass:[MPMainViewController class] title:@"美拍" image:[UIImage imageNamed:@"emoji_flower_n"] selectedImage:[UIImage imageNamed:@"emoji_flower_s"]],
+    [self createNCWithClass:[MPMyFollowViewController class] title:@"我的关注" image:[UIImage imageNamed:@"emoji_flower_n"] selectedImage:[UIImage imageNamed:@"emoji_flower_s"]],
     [self createNCWithClass:[MPShootViewController class] title:@"" image:nil selectedImage:nil],
-    [self createNCWithClass:[MPChannelsViewController class] title:@"频道" image:[UIImage imageNamed:@"ARWatermark"] selectedImage:[UIImage imageNamed:@"ARWatermark"]],
-    [self createNCWithClass:[MPUserCenterViewController class] title:@"我" image:[UIImage imageNamed:@"ARWatermark"] selectedImage:[UIImage imageNamed:@"ARWatermark"]]];
+    [self createNCWithClass:[MPChannelsViewController class] title:@"频道" image:[UIImage imageNamed:@"emoji_flower_n"] selectedImage:[UIImage imageNamed:@"emoji_flower_s"]],
+    [self createNCWithClass:[MPUserCenterViewController class] title:@"我" image:[UIImage imageNamed:@"emoji_flower_n"] selectedImage:[UIImage imageNamed:@"emoji_flower_s"]]];
     
     //自定义按钮
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width-50)/2, 0, 50, 50)];
@@ -98,6 +98,7 @@
 - (void)tabBarDidClickPlusButton
 {
     MPShootViewController * shootVC = [[MPShootViewController alloc]init];
+    shootVC.modalPresentationStyle=UIModalPresentationOverCurrentContext;
     [self presentViewController:shootVC animated:NO completion:nil];
 }
 
