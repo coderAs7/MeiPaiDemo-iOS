@@ -9,6 +9,7 @@
 #import "MPUserCenterViewController.h"
 #import "MPUserCenterHeaderTableViewCell.h"
 #import "MPUserCenterTableViewCell.h"
+#import "MPUserCenterSectionHeaderView.h"
 
 
 @interface MPUserCenterViewController () <UITableViewDelegate,UITableViewDataSource>
@@ -22,8 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
+    //self.edgesForExtendedLayout = UIRectEdgeNone;
+    [self insertViewController];
 }
 
 NSString * MPUserCenterCellIndetifier = @"MPUserCenterCellIndetifier";
@@ -31,9 +32,11 @@ NSString * MPUserCenterHeaderCellIndetifier = @"MPUserCenterHeaderCellIndetifier
 
 -(void)insertViewController
 {
-    self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.backgroundColor = MPColor_VCBackgroundGray;
+    
     
     [self.view addSubview:self.tableView];
 }
@@ -69,17 +72,27 @@ NSString * MPUserCenterHeaderCellIndetifier = @"MPUserCenterHeaderCellIndetifier
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0)
     {
-        return 360;
+        return 230;
     }
     else
     {
-        return 65;
+        return 40;
     }
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 6;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 30;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return [[MPUserCenterSectionHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 30)];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
