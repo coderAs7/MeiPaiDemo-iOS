@@ -84,6 +84,9 @@
 		52B25B201E9F40B3006909B0 /* MPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B1F1E9F40B3006909B0 /* MPBadgeView.m */; };
 		52B25B231E9F6185006909B0 /* MPShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B221E9F6185006909B0 /* MPShootViewController.m */; };
 		52B25B261EA062FE006909B0 /* CollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B251EA062FE006909B0 /* CollectionViewLayout.m */; };
+		A4C69F421EA06D690038102B /* MPMainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C69F411EA06D690038102B /* MPMainViewCell.m */; };
+		A4C69F451EA070960038102B /* MPMainTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C69F441EA070960038102B /* MPMainTopView.m */; };
+		A4C69F481EA091B00038102B /* MPMainViewBigCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C69F471EA091B00038102B /* MPMainViewBigCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -271,6 +274,12 @@
 		52B25B221E9F6185006909B0 /* MPShootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPShootViewController.m; sourceTree = "<group>"; };
 		52B25B241EA062FE006909B0 /* CollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewLayout.h; sourceTree = "<group>"; };
 		52B25B251EA062FE006909B0 /* CollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewLayout.m; sourceTree = "<group>"; };
+		A4C69F401EA06D690038102B /* MPMainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPMainViewCell.h; path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/MPMainViewCell.h"; sourceTree = "<group>"; };
+		A4C69F411EA06D690038102B /* MPMainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPMainViewCell.m; path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/MPMainViewCell.m"; sourceTree = "<group>"; };
+		A4C69F431EA070960038102B /* MPMainTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMainTopView.h; sourceTree = "<group>"; };
+		A4C69F441EA070960038102B /* MPMainTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMainTopView.m; sourceTree = "<group>"; };
+		A4C69F461EA091B00038102B /* MPMainViewBigCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMainViewBigCell.h; sourceTree = "<group>"; };
+		A4C69F471EA091B00038102B /* MPMainViewBigCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMainViewBigCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -550,6 +559,12 @@
 			children = (
 				52B25ADC1E9E2CC7006909B0 /* MPMainViewController.h */,
 				52B25ADD1E9E2CC7006909B0 /* MPMainViewController.m */,
+				A4C69F401EA06D690038102B /* MPMainViewCell.h */,
+				A4C69F411EA06D690038102B /* MPMainViewCell.m */,
+				A4C69F431EA070960038102B /* MPMainTopView.h */,
+				A4C69F441EA070960038102B /* MPMainTopView.m */,
+				A4C69F461EA091B00038102B /* MPMainViewBigCell.h */,
+				A4C69F471EA091B00038102B /* MPMainViewBigCell.m */,
 			);
 			name = "Main(主页)";
 			path = Main;
@@ -772,6 +787,7 @@
 			files = (
 				52B25A481E9E2840006909B0 /* AFHTTPRequestOperation.m in Sources */,
 				52B25B171E9F1CB7006909B0 /* ZFPlayerView.m in Sources */,
+				A4C69F481EA091B00038102B /* MPMainViewBigCell.m in Sources */,
 				52B25B131E9F1CB7006909B0 /* ZFBrightnessView.m in Sources */,
 				52B25A611E9E2840006909B0 /* NSObject+MJClass.m in Sources */,
 				52B25A571E9E2840006909B0 /* NSArray+MASAdditions.m in Sources */,
@@ -802,11 +818,13 @@
 				52B25A621E9E2840006909B0 /* NSObject+MJCoding.m in Sources */,
 				52B25A561E9E2840006909B0 /* MASViewConstraint.m in Sources */,
 				52B25B201E9F40B3006909B0 /* MPBadgeView.m in Sources */,
+				A4C69F421EA06D690038102B /* MPMainViewCell.m in Sources */,
 				52B25B1A1E9F2BE2006909B0 /* MPTabBar.m in Sources */,
 				52B25B0C1E9F1CB7006909B0 /* UIImageView+ZFCache.m in Sources */,
 				52B25A4C1E9E2840006909B0 /* AFSecurityPolicy.m in Sources */,
 				52B25A4A1E9E2840006909B0 /* AFHTTPSessionManager.m in Sources */,
 				52B25A4E1E9E2840006909B0 /* AFURLRequestSerialization.m in Sources */,
+				A4C69F451EA070960038102B /* MPMainTopView.m in Sources */,
 				52B25A741E9E2840006909B0 /* UIImageView+WebCache.m in Sources */,
 				52B25B161E9F1CB7006909B0 /* ZFPlayerModel.m in Sources */,
 				52B25A691E9E2840006909B0 /* UIImageView+RJLoader.m in Sources */,
