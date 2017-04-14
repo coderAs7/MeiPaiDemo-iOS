@@ -36,19 +36,19 @@
 
 - (void)setUpTabBar{
     
-    //去除tabbar顶部的线
-    CGRect rect = CGRectMake(0,0,CGRectGetWidth(self.view.frame),CGRectGetHeight(self.view.frame));
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context =UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [[UIColor clearColor] CGColor]);
-    CGContextFillRect(context, rect);
-    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    [self.tabBar setBackgroundImage:img];
-    [self.tabBar setShadowImage:img];
-    
-    self.tabBar.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.5];
-    self.tabBar.tintColor = MPColor_Pink;
+//    //去除tabbar顶部的线
+//    CGRect rect = CGRectMake(0,0,CGRectGetWidth(self.view.frame),CGRectGetHeight(self.view.frame));
+//    UIGraphicsBeginImageContext(rect.size);
+//    CGContextRef context =UIGraphicsGetCurrentContext();
+//    CGContextSetFillColorWithColor(context, [[UIColor clearColor] CGColor]);
+//    CGContextFillRect(context, rect);
+//    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    [self.tabBar setBackgroundImage:img];
+//    [self.tabBar setShadowImage:img];
+//    
+//    self.tabBar.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+//    self.tabBar.tintColor = MPColor_Pink;
     
     // 自定义tabBar
 //    MPTabBar *tabBar = [[MPTabBar alloc] initWithFrame:self.tabBar.bounds];
