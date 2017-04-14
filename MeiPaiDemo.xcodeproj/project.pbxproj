@@ -61,7 +61,6 @@
 		52B25A751E9E2840006909B0 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B2597B1E9E283F006909B0 /* UIView+WebCacheOperation.m */; };
 		52B25ADB1E9E2C67006909B0 /* MPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25ADA1E9E2C67006909B0 /* MPTabBarController.m */; };
 		52B25ADE1E9E2CC7006909B0 /* MPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25ADD1E9E2CC7006909B0 /* MPMainViewController.m */; };
-		52B25AE11E9F0A47006909B0 /* MPMyFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25AE01E9F0A47006909B0 /* MPMyFollowViewController.m */; };
 		52B25AE41E9F0A5F006909B0 /* MPChannelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25AE31E9F0A5F006909B0 /* MPChannelsViewController.m */; };
 		52B25AE71E9F0A73006909B0 /* MPUserCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25AE61E9F0A73006909B0 /* MPUserCenterViewController.m */; };
 		52B25B091E9F1CB7006909B0 /* ASValuePopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25AEA1E9F1CB7006909B0 /* ASValuePopUpView.m */; };
@@ -84,10 +83,25 @@
 		52B25B201E9F40B3006909B0 /* MPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B1F1E9F40B3006909B0 /* MPBadgeView.m */; };
 		52B25B231E9F6185006909B0 /* MPShootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B221E9F6185006909B0 /* MPShootViewController.m */; };
 		52B25B261EA062FE006909B0 /* CollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B251EA062FE006909B0 /* CollectionViewLayout.m */; };
+<<<<<<< HEAD
 		52B25B291EA07487006909B0 /* MPUserCenterHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B281EA07487006909B0 /* MPUserCenterHeaderTableViewCell.m */; };
 		52B25B2C1EA07497006909B0 /* MPUserCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B2B1EA07497006909B0 /* MPUserCenterTableViewCell.m */; };
 		52B25B301EA07BAA006909B0 /* MPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B2F1EA07BAA006909B0 /* MPNavigationController.m */; };
 		52B25B331EA07D40006909B0 /* MPNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B321EA07D40006909B0 /* MPNavigationBar.m */; };
+=======
+		98A826AB1EA06DCF00B931F0 /* MPMainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826AA1EA06DCF00B931F0 /* MPMainViewCell.m */; };
+		98A826C41EA0745400B931F0 /* WantFollowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826B41EA0745400B931F0 /* WantFollowTableViewCell.m */; };
+		98A826C51EA0745400B931F0 /* WantFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826B61EA0745400B931F0 /* WantFollowViewController.m */; };
+		98A826C61EA0745400B931F0 /* WantTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826B81EA0745400B931F0 /* WantTableViewCell.m */; };
+		98A826C71EA0745400B931F0 /* WantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98A826B91EA0745400B931F0 /* WantTableViewCell.xib */; };
+		98A826C81EA0745400B931F0 /* MPMyFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826BB1EA0745400B931F0 /* MPMyFollowViewController.m */; };
+		98A826C91EA0745400B931F0 /* FollowTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826BE1EA0745400B931F0 /* FollowTableView.m */; };
+		98A826CA1EA0745400B931F0 /* FollowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826C01EA0745400B931F0 /* FollowTableViewCell.m */; };
+		98A826CB1EA0745400B931F0 /* FollowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98A826C11EA0745400B931F0 /* FollowTableViewCell.xib */; };
+		98A826CC1EA0745400B931F0 /* NotFollowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826C31EA0745400B931F0 /* NotFollowView.m */; };
+		98A826D21EA0748100B931F0 /* LHScaleTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826CF1EA0748100B931F0 /* LHScaleTool.m */; };
+		98A826D31EA0748100B931F0 /* UIButton+MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826D11EA0748100B931F0 /* UIButton+MyButton.m */; };
+>>>>>>> master
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -228,8 +242,6 @@
 		52B25ADA1E9E2C67006909B0 /* MPTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTabBarController.m; sourceTree = "<group>"; };
 		52B25ADC1E9E2CC7006909B0 /* MPMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMainViewController.h; sourceTree = "<group>"; };
 		52B25ADD1E9E2CC7006909B0 /* MPMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMainViewController.m; sourceTree = "<group>"; };
-		52B25ADF1E9F0A47006909B0 /* MPMyFollowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMyFollowViewController.h; sourceTree = "<group>"; };
-		52B25AE01E9F0A47006909B0 /* MPMyFollowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMyFollowViewController.m; sourceTree = "<group>"; };
 		52B25AE21E9F0A5F006909B0 /* MPChannelsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPChannelsViewController.h; sourceTree = "<group>"; };
 		52B25AE31E9F0A5F006909B0 /* MPChannelsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPChannelsViewController.m; sourceTree = "<group>"; };
 		52B25AE51E9F0A73006909B0 /* MPUserCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPUserCenterViewController.h; sourceTree = "<group>"; };
@@ -275,6 +287,7 @@
 		52B25B221E9F6185006909B0 /* MPShootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPShootViewController.m; sourceTree = "<group>"; };
 		52B25B241EA062FE006909B0 /* CollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewLayout.h; sourceTree = "<group>"; };
 		52B25B251EA062FE006909B0 /* CollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewLayout.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		52B25B271EA07487006909B0 /* MPUserCenterHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPUserCenterHeaderTableViewCell.h; sourceTree = "<group>"; };
 		52B25B281EA07487006909B0 /* MPUserCenterHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPUserCenterHeaderTableViewCell.m; sourceTree = "<group>"; };
 		52B25B2A1EA07497006909B0 /* MPUserCenterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPUserCenterTableViewCell.h; sourceTree = "<group>"; };
@@ -283,6 +296,30 @@
 		52B25B2F1EA07BAA006909B0 /* MPNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPNavigationController.m; sourceTree = "<group>"; };
 		52B25B311EA07D40006909B0 /* MPNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPNavigationBar.h; sourceTree = "<group>"; };
 		52B25B321EA07D40006909B0 /* MPNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPNavigationBar.m; sourceTree = "<group>"; };
+=======
+		98A826A91EA06DCF00B931F0 /* MPMainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMainViewCell.h; sourceTree = "<group>"; };
+		98A826AA1EA06DCF00B931F0 /* MPMainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMainViewCell.m; sourceTree = "<group>"; };
+		98A826B31EA0745400B931F0 /* WantFollowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WantFollowTableViewCell.h; sourceTree = "<group>"; };
+		98A826B41EA0745400B931F0 /* WantFollowTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WantFollowTableViewCell.m; sourceTree = "<group>"; };
+		98A826B51EA0745400B931F0 /* WantFollowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WantFollowViewController.h; sourceTree = "<group>"; };
+		98A826B61EA0745400B931F0 /* WantFollowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WantFollowViewController.m; sourceTree = "<group>"; };
+		98A826B71EA0745400B931F0 /* WantTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WantTableViewCell.h; sourceTree = "<group>"; };
+		98A826B81EA0745400B931F0 /* WantTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WantTableViewCell.m; sourceTree = "<group>"; };
+		98A826B91EA0745400B931F0 /* WantTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WantTableViewCell.xib; sourceTree = "<group>"; };
+		98A826BA1EA0745400B931F0 /* MPMyFollowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMyFollowViewController.h; sourceTree = "<group>"; };
+		98A826BB1EA0745400B931F0 /* MPMyFollowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMyFollowViewController.m; sourceTree = "<group>"; };
+		98A826BD1EA0745400B931F0 /* FollowTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowTableView.h; sourceTree = "<group>"; };
+		98A826BE1EA0745400B931F0 /* FollowTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowTableView.m; sourceTree = "<group>"; };
+		98A826BF1EA0745400B931F0 /* FollowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowTableViewCell.h; sourceTree = "<group>"; };
+		98A826C01EA0745400B931F0 /* FollowTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowTableViewCell.m; sourceTree = "<group>"; };
+		98A826C11EA0745400B931F0 /* FollowTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowTableViewCell.xib; sourceTree = "<group>"; };
+		98A826C21EA0745400B931F0 /* NotFollowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotFollowView.h; sourceTree = "<group>"; };
+		98A826C31EA0745400B931F0 /* NotFollowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotFollowView.m; sourceTree = "<group>"; };
+		98A826CE1EA0748100B931F0 /* LHScaleTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHScaleTool.h; sourceTree = "<group>"; };
+		98A826CF1EA0748100B931F0 /* LHScaleTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHScaleTool.m; sourceTree = "<group>"; };
+		98A826D01EA0748100B931F0 /* UIButton+MyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+MyButton.h"; sourceTree = "<group>"; };
+		98A826D11EA0748100B931F0 /* UIButton+MyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+MyButton.m"; sourceTree = "<group>"; };
+>>>>>>> master
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,6 +378,7 @@
 				52B2590F1E9E2519006909B0 /* PrefixHeader.pch */,
 				52B25AD21E9E2BDD006909B0 /* Classes */,
 				52B259101E9E283F006909B0 /* Utility */,
+				98A826CD1EA0748100B931F0 /* Tool */,
 				52B2589F1E9DBFD1006909B0 /* Supporting Files */,
 			);
 			path = MeiPaiDemo;
@@ -550,8 +588,8 @@
 		52B25AD41E9E2BDD006909B0 /* Follow(关注) */ = {
 			isa = PBXGroup;
 			children = (
-				52B25ADF1E9F0A47006909B0 /* MPMyFollowViewController.h */,
-				52B25AE01E9F0A47006909B0 /* MPMyFollowViewController.m */,
+				98A826B11EA0745400B931F0 /* Controller */,
+				98A826BC1EA0745400B931F0 /* View */,
 			);
 			name = "Follow(关注)";
 			path = Follow;
@@ -562,6 +600,8 @@
 			children = (
 				52B25ADC1E9E2CC7006909B0 /* MPMainViewController.h */,
 				52B25ADD1E9E2CC7006909B0 /* MPMainViewController.m */,
+				98A826A91EA06DCF00B931F0 /* MPMainViewCell.h */,
+				98A826AA1EA06DCF00B931F0 /* MPMainViewCell.m */,
 			);
 			name = "Main(主页)";
 			path = Main;
@@ -654,6 +694,7 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		52B25B2D1EA07B83006909B0 /* MPNavigationController(导航栏) */ = {
 			isa = PBXGroup;
 			children = (
@@ -664,6 +705,56 @@
 			);
 			name = "MPNavigationController(导航栏)";
 			path = MPNavigationController;
+=======
+		98A826B11EA0745400B931F0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				98A826B21EA0745400B931F0 /*   WantFollow【你可能想关注的人】 */,
+				98A826BA1EA0745400B931F0 /* MPMyFollowViewController.h */,
+				98A826BB1EA0745400B931F0 /* MPMyFollowViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		98A826B21EA0745400B931F0 /*   WantFollow【你可能想关注的人】 */ = {
+			isa = PBXGroup;
+			children = (
+				98A826B31EA0745400B931F0 /* WantFollowTableViewCell.h */,
+				98A826B41EA0745400B931F0 /* WantFollowTableViewCell.m */,
+				98A826B51EA0745400B931F0 /* WantFollowViewController.h */,
+				98A826B61EA0745400B931F0 /* WantFollowViewController.m */,
+				98A826B71EA0745400B931F0 /* WantTableViewCell.h */,
+				98A826B81EA0745400B931F0 /* WantTableViewCell.m */,
+				98A826B91EA0745400B931F0 /* WantTableViewCell.xib */,
+			);
+			path = "  WantFollow【你可能想关注的人】";
+			sourceTree = "<group>";
+		};
+		98A826BC1EA0745400B931F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				98A826BD1EA0745400B931F0 /* FollowTableView.h */,
+				98A826BE1EA0745400B931F0 /* FollowTableView.m */,
+				98A826BF1EA0745400B931F0 /* FollowTableViewCell.h */,
+				98A826C01EA0745400B931F0 /* FollowTableViewCell.m */,
+				98A826C11EA0745400B931F0 /* FollowTableViewCell.xib */,
+				98A826C21EA0745400B931F0 /* NotFollowView.h */,
+				98A826C31EA0745400B931F0 /* NotFollowView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		98A826CD1EA0748100B931F0 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				98A826CE1EA0748100B931F0 /* LHScaleTool.h */,
+				98A826CF1EA0748100B931F0 /* LHScaleTool.m */,
+				98A826D01EA0748100B931F0 /* UIButton+MyButton.h */,
+				98A826D11EA0748100B931F0 /* UIButton+MyButton.m */,
+			);
+			name = Tool;
+			path = Classes/Tool;
+>>>>>>> master
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -772,9 +863,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98A826CB1EA0745400B931F0 /* FollowTableViewCell.xib in Resources */,
 				52B258AF1E9DBFD1006909B0 /* LaunchScreen.storyboard in Resources */,
 				52B25B141E9F1CB7006909B0 /* ZFPlayer.bundle in Resources */,
 				52B258AC1E9DBFD1006909B0 /* Assets.xcassets in Resources */,
+				98A826C71EA0745400B931F0 /* WantTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -800,10 +893,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				52B25A481E9E2840006909B0 /* AFHTTPRequestOperation.m in Sources */,
+				98A826C51EA0745400B931F0 /* WantFollowViewController.m in Sources */,
+				98A826D21EA0748100B931F0 /* LHScaleTool.m in Sources */,
 				52B25B171E9F1CB7006909B0 /* ZFPlayerView.m in Sources */,
 				52B25B131E9F1CB7006909B0 /* ZFBrightnessView.m in Sources */,
 				52B25A611E9E2840006909B0 /* NSObject+MJClass.m in Sources */,
 				52B25A571E9E2840006909B0 /* NSArray+MASAdditions.m in Sources */,
+				98A826C81EA0745400B931F0 /* MPMyFollowViewController.m in Sources */,
 				52B25A6B1E9E2840006909B0 /* SDWebImageCompat.m in Sources */,
 				52B25B1D1E9F2CC4006909B0 /* MPTabBarButton.m in Sources */,
 				52B25A581E9E2840006909B0 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
@@ -822,6 +918,7 @@
 				52B25ADB1E9E2C67006909B0 /* MPTabBarController.m in Sources */,
 				52B25ADE1E9E2CC7006909B0 /* MPMainViewController.m in Sources */,
 				52B25A551E9E2840006909B0 /* MASViewAttribute.m in Sources */,
+				98A826D31EA0748100B931F0 /* UIButton+MyButton.m in Sources */,
 				52B25A541E9E2840006909B0 /* MASLayoutConstraint.m in Sources */,
 				52B25A6C1E9E2840006909B0 /* SDWebImageDecoder.m in Sources */,
 				52B25A631E9E2840006909B0 /* NSObject+MJKeyValue.m in Sources */,
@@ -829,10 +926,12 @@
 				52B25A4F1E9E2840006909B0 /* AFURLResponseSerialization.m in Sources */,
 				52B25A4D1E9E2840006909B0 /* AFURLConnectionOperation.m in Sources */,
 				52B25A641E9E2840006909B0 /* NSObject+MJProperty.m in Sources */,
+				98A826CC1EA0745400B931F0 /* NotFollowView.m in Sources */,
 				52B25A6E1E9E2840006909B0 /* SDWebImageDownloaderOperation.m in Sources */,
 				52B25A621E9E2840006909B0 /* NSObject+MJCoding.m in Sources */,
 				52B25A561E9E2840006909B0 /* MASViewConstraint.m in Sources */,
 				52B25B201E9F40B3006909B0 /* MPBadgeView.m in Sources */,
+				98A826AB1EA06DCF00B931F0 /* MPMainViewCell.m in Sources */,
 				52B25B1A1E9F2BE2006909B0 /* MPTabBar.m in Sources */,
 				52B25B291EA07487006909B0 /* MPUserCenterHeaderTableViewCell.m in Sources */,
 				52B25B0C1E9F1CB7006909B0 /* UIImageView+ZFCache.m in Sources */,
@@ -851,19 +950,22 @@
 				52B25B261EA062FE006909B0 /* CollectionViewLayout.m in Sources */,
 				52B25B091E9F1CB7006909B0 /* ASValuePopUpView.m in Sources */,
 				52B25A5E1E9E2840006909B0 /* MJProperty.m in Sources */,
+				98A826C41EA0745400B931F0 /* WantFollowTableViewCell.m in Sources */,
 				52B25A671E9E2840006909B0 /* NSData+ImageContentType.m in Sources */,
 				52B25B0D1E9F1CB7006909B0 /* UINavigationController+ZFPlayerRotation.m in Sources */,
 				52B25A5A1E9E2840006909B0 /* ViewController+MASAdditions.m in Sources */,
 				52B25A531E9E2840006909B0 /* MASConstraintMaker.m in Sources */,
 				52B25B0B1E9F1CB7006909B0 /* UIAlertController+ZFPlayerRotation.m in Sources */,
 				52B258A41E9DBFD1006909B0 /* AppDelegate.m in Sources */,
-				52B25AE11E9F0A47006909B0 /* MPMyFollowViewController.m in Sources */,
 				52B25A6D1E9E2840006909B0 /* SDWebImageDownloader.m in Sources */,
 				52B25B2C1EA07497006909B0 /* MPUserCenterTableViewCell.m in Sources */,
 				52B25A5B1E9E2840006909B0 /* MJDictionaryCache.m in Sources */,
 				52B25A721E9E2840006909B0 /* UIImage+GIF.m in Sources */,
 				52B25A521E9E2840006909B0 /* MASConstraint.m in Sources */,
+				98A826C91EA0745400B931F0 /* FollowTableView.m in Sources */,
 				52B25A6A1E9E2840006909B0 /* SDImageCache.m in Sources */,
+				98A826C61EA0745400B931F0 /* WantTableViewCell.m in Sources */,
+				98A826CA1EA0745400B931F0 /* FollowTableViewCell.m in Sources */,
 				52B258A11E9DBFD1006909B0 /* main.m in Sources */,
 				52B25A661E9E2840006909B0 /* MKAnnotationView+WebCache.m in Sources */,
 				52B25B0E1E9F1CB7006909B0 /* UITabBarController+ZFPlayerRotation.m in Sources */,
