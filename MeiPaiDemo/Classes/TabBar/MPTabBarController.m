@@ -90,10 +90,10 @@
     NC.title = title;
     NC.tabBarItem.image = image;
     NC.tabBarItem.selectedImage = selectedImage;
-    NC.navigationBarHidden = YES;
-    [MPNavigationBar navigationBarInViewController:VC];
+    NC.navigationBarHidden = NO;
     //NC.navigationBar.barStyle = UIStatusBarStyleLightContent;
     //[VC setNeedsStatusBarAppearanceUpdate];
+    [NC.navigationBar addSubview:[MPNavigationBar navigationBarInViewController:VC]];
     return NC;
 }
 

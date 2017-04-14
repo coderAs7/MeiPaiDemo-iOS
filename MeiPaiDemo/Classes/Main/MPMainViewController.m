@@ -23,22 +23,6 @@
     [super viewDidLoad];
     //注释
 
-<<<<<<< HEAD
-//    CollectionViewLayout *layout = [[CollectionViewLayout alloc] init];
-//    
-//    _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
-//    [self.view addSubview:_collectionView];
-//    _collectionView.delegate = self;
-//    _collectionView.dataSource = self;
-//    [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"MPMainCollectionViewCell"];
-//    
-//    UIBlurEffect *eff = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-//    
-//    _effectView = [[UIVisualEffectView alloc] initWithEffect:eff];
-//    
-//    _effectView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 64);
-//    [self.view addSubview:_effectView];
-=======
     CollectionViewLayout *layout = [[CollectionViewLayout alloc] init];
     layout.delegate = self;
     layout.columnCount = 2;
@@ -58,7 +42,6 @@
     
     _effectView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 64);
     [self.view addSubview:_effectView];
->>>>>>> master
     
 }
 //

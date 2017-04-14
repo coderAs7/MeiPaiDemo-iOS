@@ -30,7 +30,7 @@
     }
     self.viewController = viewController;
     
-    if (self = [super initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 64.0)])
+    if (self = [super initWithFrame:CGRectMake(0, -20, SCREEN_WIDTH, 64.0)])
     {
         if (!self.viewController.navigationController)
         {
@@ -47,11 +47,12 @@
     self.titleLabel.text = @"title";
     self.titleLabel.font = [UIFont systemFontOfSize:16.0F];
     [self.titleLabel sizeToFit];
-    self.titleLabel.center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height + 20);
+    self.titleLabel.center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2 + 10);
     [self addSubview:self.titleLabel];
     
     self.leftButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 20, 60, 44)];
     self.leftButton.userInteractionEnabled = YES;
+    self.leftButton.backgroundColor = [UIColor blueColor];
     [self.leftButton setTitle:@"返回" forState:UIControlStateNormal];
     [self.leftButton addTarget:self action:@selector(clickedLeftButton:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.leftButton];
@@ -62,11 +63,11 @@
     {
         [self.leftButton removeFromSuperview];
     }
-    [self.viewController.view addSubview:self];
-    [self.viewController.view bringSubviewToFront:self];
+    //[self.viewController.view addSubview:self];
+    //[self.viewController.view bringSubviewToFront:self];
     //[self.viewController.view addObserver:self forKeyPath:@"subviews.count" options:NSKeyValueObservingOptionNew context:NULL];
     
-    self.backgroundColor = [UIColor redColor];
+    self.backgroundColor = [UIColor clearColor];
 }
 
 -(void)clickedLeftButton:(UIButton *)button
