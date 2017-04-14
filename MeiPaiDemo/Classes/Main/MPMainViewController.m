@@ -9,15 +9,29 @@
 #import "MPMainViewController.h"
 
 @interface MPMainViewController ()
-
+@property (nonatomic, strong) UIVisualEffectView *effectView;
 @end
 
 @implementation MPMainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.view.backgroundColor = [UIColor whiteColor];
+
+    UIBlurEffect *eff = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    
+    _effectView = [[UIVisualEffectView alloc] initWithEffect:eff];
+    
+    _effectView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 64);
+    [self.view addSubview:_effectView];
+    
 }
+
+-(void)viewWillAppear:(BOOL)animated  {
+    [super viewWillAppear:animated];
+    self.view.backgroundColor = [UIColor whiteColor];
+
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
