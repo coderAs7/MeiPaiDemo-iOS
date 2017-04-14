@@ -10,4 +10,11 @@
 
 @interface MPMainViewCell : UICollectionViewCell
 @property (nonatomic, strong) UIImageView *img;
+
+@property (nonatomic, strong) UIImageView *userIcon;
+
+@property (nonatomic, strong) UILabel *prompt;
+@property (nonatomic, strong) UILabel *number;
+@property (nonatomic, strong) UILabel *name;
+
 @end

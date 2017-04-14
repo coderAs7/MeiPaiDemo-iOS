@@ -8,63 +8,75 @@
 
 #import "MPMainViewController.h"
 
-#import "CollectionViewLayout.h"
-#import "MPMainViewCell.h"
+#import "MPMainViewBigCell.h"
 #import "PrefixHeader.pch"
+#import "MPMainTopView.h"
 
-@interface MPMainViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, CollectionViewLayoutDelegate>
-@property (nonatomic, strong) UIVisualEffectView *effectView;
+@interface MPMainViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, MPMainTopViewDelegate>
+
+@property (nonatomic, strong) MPMainTopView *topView;
 @property (nonatomic, strong) UICollectionView *collectionView;
+
 @end
 
 @implementation MPMainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //注释
-
-    CollectionViewLayout *layout = [[CollectionViewLayout alloc] init];
-    layout.delegate = self;
-    layout.columnCount = 2;
-    layout.rowSpacing = 4;
-    layout.columnSpacing = 4;
-    layout.sectionInset = UIEdgeInsetsMake(64, 0, 10, 0);
-
-    _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
-    [self.view addSubview:_collectionView];
+    UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
+    flow.itemSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT);
+    flow.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    flow.minimumLineSpacing = 0;
+    _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:flow];
     _collectionView.delegate = self;
+    _collectionView.showsHorizontalScrollIndicator = NO;
+    _collectionView.pagingEnabled = YES;
     _collectionView.dataSource = self;
-    [_collectionView registerClass:[MPMainViewCell class] forCellWithReuseIdentifier:@"MPMainCollectionViewCell"];
-    _collectionView.backgroundColor = MPColor_VCBackgroundGray;
-    UIBlurEffect *eff = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
     
-    _effectView = [[UIVisualEffectView alloc] initWithEffect:eff];
+    [_collectionView registerClass:[MPMainViewBigCell class] forCellWithReuseIdentifier:@"MPMainViewBigCell"];
+    [self.view addSubview:_collectionView];
     
-    _effectView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 64);
-    [self.view addSubview:_effectView];
+    _topView = [[MPMainTopView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 64)];
+    [self.view addSubview:_topView];
+    _topView.delegate = self;
     
-}
-//
-//-(void)viewWillAppear:(BOOL)animated  {
-//    [super viewWillAppear:animated];
-//    self.view.backgroundColor = [UIColor whiteColor];
-//
-//}
-
-- (CGFloat)collectionViewLayout:(CollectionViewLayout *)layout itemHeightForIndexPath:(NSIndexPath *)indexPath {
-    return 280;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 20;
+    return 3;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    MPMainViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MPMainCollectionViewCell" forIndexPath:indexPath];
-//    UIImageView *img = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Effects2"]];
-//    [cell.contentView addSubview:img];
-    //cell.backgroundColor = [UIColor orangeColor];
+    MPMainViewBigCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MPMainViewBigCell" forIndexPath:indexPath];
     return cell;
+}
+
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    
+}
+
+- (void)topViewBtnClick:(UIButton *)sender {
+
+    NSIndexPath *path = [NSIndexPath indexPathForItem:sender.tag-1 inSection:0];
+    
+    [_collectionView scrollToItemAtIndexPath:path atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSInteger i = scrollView.contentOffset.x / SCREEN_WIDTH;
+
+    [_topView btnInTag:i + 1];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    CGFloat x = scrollView.contentOffset.x;
+    if (x < 0 || x > SCREEN_WIDTH * 2) {
+        return;
+    }
+    CGFloat f =  x / SCREEN_WIDTH * 80 + SCREEN_WIDTH / 2 - 120;
+    [_topView updateBottomLineViewPosition:f];
 }
 
 - (void)didReceiveMemoryWarning {
