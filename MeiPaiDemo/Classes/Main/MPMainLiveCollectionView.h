@@ -1,5 +1,5 @@
 //
-//  MPMainViewBigCell.h
+//  [cell creatCollectionView:_layout forInteger:indexPath.item]; MPMainLiveCollectionView.h
 //  MeiPaiDemo
 //
 //  Created by 李明 on 2017/4/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MPMainViewBigCell : UICollectionViewCell
-@property (nonatomic, strong) id data;
+@interface MPMainLiveCollectionView : UIView
+
 @end
