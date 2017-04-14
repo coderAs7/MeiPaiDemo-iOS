@@ -98,6 +98,7 @@
 - (void)tabBarDidClickPlusButton
 {
     MPShootViewController * shootVC = [[MPShootViewController alloc]init];
+    shootVC.modalPresentationStyle=UIModalPresentationOverCurrentContext;
     [self presentViewController:shootVC animated:NO completion:nil];
 }
 
