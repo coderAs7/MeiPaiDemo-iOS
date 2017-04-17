@@ -44,7 +44,7 @@
 -(void)insertNavigationBarWithViewController:(UIViewController *)viewController
 {
     self.titleLabel = [[UILabel alloc]init];
-    self.titleLabel.text = @"title";
+    self.titleLabel.text = viewController.title;
     self.titleLabel.font = [UIFont systemFontOfSize:16.0F];
     [self.titleLabel sizeToFit];
     self.titleLabel.center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2 + 10);
@@ -63,11 +63,14 @@
     {
         [self.leftButton removeFromSuperview];
     }
-    //[self.viewController.view addSubview:self];
+    //[self.window addSubview:self];
     //[self.viewController.view bringSubviewToFront:self];
     //[self.viewController.view addObserver:self forKeyPath:@"subviews.count" options:NSKeyValueObservingOptionNew context:NULL];
+    //viewController.navigationController.navigationBar.tintColor = [UIColor redColor];
+    //self.backgroundColor = [UIColor redColor];
+    //self.viewController.navigationController.navigationBar = self;
     
-    self.backgroundColor = [UIColor clearColor];
+    [self.viewController addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:NULL];
 }
 
 -(void)clickedLeftButton:(UIButton *)button
@@ -75,13 +78,14 @@
     [self.viewController.navigationController popViewControllerAnimated:YES];
 }
 
-//-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-//{
-//    if([keyPath isEqualToString:@"subviews.count"])
-//    {
-//        [self.viewController.view bringSubviewToFront: self];
-//    }
-//}
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if([keyPath isEqualToString:@"title"])
+    {
+        self.titleLabel.text = @"111";
+        //[self.viewController.view bringSubviewToFront: self];
+    }
+}
 
 
 
