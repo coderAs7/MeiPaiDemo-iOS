@@ -110,6 +110,7 @@
 		A40ADA541EA0CD1E002D5AE6 /* MPMainTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A40ADA4C1EA0CD1E002D5AE6 /* MPMainTopView.m */; };
 		A40ADA551EA0CD1E002D5AE6 /* MPMainViewCityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A40ADA4E1EA0CD1E002D5AE6 /* MPMainViewCityCell.m */; };
 		A465E9371EA4634F00C63719 /* ScrollImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A465E9361EA4634F00C63719 /* ScrollImage.m */; };
+		A47E17041EA4844900809A33 /* ShortVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E17031EA4844900809A33 /* ShortVideoController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -347,6 +348,8 @@
 		A40ADA4E1EA0CD1E002D5AE6 /* MPMainViewCityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPMainViewCityCell.m; path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/MPMainViewCityCell.m"; sourceTree = "<group>"; };
 		A465E9351EA4634F00C63719 /* ScrollImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollImage.h; sourceTree = "<group>"; };
 		A465E9361EA4634F00C63719 /* ScrollImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollImage.m; sourceTree = "<group>"; };
+		A47E17021EA4844900809A33 /* ShortVideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortVideoController.h; sourceTree = "<group>"; };
+		A47E17031EA4844900809A33 /* ShortVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShortVideoController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -654,6 +657,7 @@
 		52B25AD61E9E2BDD006909B0 /* Shoot(拍摄) */ = {
 			isa = PBXGroup;
 			children = (
+				A47E17011EA4842E00809A33 /* 短视频 */,
 				52B25B211E9F6185006909B0 /* MPShootViewController.h */,
 				52B25B221E9F6185006909B0 /* MPShootViewController.m */,
 			);
@@ -811,6 +815,16 @@
 			);
 			name = Tool;
 			path = Classes/Tool;
+			sourceTree = "<group>";
+		};
+		A47E17011EA4842E00809A33 /* 短视频 */ = {
+			isa = PBXGroup;
+			children = (
+				A47E17021EA4844900809A33 /* ShortVideoController.h */,
+				A47E17031EA4844900809A33 /* ShortVideoController.m */,
+			);
+			name = "短视频";
+			path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Shoot/短视频";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -980,6 +994,7 @@
 				98A826D31EA0748100B931F0 /* UIButton+MyButton.m in Sources */,
 				A40ADA511EA0CD1E002D5AE6 /* MPMainLiveCollectionView.m in Sources */,
 				52B25A541E9E2840006909B0 /* MASLayoutConstraint.m in Sources */,
+				A47E17041EA4844900809A33 /* ShortVideoController.m in Sources */,
 				52B25A6C1E9E2840006909B0 /* SDWebImageDecoder.m in Sources */,
 				A40ADA521EA0CD1E002D5AE6 /* MPMainPopularCollectionView.m in Sources */,
 				A40ADA501EA0CD1E002D5AE6 /* MPMainCityCollectionView.m in Sources */,
