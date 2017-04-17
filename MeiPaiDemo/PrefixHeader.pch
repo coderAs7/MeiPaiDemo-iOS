@@ -97,6 +97,7 @@
 //生成随机色
 #define RANDOM_COLOR RGB(arc4random_uniform(256.0),arc4random_uniform(256.0),arc4random_uniform(256.0))
 
+
 #import "AFNetworking.h"
 #import "LHScaleTool.h"
 #import "UIButton+MyButton.h"
