@@ -14,6 +14,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *backView;
 
+@property (nonatomic,strong)UIImageView *playImage;//播放与暂停图
+
 - (void)dataSourceArray:(NSArray *)array withIndex:(NSIndexPath *)index;
 
 - (void)computeCellHeight;

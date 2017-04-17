@@ -38,17 +38,29 @@
     [super awakeFromNib];
     self.backView.hidden = YES;
     self.backView.backgroundColor = [UIColor blackColor];
+    [self.contentView addSubview:self.playImage];
     
+    [self.playImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.mas_centerX);
+        make.centerY.equalTo(self.mas_centerY);
+    }];
+}
+
+- (UIImageView *)playImage {
+    if (!_playImage) {
+        _playImage = [[UIImageView alloc]init];
+        _playImage.image = [UIImage imageNamed:@"btn_play_bg_b"];
+    }
+    return _playImage;
 }
 
 - (void)dataSourceArray:(NSArray *)array withIndex:(NSIndexPath *)index {
     self.headImage.image = [UIImage imageNamed:@"Effects10"];
-    self.nameLabel.text = @"ps姐姐秀";
+    self.nameLabel.text = array[index.row][@"title"];
     self.messageLabel.text = @"04-12 19:28";
     [self.giftButton setBackgroundImage:[UIImage imageNamed:@"bg_directMessage_alertview"] forState:UIControlStateNormal];
     self.backImage.contentMode = UIViewContentModeScaleToFill;
-    self.backImage.image = [UIImage imageNamed:@"fli305"];
-    
+    [self.backImage sd_setImageWithURL:array[index.row][@"bpic"] placeholderImage:[UIImage imageNamed:@""]];
     
     
     

@@ -37,6 +37,10 @@
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define UIColorFromRGBA(rgbValue,alphaNum) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:alphaNum]
 
+#define MPRGBA(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+#define MPRGB(r,g,b) MPRGBA(r,g,b,1.0f)
+
+
 //控制器背景黑
 #define MPColor_VCBackgroundGray [UIColor colorWithRed:32.0/255.0 green:30.0/255.0 blue:42.0/255.0 alpha:1.0]
 //控制器前景黑
@@ -47,6 +51,11 @@
 #define MPColor_Pink [UIColor colorWithRed:251.0/255.0 green:0.0/255.0 blue:92.0/255.0 alpha:1.0]
 //灰色(浅)
 #define MPColor_Gray [UIColor colorWithRed:149.0/255.0 green:148.0/255.0 blue:152.0/255.0 alpha:1.0]
+
+#define MPColor_Purple [UIColor colorWithRed:109.0/255.0 green:41.0/255.0 blue:237.0/255.0 alpha:1.0]
+//黑紫色
+#define MPColor_BlackPurple [UIColor colorWithRed:42.0/255.0 green:41.0/255.0 blue:55.0/255.0 alpha:1.0]
+
 
 
 //统默认字体
@@ -63,7 +72,9 @@
 #endif
 #define JHLogFunc D_Log(@"%s---%zd", __func__,__LINE__)
 
+#import "MPNavigationBar.h"
 
+#pragma mark -- LH
 
 // 基数屏幕大小
 #define Original_W 375
@@ -86,10 +97,17 @@
 //生成随机色
 #define RANDOM_COLOR RGB(arc4random_uniform(256.0),arc4random_uniform(256.0),arc4random_uniform(256.0))
 
+
+#import "AFNetworking.h"
 #import "LHScaleTool.h"
 #import "UIButton+MyButton.h"
+#import "UIImageView+WebCache.h"
 
+#define HLS_URL @"http://dlhls.cdn.zhanqi.tv/zqlive/"
 
+#define HOME_URL @"http://www.zhanqi.tv/api/static/live.index/recommend-apps.json?"
+
+#define SCROLL_URL @"http://www.zhanqi.tv/api/touch/apps.banner?rand=1455848328344"
 
 
 // Include any system framework and library headers here that should be included in all compilation units.
