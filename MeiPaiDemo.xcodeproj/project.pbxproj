@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		527EF60A1EA45479001CD1FD /* MPShootViewScrollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 527EF6091EA45479001CD1FD /* MPShootViewScrollCell.m */; };
 		52B258A11E9DBFD1006909B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B258A01E9DBFD1006909B0 /* main.m */; };
 		52B258A41E9DBFD1006909B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B258A31E9DBFD1006909B0 /* AppDelegate.m */; };
 		52B258AC1E9DBFD1006909B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B258AB1E9DBFD1006909B0 /* Assets.xcassets */; };
@@ -122,6 +123,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		527EF6081EA45479001CD1FD /* MPShootViewScrollCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPShootViewScrollCell.h; sourceTree = "<group>"; };
+		527EF6091EA45479001CD1FD /* MPShootViewScrollCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPShootViewScrollCell.m; sourceTree = "<group>"; };
 		52B2589C1E9DBFD1006909B0 /* MeiPaiDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeiPaiDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B258A01E9DBFD1006909B0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		52B258A21E9DBFD1006909B0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -616,6 +619,8 @@
 			children = (
 				52B25B211E9F6185006909B0 /* MPShootViewController.h */,
 				52B25B221E9F6185006909B0 /* MPShootViewController.m */,
+				527EF6081EA45479001CD1FD /* MPShootViewScrollCell.h */,
+				527EF6091EA45479001CD1FD /* MPShootViewScrollCell.m */,
 			);
 			name = "Shoot(拍摄)";
 			path = Shoot;
@@ -994,6 +999,7 @@
 				52B25B391EA0A12D006909B0 /* MPNavigationBar.m in Sources */,
 				52B25A5D1E9E2840006909B0 /* MJFoundation.m in Sources */,
 				52B25B111E9F1CB7006909B0 /* UIWindow+CurrentViewController.m in Sources */,
+				527EF60A1EA45479001CD1FD /* MPShootViewScrollCell.m in Sources */,
 				52B25B401EA0A178006909B0 /* MPUserCenterTableViewCell.m in Sources */,
 				52B25A591E9E2840006909B0 /* View+MASAdditions.m in Sources */,
 			);
