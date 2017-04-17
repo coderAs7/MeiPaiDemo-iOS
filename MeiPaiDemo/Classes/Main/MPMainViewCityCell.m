@@ -20,6 +20,8 @@
         self.clipsToBounds = YES;
         
         _userIcon = [[UIImageView alloc] init];
+        _userIcon.image = [UIImage imageNamed:@"mv6"];
+
         _userIcon.backgroundColor = [UIColor orangeColor];
         [self.contentView addSubview:_userIcon];
         _userIcon.layer.cornerRadius = 16;

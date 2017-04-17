@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol LiveCollectionViewDelegate <NSObject>
+
+- (void)liveCollectionViewDidSelectItemAtIndexPath:(NSIndexPath *)indexPath inIdentifier:(NSInteger)integer;
+
+
+@end
+
 @interface MPMainLiveCollectionView : UIView
+@property (nonatomic, weak) id <LiveCollectionViewDelegate> delegate;
 @property (nonatomic, strong) UICollectionView *collectionView;
 @end

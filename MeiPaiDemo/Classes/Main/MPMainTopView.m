@@ -12,20 +12,20 @@
 #define lineViewWidth 80
 @interface MPMainTopView ()
 @property (nonatomic, strong) UIVisualEffectView *effectView;
-
+@property (nonatomic, assign) CGFloat height;
 @end
 
 @implementation MPMainTopView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        _height = frame.size.height;
         UIBlurEffect *eff = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
         
         _effectView = [[UIVisualEffectView alloc] initWithEffect:eff];
         
-        _effectView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 64);
-        [self addSubview:_effectView];
-        _bottomLineView = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH / 2 - 120, 61, lineViewWidth, 3)];
+        _effectView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 44);
+        _bottomLineView = [[UIView alloc] initWithFrame:CGRectMake(frame.size.width / 2 - 120, _height - 3, lineViewWidth, 3)];
         _bottomLineView.backgroundColor = MPColor_Pink;
         [self addSubview:_bottomLineView];
         
@@ -64,7 +64,7 @@
 - (void)btnClick:(UIButton *)sender {
 
     [self btnInTag:sender.tag];
-    [self updateBottmLineViewCenter:sender.center.x];
+    [self updateBottmLineViewCenter:sender.center.x - 40];
     if ([self.delegate respondsToSelector:@selector(topViewBtnClick:)]) {
         [self.delegate topViewBtnClick:sender];
     }
@@ -98,7 +98,7 @@
 }
 
 - (void)updateBottomLineViewPosition:(CGFloat)value {
-    _bottomLineView.frame = CGRectMake(value, 61, lineViewWidth, 3);
+    _bottomLineView.frame = CGRectMake(value - 40, _height - 3, lineViewWidth, 3);
 }
 
 

@@ -16,9 +16,10 @@
 #import "MPMainCityCollectionView.h"
 #import "MPMainSearchController.h"
 #import "ScrollImage.h"
+#import "LiveController.h"
+#import "VideoController.h"
 
-
-@interface MPMainViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, MPMainTopViewDelegate, UISearchBarDelegate, ScrollImageDelegate>
+@interface MPMainViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, MPMainTopViewDelegate, UISearchBarDelegate, ScrollImageDelegate, CityCollectionViewDelegate, PopularCollectionViewDelegate, LiveCollectionViewDelegate>
 
 @property (nonatomic, strong) MPMainTopView *topView;
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -45,8 +46,8 @@
     [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"MPMainViewBigCell"];
     [self.view addSubview:_collectionView];
     
-    _topView = [[MPMainTopView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 64)];
-    [self.view addSubview:_topView];
+    _topView = [[MPMainTopView alloc] initWithFrame:CGRectMake(40, 0, SCREEN_WIDTH - 80, 44)];
+    self.navigationItem.titleView  = _topView;
     _topView.delegate = self;
 }
 
@@ -66,6 +67,7 @@
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MPMainViewBigCell" forIndexPath:indexPath];
     if (indexPath.item == 0) {
         MPMainLiveCollectionView *view = [[MPMainLiveCollectionView alloc] initWithFrame:self.view.bounds];
+        view.delegate = self;
         [cell.contentView addSubview:view];
         
         
@@ -78,7 +80,7 @@
                            @"http://pic15.nipic.com/20110628/7398485_105718357143_2.jpg"];
         ScrollImage *scrl = [[ScrollImage alloc] initWithCurrentController:self
                                                                  urlString:array
-                                                                 viewFrame:CGRectMake(0, 54, self.view.bounds.size.width, 200)
+                                                                 viewFrame:CGRectMake(0, 60, self.view.bounds.size.width, 200)
                                                           placeholderImage:[UIImage imageNamed:@"fli311"]];
         scrl.delegate = self;
         scrl.timeInterval = 4.0;
@@ -89,7 +91,8 @@
     }
     if (indexPath.item == 1) {
         MPMainPopularCollectionView *popular = [[MPMainPopularCollectionView alloc] initWithFrame:self.view.bounds];
-        CustomSearchBar *search = [[CustomSearchBar alloc] initWithFrame:CGRectMake(10, 86, SCREEN_WIDTH - 20, 32)];
+        popular.delegate = self;
+        CustomSearchBar *search = [[CustomSearchBar alloc] initWithFrame:CGRectMake(10, 70, SCREEN_WIDTH - 20, 32)];
         search.delegate = self;
         search.placeholder = @"哈哈";
         [popular.collectionView addSubview:search];
@@ -97,11 +100,36 @@
     }
     if (indexPath.item == 2) {
         MPMainCityCollectionView *city = [[MPMainCityCollectionView alloc] initWithFrame:self.view.bounds];
+        city.delegate = self;
         [cell.contentView addSubview:city];
     }
     
     return cell;
 }
+
+- (void)liveCollectionViewDidSelectItemAtIndexPath:(NSIndexPath *)indexPath inIdentifier:(NSInteger)integer {
+    LiveController *live = [[LiveController alloc] init];
+    [self presentViewController:live animated:YES completion:nil];
+
+}
+
+- (void)popularCollectionViewDidSelectItemAtIndexPath:(NSIndexPath *)indexPath inIdentifier:(NSInteger)integer {
+    VideoController *video = [[VideoController alloc] init];
+    [self.navigationController pushViewController:video animated:YES];
+
+}
+
+- (void)cityCollectionViewDidSelectItemAtIndexPath:(NSIndexPath *)indexPath inIdentifier:(NSInteger)integer {
+    if (integer == 0) {
+        LiveController *live = [[LiveController alloc] init];
+        [self presentViewController:live animated:YES completion:nil];
+    } else {
+        VideoController *video = [[VideoController alloc] init];
+        [self.navigationController pushViewController:video animated:YES];
+    }
+}
+
+
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
     

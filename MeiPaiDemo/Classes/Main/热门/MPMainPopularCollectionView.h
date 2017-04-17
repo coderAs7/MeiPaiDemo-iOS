@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PopularCollectionViewDelegate <NSObject>
+
+- (void)popularCollectionViewDidSelectItemAtIndexPath:(NSIndexPath *)indexPath inIdentifier:(NSInteger)integer;
+@end
+
 @interface MPMainPopularCollectionView : UIView
+@property (nonatomic, weak) id <PopularCollectionViewDelegate> delegate;
 @property (nonatomic, strong) UICollectionView *collectionView;
 
 @end

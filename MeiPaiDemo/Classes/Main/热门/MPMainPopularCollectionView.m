@@ -1,23 +1,23 @@
 //
-//  MPMainCityCollectionView.m
+//  MPMainPopularCollectionView.m
 //  MeiPaiDemo
 //
 //  Created by 李明 on 2017/4/14.
 //  Copyright © 2017年 UTOUU. All rights reserved.
 //
 
-#import "MPMainCityCollectionView.h"
+#import "MPMainPopularCollectionView.h"
 #import "CollectionViewLayout.h"
 #import "MPMainViewCell.h"
-#import "MPMainViewCityCell.h"
 
-@interface MPMainCityCollectionView ()<UICollectionViewDelegate, UICollectionViewDataSource, CollectionViewLayoutDelegate>
-@property (nonatomic, strong) UICollectionView *collectionView;
+@interface MPMainPopularCollectionView ()<UICollectionViewDelegate, UICollectionViewDataSource, CollectionViewLayoutDelegate>
 @property (nonatomic, strong) NSArray *arr;
 
 @end
 
-@implementation MPMainCityCollectionView
+
+@implementation MPMainPopularCollectionView
+
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -27,14 +27,13 @@
         layout.columnCount = 2;
         layout.rowSpacing = 0;
         layout.columnSpacing = 3;
-        layout.sectionInset = UIEdgeInsetsMake(80, 0, 10, 0);
+        layout.sectionInset = UIEdgeInsetsMake(112, 0, 10, 0);
         
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         [self addSubview:_collectionView];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         [_collectionView registerClass:[MPMainViewCell class] forCellWithReuseIdentifier:@"MPMainCollectionViewCell"];
-        [_collectionView registerClass:[MPMainViewCityCell class] forCellWithReuseIdentifier:@"MPMainViewCityCell"];
         _collectionView.backgroundColor = MPRGB(42, 41, 55);
         
     }
@@ -50,12 +49,17 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.item % 2 == 0) {
-        MPMainViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MPMainCollectionViewCell" forIndexPath:indexPath];
-        return cell;
-    }
-    MPMainViewCityCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MPMainViewCityCell" forIndexPath:indexPath];
+    MPMainViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MPMainCollectionViewCell" forIndexPath:indexPath];
+    cell.live.hidden = YES;
+    cell.watch.hidden = YES;
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self.delegate respondsToSelector:@selector(popularCollectionViewDidSelectItemAtIndexPath:inIdentifier:)]) {
+        [self.delegate popularCollectionViewDidSelectItemAtIndexPath:indexPath inIdentifier:1];
+    }
+    
 }
 
 
@@ -67,5 +71,4 @@
     }];
     
 }
-
 @end

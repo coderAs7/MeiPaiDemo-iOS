@@ -1,22 +1,23 @@
 //
-//  MPMainPopularCollectionView.m
+//  [cell creatCollectionView:_layout forInteger:indexPath.item]; MPMainLiveCollectionView.m
 //  MeiPaiDemo
 //
 //  Created by 李明 on 2017/4/14.
 //  Copyright © 2017年 UTOUU. All rights reserved.
 //
 
-#import "MPMainPopularCollectionView.h"
+#import "MPMainLiveCollectionView.h"
+#import "PrefixHeader.pch"
+
 #import "CollectionViewLayout.h"
 #import "MPMainViewCell.h"
 
-@interface MPMainPopularCollectionView ()<UICollectionViewDelegate, UICollectionViewDataSource, CollectionViewLayoutDelegate>
+@interface MPMainLiveCollectionView ()<UICollectionViewDelegate, UICollectionViewDataSource, CollectionViewLayoutDelegate>
+
 @property (nonatomic, strong) NSArray *arr;
 
 @end
-
-
-@implementation MPMainPopularCollectionView
+@implementation MPMainLiveCollectionView
 
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -27,7 +28,7 @@
         layout.columnCount = 2;
         layout.rowSpacing = 0;
         layout.columnSpacing = 3;
-        layout.sectionInset = UIEdgeInsetsMake(124, 0, 10, 0);
+        layout.sectionInset = UIEdgeInsetsMake(300, 0, 10, 0);
         
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         [self addSubview:_collectionView];
@@ -50,18 +51,28 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     MPMainViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MPMainCollectionViewCell" forIndexPath:indexPath];
-    cell.live.hidden = YES;
-    cell.watch.hidden = YES;
+    //    UIImageView *img = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Effects2"]];
+    //    [cell.contentView addSubview:img];
+    //cell.backgroundColor = [UIColor orangeColor];
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self.delegate respondsToSelector:@selector(liveCollectionViewDidSelectItemAtIndexPath:inIdentifier:)]) {
+        [self.delegate liveCollectionViewDidSelectItemAtIndexPath:indexPath inIdentifier:0];
+    }
+
 }
 
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
+
     [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.bottom.mas_equalTo(self);
     }];
     
 }
+
+
 @end

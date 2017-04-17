@@ -104,15 +104,17 @@
 		98A826CC1EA0745400B931F0 /* NotFollowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826C31EA0745400B931F0 /* NotFollowView.m */; };
 		98A826D21EA0748100B931F0 /* LHScaleTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826CF1EA0748100B931F0 /* LHScaleTool.m */; };
 		98A826D31EA0748100B931F0 /* UIButton+MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826D11EA0748100B931F0 /* UIButton+MyButton.m */; };
-		A40ADA4F1EA0CD1E002D5AE6 /* CustomSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A40ADA421EA0CD1E002D5AE6 /* CustomSearchBar.m */; };
-		A40ADA501EA0CD1E002D5AE6 /* MPMainCityCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A40ADA441EA0CD1E002D5AE6 /* MPMainCityCollectionView.m */; };
-		A40ADA511EA0CD1E002D5AE6 /* MPMainLiveCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A40ADA461EA0CD1E002D5AE6 /* MPMainLiveCollectionView.m */; };
-		A40ADA521EA0CD1E002D5AE6 /* MPMainPopularCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A40ADA481EA0CD1E002D5AE6 /* MPMainPopularCollectionView.m */; };
-		A40ADA531EA0CD1E002D5AE6 /* MPMainSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40ADA4A1EA0CD1E002D5AE6 /* MPMainSearchController.m */; };
 		A40ADA541EA0CD1E002D5AE6 /* MPMainTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A40ADA4C1EA0CD1E002D5AE6 /* MPMainTopView.m */; };
 		A40ADA551EA0CD1E002D5AE6 /* MPMainViewCityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A40ADA4E1EA0CD1E002D5AE6 /* MPMainViewCityCell.m */; };
-		A465E9371EA4634F00C63719 /* ScrollImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A465E9361EA4634F00C63719 /* ScrollImage.m */; };
 		A47E17041EA4844900809A33 /* ShortVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E17031EA4844900809A33 /* ShortVideoController.m */; };
+		A47E17101EA4A0C800809A33 /* CustomSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E17081EA4A0C800809A33 /* CustomSearchBar.m */; };
+		A47E17111EA4A0C800809A33 /* MPMainPopularCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E170A1EA4A0C800809A33 /* MPMainPopularCollectionView.m */; };
+		A47E17121EA4A0C800809A33 /* MPMainSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E170C1EA4A0C800809A33 /* MPMainSearchController.m */; };
+		A47E17131EA4A0C800809A33 /* MPMainCityCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E170F1EA4A0C800809A33 /* MPMainCityCollectionView.m */; };
+		A47E17191EA4A0D700809A33 /* MPMainLiveCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E17161EA4A0D700809A33 /* MPMainLiveCollectionView.m */; };
+		A47E171A1EA4A0D800809A33 /* ScrollImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E17181EA4A0D700809A33 /* ScrollImage.m */; };
+		A47E171D1EA4A11000809A33 /* LiveController.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E171C1EA4A11000809A33 /* LiveController.m */; };
+		A47E17201EA4A13900809A33 /* VideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E171F1EA4A13900809A33 /* VideoController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -338,24 +340,28 @@
 		98A826CF1EA0748100B931F0 /* LHScaleTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHScaleTool.m; sourceTree = "<group>"; };
 		98A826D01EA0748100B931F0 /* UIButton+MyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+MyButton.h"; sourceTree = "<group>"; };
 		98A826D11EA0748100B931F0 /* UIButton+MyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+MyButton.m"; sourceTree = "<group>"; };
-		A40ADA411EA0CD1E002D5AE6 /* CustomSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomSearchBar.h; path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/CustomSearchBar.h"; sourceTree = "<group>"; };
-		A40ADA421EA0CD1E002D5AE6 /* CustomSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomSearchBar.m; path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/CustomSearchBar.m"; sourceTree = "<group>"; };
-		A40ADA431EA0CD1E002D5AE6 /* MPMainCityCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPMainCityCollectionView.h; path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/MPMainCityCollectionView.h"; sourceTree = "<group>"; };
-		A40ADA441EA0CD1E002D5AE6 /* MPMainCityCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPMainCityCollectionView.m; path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/MPMainCityCollectionView.m"; sourceTree = "<group>"; };
-		A40ADA451EA0CD1E002D5AE6 /* MPMainLiveCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPMainLiveCollectionView.h; path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/MPMainLiveCollectionView.h"; sourceTree = "<group>"; };
-		A40ADA461EA0CD1E002D5AE6 /* MPMainLiveCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPMainLiveCollectionView.m; path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/MPMainLiveCollectionView.m"; sourceTree = "<group>"; };
-		A40ADA471EA0CD1E002D5AE6 /* MPMainPopularCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPMainPopularCollectionView.h; path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/MPMainPopularCollectionView.h"; sourceTree = "<group>"; };
-		A40ADA481EA0CD1E002D5AE6 /* MPMainPopularCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPMainPopularCollectionView.m; path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/MPMainPopularCollectionView.m"; sourceTree = "<group>"; };
-		A40ADA491EA0CD1E002D5AE6 /* MPMainSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPMainSearchController.h; path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/MPMainSearchController.h"; sourceTree = "<group>"; };
-		A40ADA4A1EA0CD1E002D5AE6 /* MPMainSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPMainSearchController.m; path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/MPMainSearchController.m"; sourceTree = "<group>"; };
 		A40ADA4B1EA0CD1E002D5AE6 /* MPMainTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPMainTopView.h; path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/MPMainTopView.h"; sourceTree = "<group>"; };
 		A40ADA4C1EA0CD1E002D5AE6 /* MPMainTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPMainTopView.m; path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/MPMainTopView.m"; sourceTree = "<group>"; };
 		A40ADA4D1EA0CD1E002D5AE6 /* MPMainViewCityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPMainViewCityCell.h; path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/MPMainViewCityCell.h"; sourceTree = "<group>"; };
 		A40ADA4E1EA0CD1E002D5AE6 /* MPMainViewCityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPMainViewCityCell.m; path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/MPMainViewCityCell.m"; sourceTree = "<group>"; };
-		A465E9351EA4634F00C63719 /* ScrollImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollImage.h; sourceTree = "<group>"; };
-		A465E9361EA4634F00C63719 /* ScrollImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollImage.m; sourceTree = "<group>"; };
 		A47E17021EA4844900809A33 /* ShortVideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortVideoController.h; sourceTree = "<group>"; };
 		A47E17031EA4844900809A33 /* ShortVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShortVideoController.m; sourceTree = "<group>"; };
+		A47E17071EA4A0C800809A33 /* CustomSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSearchBar.h; sourceTree = "<group>"; };
+		A47E17081EA4A0C800809A33 /* CustomSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSearchBar.m; sourceTree = "<group>"; };
+		A47E17091EA4A0C800809A33 /* MPMainPopularCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMainPopularCollectionView.h; sourceTree = "<group>"; };
+		A47E170A1EA4A0C800809A33 /* MPMainPopularCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMainPopularCollectionView.m; sourceTree = "<group>"; };
+		A47E170B1EA4A0C800809A33 /* MPMainSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMainSearchController.h; sourceTree = "<group>"; };
+		A47E170C1EA4A0C800809A33 /* MPMainSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMainSearchController.m; sourceTree = "<group>"; };
+		A47E170E1EA4A0C800809A33 /* MPMainCityCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMainCityCollectionView.h; sourceTree = "<group>"; };
+		A47E170F1EA4A0C800809A33 /* MPMainCityCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMainCityCollectionView.m; sourceTree = "<group>"; };
+		A47E17151EA4A0D700809A33 /* MPMainLiveCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMainLiveCollectionView.h; sourceTree = "<group>"; };
+		A47E17161EA4A0D700809A33 /* MPMainLiveCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMainLiveCollectionView.m; sourceTree = "<group>"; };
+		A47E17171EA4A0D700809A33 /* ScrollImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollImage.h; sourceTree = "<group>"; };
+		A47E17181EA4A0D700809A33 /* ScrollImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollImage.m; sourceTree = "<group>"; };
+		A47E171B1EA4A11000809A33 /* LiveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LiveController.h; path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/LiveController.h"; sourceTree = "<group>"; };
+		A47E171C1EA4A11000809A33 /* LiveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LiveController.m; path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/LiveController.m"; sourceTree = "<group>"; };
+		A47E171E1EA4A13900809A33 /* VideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoController.h; sourceTree = "<group>"; };
+		A47E171F1EA4A13900809A33 /* VideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -637,26 +643,21 @@
 		52B25AD51E9E2BDD006909B0 /* Main(主页) */ = {
 			isa = PBXGroup;
 			children = (
-				A465E9351EA4634F00C63719 /* ScrollImage.h */,
-				A465E9361EA4634F00C63719 /* ScrollImage.m */,
+				A47E17141EA4A0D700809A33 /* 直播 */,
+				A47E17061EA4A0C800809A33 /* 热门 */,
+				A47E170D1EA4A0C800809A33 /* 同城 */,
 				52B25ADC1E9E2CC7006909B0 /* MPMainViewController.h */,
 				52B25ADD1E9E2CC7006909B0 /* MPMainViewController.m */,
-				A40ADA411EA0CD1E002D5AE6 /* CustomSearchBar.h */,
-				A40ADA421EA0CD1E002D5AE6 /* CustomSearchBar.m */,
-				A40ADA431EA0CD1E002D5AE6 /* MPMainCityCollectionView.h */,
-				A40ADA441EA0CD1E002D5AE6 /* MPMainCityCollectionView.m */,
-				A40ADA451EA0CD1E002D5AE6 /* MPMainLiveCollectionView.h */,
-				A40ADA461EA0CD1E002D5AE6 /* MPMainLiveCollectionView.m */,
-				A40ADA471EA0CD1E002D5AE6 /* MPMainPopularCollectionView.h */,
-				A40ADA481EA0CD1E002D5AE6 /* MPMainPopularCollectionView.m */,
-				A40ADA491EA0CD1E002D5AE6 /* MPMainSearchController.h */,
-				A40ADA4A1EA0CD1E002D5AE6 /* MPMainSearchController.m */,
 				A40ADA4B1EA0CD1E002D5AE6 /* MPMainTopView.h */,
 				A40ADA4C1EA0CD1E002D5AE6 /* MPMainTopView.m */,
 				A40ADA4D1EA0CD1E002D5AE6 /* MPMainViewCityCell.h */,
 				A40ADA4E1EA0CD1E002D5AE6 /* MPMainViewCityCell.m */,
 				98A826A91EA06DCF00B931F0 /* MPMainViewCell.h */,
 				98A826AA1EA06DCF00B931F0 /* MPMainViewCell.m */,
+				A47E171B1EA4A11000809A33 /* LiveController.h */,
+				A47E171C1EA4A11000809A33 /* LiveController.m */,
+				A47E171E1EA4A13900809A33 /* VideoController.h */,
+				A47E171F1EA4A13900809A33 /* VideoController.m */,
 			);
 			name = "Main(主页)";
 			path = Main;
@@ -837,6 +838,42 @@
 			path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Shoot/短视频";
 			sourceTree = "<group>";
 		};
+		A47E17061EA4A0C800809A33 /* 热门 */ = {
+			isa = PBXGroup;
+			children = (
+				A47E17071EA4A0C800809A33 /* CustomSearchBar.h */,
+				A47E17081EA4A0C800809A33 /* CustomSearchBar.m */,
+				A47E17091EA4A0C800809A33 /* MPMainPopularCollectionView.h */,
+				A47E170A1EA4A0C800809A33 /* MPMainPopularCollectionView.m */,
+				A47E170B1EA4A0C800809A33 /* MPMainSearchController.h */,
+				A47E170C1EA4A0C800809A33 /* MPMainSearchController.m */,
+			);
+			name = "热门";
+			path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/热门";
+			sourceTree = "<group>";
+		};
+		A47E170D1EA4A0C800809A33 /* 同城 */ = {
+			isa = PBXGroup;
+			children = (
+				A47E170E1EA4A0C800809A33 /* MPMainCityCollectionView.h */,
+				A47E170F1EA4A0C800809A33 /* MPMainCityCollectionView.m */,
+			);
+			name = "同城";
+			path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/同城";
+			sourceTree = "<group>";
+		};
+		A47E17141EA4A0D700809A33 /* 直播 */ = {
+			isa = PBXGroup;
+			children = (
+				A47E17151EA4A0D700809A33 /* MPMainLiveCollectionView.h */,
+				A47E17161EA4A0D700809A33 /* MPMainLiveCollectionView.m */,
+				A47E17171EA4A0D700809A33 /* ScrollImage.h */,
+				A47E17181EA4A0D700809A33 /* ScrollImage.m */,
+			);
+			name = "直播";
+			path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/直播";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -980,6 +1017,7 @@
 				52B2FE651EA48A2C0065222E /* UIViewController+MPExtension.m in Sources */,
 				52B25B171E9F1CB7006909B0 /* ZFPlayerView.m in Sources */,
 				52B25B131E9F1CB7006909B0 /* ZFBrightnessView.m in Sources */,
+				A47E17191EA4A0D700809A33 /* MPMainLiveCollectionView.m in Sources */,
 				52B25A611E9E2840006909B0 /* NSObject+MJClass.m in Sources */,
 				52B25A571E9E2840006909B0 /* NSArray+MASAdditions.m in Sources */,
 				98A826C81EA0745400B931F0 /* MPMyFollowViewController.m in Sources */,
@@ -992,6 +1030,7 @@
 				52B25B471EA0B76C006909B0 /* MPDataManager.m in Sources */,
 				52B25B0F1E9F1CB7006909B0 /* UIView+CustomControlView.m in Sources */,
 				52B25A601E9E2840006909B0 /* MJPropertyType.m in Sources */,
+				A47E17201EA4A13900809A33 /* VideoController.m in Sources */,
 				52B25B121E9F1CB7006909B0 /* MMMaterialDesignSpinner.m in Sources */,
 				52B25A491E9E2840006909B0 /* AFHTTPRequestOperationManager.m in Sources */,
 				52B25AE71E9F0A73006909B0 /* MPUserCenterViewController.m in Sources */,
@@ -999,19 +1038,14 @@
 				52B25A4B1E9E2840006909B0 /* AFNetworkReachabilityManager.m in Sources */,
 				52B25ADB1E9E2C67006909B0 /* MPTabBarController.m in Sources */,
 				52B25B3F1EA0A178006909B0 /* MPUserCenterHeaderTableViewCell.m in Sources */,
-				A465E9371EA4634F00C63719 /* ScrollImage.m in Sources */,
 				52B25ADE1E9E2CC7006909B0 /* MPMainViewController.m in Sources */,
 				52B25A551E9E2840006909B0 /* MASViewAttribute.m in Sources */,
 				98A826D31EA0748100B931F0 /* UIButton+MyButton.m in Sources */,
-				A40ADA511EA0CD1E002D5AE6 /* MPMainLiveCollectionView.m in Sources */,
 				52B25A541E9E2840006909B0 /* MASLayoutConstraint.m in Sources */,
 				A47E17041EA4844900809A33 /* ShortVideoController.m in Sources */,
 				52B25A6C1E9E2840006909B0 /* SDWebImageDecoder.m in Sources */,
-				A40ADA521EA0CD1E002D5AE6 /* MPMainPopularCollectionView.m in Sources */,
-				A40ADA501EA0CD1E002D5AE6 /* MPMainCityCollectionView.m in Sources */,
 				52B25A631E9E2840006909B0 /* NSObject+MJKeyValue.m in Sources */,
 				52B25B4A1EA0C34F006909B0 /* MPUserCenterSectionHeaderView.m in Sources */,
-				A40ADA4F1EA0CD1E002D5AE6 /* CustomSearchBar.m in Sources */,
 				52B25A511E9E2840006909B0 /* MASCompositeConstraint.m in Sources */,
 				52B25A4F1E9E2840006909B0 /* AFURLResponseSerialization.m in Sources */,
 				52B25A4D1E9E2840006909B0 /* AFURLConnectionOperation.m in Sources */,
@@ -1024,6 +1058,7 @@
 				98A826AB1EA06DCF00B931F0 /* MPMainViewCell.m in Sources */,
 				52B25B1A1E9F2BE2006909B0 /* MPTabBar.m in Sources */,
 				52B25B0C1E9F1CB7006909B0 /* UIImageView+ZFCache.m in Sources */,
+				A47E17121EA4A0C800809A33 /* MPMainSearchController.m in Sources */,
 				52B25A4C1E9E2840006909B0 /* AFSecurityPolicy.m in Sources */,
 				52B25A4A1E9E2840006909B0 /* AFHTTPSessionManager.m in Sources */,
 				52B25A4E1E9E2840006909B0 /* AFURLRequestSerialization.m in Sources */,
@@ -1038,6 +1073,7 @@
 				52B25A681E9E2840006909B0 /* RJCircularLoaderView.m in Sources */,
 				52B25B261EA062FE006909B0 /* CollectionViewLayout.m in Sources */,
 				52B25B091E9F1CB7006909B0 /* ASValuePopUpView.m in Sources */,
+				A47E17131EA4A0C800809A33 /* MPMainCityCollectionView.m in Sources */,
 				52B25A5E1E9E2840006909B0 /* MJProperty.m in Sources */,
 				98A826C41EA0745400B931F0 /* WantFollowTableViewCell.m in Sources */,
 				52B25A671E9E2840006909B0 /* NSData+ImageContentType.m in Sources */,
@@ -1056,13 +1092,14 @@
 				98A826C61EA0745400B931F0 /* WantTableViewCell.m in Sources */,
 				98A826CA1EA0745400B931F0 /* FollowTableViewCell.m in Sources */,
 				52B258A11E9DBFD1006909B0 /* main.m in Sources */,
+				A47E17111EA4A0C800809A33 /* MPMainPopularCollectionView.m in Sources */,
 				52B25A661E9E2840006909B0 /* MKAnnotationView+WebCache.m in Sources */,
 				52B25B0E1E9F1CB7006909B0 /* UITabBarController+ZFPlayerRotation.m in Sources */,
 				52B25B151E9F1CB7006909B0 /* ZFPlayerControlView.m in Sources */,
 				52B25B101E9F1CB7006909B0 /* UIViewController+ZFPlayerRotation.m in Sources */,
+				A47E171D1EA4A11000809A33 /* LiveController.m in Sources */,
 				52B25A701E9E2840006909B0 /* SDWebImagePrefetcher.m in Sources */,
 				52B25A751E9E2840006909B0 /* UIView+WebCacheOperation.m in Sources */,
-				A40ADA531EA0CD1E002D5AE6 /* MPMainSearchController.m in Sources */,
 				52B25A731E9E2840006909B0 /* UIImage+MultiFormat.m in Sources */,
 				52B25B391EA0A12D006909B0 /* MPNavigationBar.m in Sources */,
 				52B25A5D1E9E2840006909B0 /* MJFoundation.m in Sources */,
@@ -1070,7 +1107,9 @@
 				527EF60A1EA45479001CD1FD /* MPShootViewScrollCell.m in Sources */,
 				52B25B401EA0A178006909B0 /* MPUserCenterTableViewCell.m in Sources */,
 				A40ADA551EA0CD1E002D5AE6 /* MPMainViewCityCell.m in Sources */,
+				A47E17101EA4A0C800809A33 /* CustomSearchBar.m in Sources */,
 				52B25A591E9E2840006909B0 /* View+MASAdditions.m in Sources */,
+				A47E171A1EA4A0D800809A33 /* ScrollImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
