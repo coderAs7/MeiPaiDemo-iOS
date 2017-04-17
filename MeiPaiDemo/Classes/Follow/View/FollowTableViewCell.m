@@ -10,6 +10,11 @@
 
 @interface FollowTableViewCell ()
 
+
+@property (weak, nonatomic) IBOutlet UIView *separateView;
+
+@property (weak, nonatomic) IBOutlet UIView *separateNextView;
+
 @property (weak, nonatomic) IBOutlet UIImageView *headImage;
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -31,16 +36,78 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
-}
-
-- (void)dataSourceArray:(NSArray *)array withIndex:(NSIndexPath *)index {
-    self.headImage.image = [UIImage imageNamed:@"wantHeadImage"];
-    self.nameLabel.text = @"ps姐姐秀";
-    self.messageLabel.text = @"04-12 19:28";
-    [self.giftButton setBackgroundImage:[UIImage imageNamed:@"wantHeadImage"] forState:UIControlStateNormal];
+    self.backView.hidden = YES;
+    self.backView.backgroundColor = [UIColor blackColor];
     
 }
 
+- (void)dataSourceArray:(NSArray *)array withIndex:(NSIndexPath *)index {
+    self.headImage.image = [UIImage imageNamed:@"Effects10"];
+    self.nameLabel.text = @"ps姐姐秀";
+    self.messageLabel.text = @"04-12 19:28";
+    [self.giftButton setBackgroundImage:[UIImage imageNamed:@"bg_directMessage_alertview"] forState:UIControlStateNormal];
+    self.backImage.contentMode = UIViewContentModeScaleToFill;
+    self.backImage.image = [UIImage imageNamed:@"fli305"];
+    
+    
+    
+    
+    CGFloat wid = (SCREEN_WIDTH/4 - FN(15));
+    [self.loveButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).offset(wid);
+        make.top.equalTo(self.backImage.mas_bottom).offset(5);
+        make.size.mas_equalTo(CGSizeMake(FN(30), FN(30)));
+    }];
+    
+    
+    [self.separateView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.loveButton.mas_right).offset(FN(20));
+        make.top.equalTo(self.loveButton.mas_top);
+        make.size.mas_equalTo(CGSizeMake(5, FN(30)));
+    }];
+    
+    [self.messageButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).offset(wid * 2);
+        make.top.equalTo(self.backImage.mas_bottom).offset(5);
+        make.size.mas_equalTo(CGSizeMake(FN(30), FN(30)));
+    }];
+    
+    [self.separateNextView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.messageButton.mas_right).offset(FN(20));
+        make.top.equalTo(self.messageButton.mas_top);
+        make.size.mas_equalTo(CGSizeMake(5, FN(30)));
+    }];
+    
+    [self.shareButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).offset(wid * 3);
+        make.top.equalTo(self.backImage.mas_bottom).offset(5);
+        make.size.mas_equalTo(CGSizeMake(FN(30), FN(30)));
+    }];
+    
+}
+
+- (void)changeHidden {
+    self.backView.hidden = NO;
+}
+
+
+
+
+- (void)computeCellHeight {
+    [self layoutIfNeeded];
+    self.frame = CGRectMake(0, 0, SCREEN_WIDTH, CGRectGetMaxY(self.shareButton.frame));
+//    CGSize maxSize = CGSizeMake([UIScreen mainScreen].bounds.size.width - 50, MAXFLOAT);
+//    CGSize size = [self sizeWithFont:[UIFont systemFontOfSize:13] maxSize:maxSize withString:string];
+//    NSLog(@"\\\\\\ %f\n",size.height);
+//    
+//    //    NSLog(@"%f",_textButton.frame.size.height);
+//    self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, size.height + 20);
+//    self.textButton.frame = CGRectMake(0, 0,[UIScreen mainScreen].bounds.size.width , size.height + 20);
+}
+
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
 
 @end
