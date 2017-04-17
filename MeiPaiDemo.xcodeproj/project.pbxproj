@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		527EF60A1EA45479001CD1FD /* MPShootViewScrollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 527EF6091EA45479001CD1FD /* MPShootViewScrollCell.m */; };
 		52B258A11E9DBFD1006909B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B258A01E9DBFD1006909B0 /* main.m */; };
 		52B258A41E9DBFD1006909B0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B258A31E9DBFD1006909B0 /* AppDelegate.m */; };
 		52B258AC1E9DBFD1006909B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B258AB1E9DBFD1006909B0 /* Assets.xcassets */; };
@@ -90,6 +91,7 @@
 		52B25B431EA0AFCC006909B0 /* MPTopNameButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B421EA0AFCC006909B0 /* MPTopNameButtonView.m */; };
 		52B25B471EA0B76C006909B0 /* MPDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B461EA0B76C006909B0 /* MPDataManager.m */; };
 		52B25B4A1EA0C34F006909B0 /* MPUserCenterSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B491EA0C34F006909B0 /* MPUserCenterSectionHeaderView.m */; };
+		52B2FE651EA48A2C0065222E /* UIViewController+MPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B2FE641EA48A2C0065222E /* UIViewController+MPExtension.m */; };
 		98A826AB1EA06DCF00B931F0 /* MPMainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826AA1EA06DCF00B931F0 /* MPMainViewCell.m */; };
 		98A826C41EA0745400B931F0 /* WantFollowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826B41EA0745400B931F0 /* WantFollowTableViewCell.m */; };
 		98A826C51EA0745400B931F0 /* WantFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826B61EA0745400B931F0 /* WantFollowViewController.m */; };
@@ -122,6 +124,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		527EF6081EA45479001CD1FD /* MPShootViewScrollCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPShootViewScrollCell.h; sourceTree = "<group>"; };
+		527EF6091EA45479001CD1FD /* MPShootViewScrollCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPShootViewScrollCell.m; sourceTree = "<group>"; };
 		52B2589C1E9DBFD1006909B0 /* MeiPaiDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeiPaiDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B258A01E9DBFD1006909B0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		52B258A21E9DBFD1006909B0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -301,6 +305,8 @@
 		52B25B461EA0B76C006909B0 /* MPDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPDataManager.m; sourceTree = "<group>"; };
 		52B25B481EA0C34F006909B0 /* MPUserCenterSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPUserCenterSectionHeaderView.h; sourceTree = "<group>"; };
 		52B25B491EA0C34F006909B0 /* MPUserCenterSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPUserCenterSectionHeaderView.m; sourceTree = "<group>"; };
+		52B2FE631EA48A2C0065222E /* UIViewController+MPExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MPExtension.h"; sourceTree = "<group>"; };
+		52B2FE641EA48A2C0065222E /* UIViewController+MPExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MPExtension.m"; sourceTree = "<group>"; };
 		98A826A91EA06DCF00B931F0 /* MPMainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMainViewCell.h; sourceTree = "<group>"; };
 		98A826AA1EA06DCF00B931F0 /* MPMainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMainViewCell.m; sourceTree = "<group>"; };
 		98A826B31EA0745400B931F0 /* WantFollowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WantFollowTableViewCell.h; sourceTree = "<group>"; };
@@ -423,6 +429,8 @@
 				52B259251E9E283F006909B0 /* Masonry */,
 				52B2593F1E9E283F006909B0 /* MJExtension */,
 				52B259571E9E283F006909B0 /* SDWebImage */,
+				52B2FE631EA48A2C0065222E /* UIViewController+MPExtension.h */,
+				52B2FE641EA48A2C0065222E /* UIViewController+MPExtension.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -616,6 +624,8 @@
 			children = (
 				52B25B211E9F6185006909B0 /* MPShootViewController.h */,
 				52B25B221E9F6185006909B0 /* MPShootViewController.m */,
+				527EF6081EA45479001CD1FD /* MPShootViewScrollCell.h */,
+				527EF6091EA45479001CD1FD /* MPShootViewScrollCell.m */,
 			);
 			name = "Shoot(拍摄)";
 			path = Shoot;
@@ -913,6 +923,7 @@
 				52B25B3A1EA0A12D006909B0 /* MPNavigationController.m in Sources */,
 				98A826D21EA0748100B931F0 /* LHScaleTool.m in Sources */,
 				52B25B431EA0AFCC006909B0 /* MPTopNameButtonView.m in Sources */,
+				52B2FE651EA48A2C0065222E /* UIViewController+MPExtension.m in Sources */,
 				52B25B171E9F1CB7006909B0 /* ZFPlayerView.m in Sources */,
 				52B25B131E9F1CB7006909B0 /* ZFBrightnessView.m in Sources */,
 				52B25A611E9E2840006909B0 /* NSObject+MJClass.m in Sources */,
@@ -994,6 +1005,7 @@
 				52B25B391EA0A12D006909B0 /* MPNavigationBar.m in Sources */,
 				52B25A5D1E9E2840006909B0 /* MJFoundation.m in Sources */,
 				52B25B111E9F1CB7006909B0 /* UIWindow+CurrentViewController.m in Sources */,
+				527EF60A1EA45479001CD1FD /* MPShootViewScrollCell.m in Sources */,
 				52B25B401EA0A178006909B0 /* MPUserCenterTableViewCell.m in Sources */,
 				52B25A591E9E2840006909B0 /* View+MASAdditions.m in Sources */,
 			);
