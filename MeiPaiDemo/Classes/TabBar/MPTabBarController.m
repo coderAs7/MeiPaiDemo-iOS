@@ -13,7 +13,7 @@
 #import "MPChannelsViewController.h"
 #import "MPUserCenterViewController.h"
 #import "MPShootViewController.h"
-#import "MPNavigationBar.h"
+//#import "MPNavigationBar.h"
 
 @interface MPTabBarController () <MPTabBarDelegate>
 
@@ -37,7 +37,8 @@
 - (void)setUpTabBar{
     
     //去除tabbar顶部的线
-    CGRect rect = CGRectMake(0,0,CGRectGetWidth(self.view.frame),CGRectGetHeight(self.view.frame));
+    CGRect rect = CGRectMake(0,0,1,1);
+    //CGRect rect = CGRectZero;
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context =UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, [[UIColor clearColor] CGColor]);
@@ -46,8 +47,8 @@
     UIGraphicsEndImageContext();
     [self.tabBar setBackgroundImage:img];
     [self.tabBar setShadowImage:img];
-    
-    self.tabBar.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+
+    self.tabBar.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.9];
     self.tabBar.tintColor = MPColor_Pink;
     
     // 自定义tabBar
@@ -91,9 +92,8 @@
     NC.tabBarItem.image = image;
     NC.tabBarItem.selectedImage = selectedImage;
     NC.navigationBarHidden = NO;
-    //NC.navigationBar.barStyle = UIStatusBarStyleLightContent;
-    //[VC setNeedsStatusBarAppearanceUpdate];
-    [NC.navigationBar addSubview:[MPNavigationBar navigationBarInViewController:VC]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
+    [NC.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:19],NSForegroundColorAttributeName:MPColor_Gray}];
     return NC;
 }
 
