@@ -92,7 +92,8 @@
     NC.tabBarItem.image = image;
     NC.tabBarItem.selectedImage = selectedImage;
     NC.navigationBarHidden = NO;
-    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
+    //[[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
+    NC.navigationBar.barStyle = UIBarStyleBlack;
     [NC.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:19],NSForegroundColorAttributeName:MPColor_Gray}];
     return NC;
 }

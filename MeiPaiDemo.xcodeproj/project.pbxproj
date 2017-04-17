@@ -92,6 +92,7 @@
 		52B25B471EA0B76C006909B0 /* MPDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B461EA0B76C006909B0 /* MPDataManager.m */; };
 		52B25B4A1EA0C34F006909B0 /* MPUserCenterSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B491EA0C34F006909B0 /* MPUserCenterSectionHeaderView.m */; };
 		52B2FE651EA48A2C0065222E /* UIViewController+MPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B2FE641EA48A2C0065222E /* UIViewController+MPExtension.m */; };
+		52B2FE6D1EA49BAB0065222E /* MPPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B2FE6C1EA49BAB0065222E /* MPPhotoViewController.m */; };
 		98A826AB1EA06DCF00B931F0 /* MPMainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826AA1EA06DCF00B931F0 /* MPMainViewCell.m */; };
 		98A826C41EA0745400B931F0 /* WantFollowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826B41EA0745400B931F0 /* WantFollowTableViewCell.m */; };
 		98A826C51EA0745400B931F0 /* WantFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826B61EA0745400B931F0 /* WantFollowViewController.m */; };
@@ -307,6 +308,8 @@
 		52B25B491EA0C34F006909B0 /* MPUserCenterSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPUserCenterSectionHeaderView.m; sourceTree = "<group>"; };
 		52B2FE631EA48A2C0065222E /* UIViewController+MPExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MPExtension.h"; sourceTree = "<group>"; };
 		52B2FE641EA48A2C0065222E /* UIViewController+MPExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MPExtension.m"; sourceTree = "<group>"; };
+		52B2FE6B1EA49BAB0065222E /* MPPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPhotoViewController.h; sourceTree = "<group>"; };
+		52B2FE6C1EA49BAB0065222E /* MPPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPhotoViewController.m; sourceTree = "<group>"; };
 		98A826A91EA06DCF00B931F0 /* MPMainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMainViewCell.h; sourceTree = "<group>"; };
 		98A826AA1EA06DCF00B931F0 /* MPMainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMainViewCell.m; sourceTree = "<group>"; };
 		98A826B31EA0745400B931F0 /* WantFollowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WantFollowTableViewCell.h; sourceTree = "<group>"; };
@@ -626,6 +629,11 @@
 				52B25B221E9F6185006909B0 /* MPShootViewController.m */,
 				527EF6081EA45479001CD1FD /* MPShootViewScrollCell.h */,
 				527EF6091EA45479001CD1FD /* MPShootViewScrollCell.m */,
+				52B2FE6A1EA49B850065222E /* MPTenSPosterViewController */,
+				52B2FE661EA49AD20065222E /* MPDBChallengeViewController */,
+				52B2FE671EA49AD20065222E /* MPLiveViewController */,
+				52B2FE681EA49AD20065222E /* MPPhotoViewController */,
+				52B2FE691EA49AD20065222E /* MPShortVideoViewController */,
 			);
 			name = "Shoot(拍摄)";
 			path = Shoot;
@@ -731,6 +739,44 @@
 			);
 			name = "MPDataManager(数据管理)";
 			path = MPDataManager;
+			sourceTree = "<group>";
+		};
+		52B2FE661EA49AD20065222E /* MPDBChallengeViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MPDBChallengeViewController;
+			sourceTree = "<group>";
+		};
+		52B2FE671EA49AD20065222E /* MPLiveViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MPLiveViewController;
+			sourceTree = "<group>";
+		};
+		52B2FE681EA49AD20065222E /* MPPhotoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				52B2FE6B1EA49BAB0065222E /* MPPhotoViewController.h */,
+				52B2FE6C1EA49BAB0065222E /* MPPhotoViewController.m */,
+			);
+			path = MPPhotoViewController;
+			sourceTree = "<group>";
+		};
+		52B2FE691EA49AD20065222E /* MPShortVideoViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MPShortVideoViewController;
+			path = MPShootVideoViewController;
+			sourceTree = "<group>";
+		};
+		52B2FE6A1EA49B850065222E /* MPTenSPosterViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MPTenSPosterViewController;
 			sourceTree = "<group>";
 		};
 		98A826B11EA0745400B931F0 /* Controller */ = {
@@ -989,6 +1035,7 @@
 				52B25A6D1E9E2840006909B0 /* SDWebImageDownloader.m in Sources */,
 				52B25A5B1E9E2840006909B0 /* MJDictionaryCache.m in Sources */,
 				52B25A721E9E2840006909B0 /* UIImage+GIF.m in Sources */,
+				52B2FE6D1EA49BAB0065222E /* MPPhotoViewController.m in Sources */,
 				52B25A521E9E2840006909B0 /* MASConstraint.m in Sources */,
 				98A826C91EA0745400B931F0 /* FollowTableView.m in Sources */,
 				52B25A6A1E9E2840006909B0 /* SDImageCache.m in Sources */,

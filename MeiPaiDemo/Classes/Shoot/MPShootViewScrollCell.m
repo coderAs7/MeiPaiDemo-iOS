@@ -31,6 +31,8 @@
 {
     if (self = [super initWithFrame:frame])
     {
+        self.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.5];
+        
         self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 80, 60)];
         self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 60, 80, 20)];
         self.button = [[UIButton alloc]initWithFrame:self.bounds];
@@ -50,7 +52,7 @@
 
 -(void)buttonClicked:(UIButton *)sender
 {
-    //[self.delegate shootCellClicked:self];
+    [self.delegate shootCellClicked:self];
 }
 
 /*
