@@ -18,7 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.title = @"我的关注";
+    [MPNavigationBar navigationBarInViewController:self];
     self.view.backgroundColor = RGB(45, 47, 55);
     
 //    __weak typeof(self)weakSelf = self;
