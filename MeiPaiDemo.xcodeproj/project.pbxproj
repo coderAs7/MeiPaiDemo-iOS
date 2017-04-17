@@ -91,6 +91,7 @@
 		52B25B431EA0AFCC006909B0 /* MPTopNameButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B421EA0AFCC006909B0 /* MPTopNameButtonView.m */; };
 		52B25B471EA0B76C006909B0 /* MPDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B461EA0B76C006909B0 /* MPDataManager.m */; };
 		52B25B4A1EA0C34F006909B0 /* MPUserCenterSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B25B491EA0C34F006909B0 /* MPUserCenterSectionHeaderView.m */; };
+		52B2FE651EA48A2C0065222E /* UIViewController+MPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B2FE641EA48A2C0065222E /* UIViewController+MPExtension.m */; };
 		98A826AB1EA06DCF00B931F0 /* MPMainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826AA1EA06DCF00B931F0 /* MPMainViewCell.m */; };
 		98A826C41EA0745400B931F0 /* WantFollowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826B41EA0745400B931F0 /* WantFollowTableViewCell.m */; };
 		98A826C51EA0745400B931F0 /* WantFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826B61EA0745400B931F0 /* WantFollowViewController.m */; };
@@ -304,6 +305,8 @@
 		52B25B461EA0B76C006909B0 /* MPDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPDataManager.m; sourceTree = "<group>"; };
 		52B25B481EA0C34F006909B0 /* MPUserCenterSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPUserCenterSectionHeaderView.h; sourceTree = "<group>"; };
 		52B25B491EA0C34F006909B0 /* MPUserCenterSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPUserCenterSectionHeaderView.m; sourceTree = "<group>"; };
+		52B2FE631EA48A2C0065222E /* UIViewController+MPExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MPExtension.h"; sourceTree = "<group>"; };
+		52B2FE641EA48A2C0065222E /* UIViewController+MPExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MPExtension.m"; sourceTree = "<group>"; };
 		98A826A91EA06DCF00B931F0 /* MPMainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMainViewCell.h; sourceTree = "<group>"; };
 		98A826AA1EA06DCF00B931F0 /* MPMainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMainViewCell.m; sourceTree = "<group>"; };
 		98A826B31EA0745400B931F0 /* WantFollowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WantFollowTableViewCell.h; sourceTree = "<group>"; };
@@ -426,6 +429,8 @@
 				52B259251E9E283F006909B0 /* Masonry */,
 				52B2593F1E9E283F006909B0 /* MJExtension */,
 				52B259571E9E283F006909B0 /* SDWebImage */,
+				52B2FE631EA48A2C0065222E /* UIViewController+MPExtension.h */,
+				52B2FE641EA48A2C0065222E /* UIViewController+MPExtension.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -918,6 +923,7 @@
 				52B25B3A1EA0A12D006909B0 /* MPNavigationController.m in Sources */,
 				98A826D21EA0748100B931F0 /* LHScaleTool.m in Sources */,
 				52B25B431EA0AFCC006909B0 /* MPTopNameButtonView.m in Sources */,
+				52B2FE651EA48A2C0065222E /* UIViewController+MPExtension.m in Sources */,
 				52B25B171E9F1CB7006909B0 /* ZFPlayerView.m in Sources */,
 				52B25B131E9F1CB7006909B0 /* ZFBrightnessView.m in Sources */,
 				52B25A611E9E2840006909B0 /* NSObject+MJClass.m in Sources */,
