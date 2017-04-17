@@ -31,15 +31,18 @@
 {
     if (self = [super initWithFrame:frame])
     {
-        self.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.5];
         
-        self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 80, 60)];
-        self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 60, 80, 20)];
-        self.button = [[UIButton alloc]initWithFrame:self.bounds];
+        self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
+        self.imageView.center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2 - 10);
+        self.imageView.layer.cornerRadius = 30;
+        self.imageView.clipsToBounds = YES;
         
+        self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 60, self.bounds.size.width, 20)];
         self.titleLabel.textColor = [UIColor whiteColor];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
+        self.titleLabel.font = [UIFont systemFontOfSize:15.0];
         
+        self.button = [[UIButton alloc]initWithFrame:self.bounds];
         [self.button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
         
         

@@ -17,6 +17,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = MPColor_VCBackgroundGray;
+    
+    [self insertViewController];
+}
+
+-(void)insertViewController
+{
+    UIButton * closeButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 64, 64)];
+    [closeButton addTarget:self action:@selector(clickedCloseButton:) forControlEvents:UIControlEventTouchUpInside];
+    [closeButton setImage:[UIImage imageNamed:@"btn_banner_a"] forState:UIControlStateNormal];
+    [self.view addSubview:closeButton];
+    
+}
+
+-(void)clickedCloseButton:(UIButton *)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

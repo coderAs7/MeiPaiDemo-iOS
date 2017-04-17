@@ -7,10 +7,9 @@
 //
 
 #import "MPUserCenterHeaderTableViewCell.h"
-
 #import "MPTopNameButtonView.h"
-
 #import "MPDataManager.h"
+#import "MPUserCenterSectionHeaderView.h"
 
 @interface MPUserCenterHeaderTableViewCell ()
 
@@ -51,19 +50,17 @@
     CGFloat topButtonWidth = SCREEN_WIDTH / 4;
     
     self.meiPaiButton = [[MPTopNameButtonView alloc]initWithFrame:CGRectMake(0, nameHeight, topButtonWidth, buttonHeight) title:@"美拍" number:@"0"];
-    self.relayButton = [[MPTopNameButtonView alloc]initWithFrame:CGRectMake(topButtonWidth, nameHeight, topButtonWidth, buttonHeight) title:@"转发" number:@"0"];
-    self.followButton = [[MPTopNameButtonView alloc]initWithFrame:CGRectMake(topButtonWidth * 2, nameHeight, topButtonWidth, buttonHeight) title:@"关注" number:@"0"];
-    self.fansButton = [[MPTopNameButtonView alloc]initWithFrame:CGRectMake(topButtonWidth * 3, nameHeight, topButtonWidth, buttonHeight) title:@"粉丝" number:@"0"];
+    self.relayButton = [[MPTopNameButtonView alloc]initWithFrame:CGRectMake(topButtonWidth, nameHeight, topButtonWidth, buttonHeight) title:@"转发" number:@"666"];
+    self.followButton = [[MPTopNameButtonView alloc]initWithFrame:CGRectMake(topButtonWidth * 2, nameHeight, topButtonWidth, buttonHeight) title:@"关注" number:@"12"];
+    self.fansButton = [[MPTopNameButtonView alloc]initWithFrame:CGRectMake(topButtonWidth * 3, nameHeight, topButtonWidth, buttonHeight) title:@"粉丝" number:@"666"];
     
-    UIView * view = [[UIView alloc]initWithFrame:CGRectMake(0, 120, SCREEN_WIDTH, 30)];
-    view.backgroundColor = [UIColor yellowColor];
+    MPUserCenterSectionHeaderView * view = [[MPUserCenterSectionHeaderView alloc]initWithFrame:CGRectMake(0, 120, SCREEN_WIDTH, 30)];
     
     CGFloat buttonX = 150;
-    
-    self.upvoteButton = [[MPTopNameButtonView alloc]initWithFrame:CGRectMake(0, buttonX, topButtonWidth * 2, buttonHeight) title:@"美拍" image:[UIImage imageNamed:@""]];
-    self.atMeButton = [[MPTopNameButtonView alloc]initWithFrame:CGRectMake(topButtonWidth * 2, buttonX, topButtonWidth * 2, buttonHeight) title:@"美拍" image:[UIImage imageNamed:@""]];
-    self.commentButton = [[MPTopNameButtonView alloc]initWithFrame:CGRectMake(0, buttonX + buttonHeight, topButtonWidth * 2, buttonHeight) title:@"美拍" image:[UIImage imageNamed:@""]];
-    self.privateLatterButton = [[MPTopNameButtonView alloc]initWithFrame:CGRectMake(topButtonWidth * 2, buttonX + buttonHeight, topButtonWidth * 2, buttonHeight) title:@"美拍" image:[UIImage imageNamed:@""]];
+    self.upvoteButton = [[MPTopNameButtonView alloc]initWithFrame:CGRectMake(0, buttonX, topButtonWidth * 2, buttonHeight) title:@"赞" image:[UIImage imageNamed:@"icon_cell_likesmall_a"]];
+    self.atMeButton = [[MPTopNameButtonView alloc]initWithFrame:CGRectMake(topButtonWidth * 2, buttonX, topButtonWidth * 2, buttonHeight) title:@"@我的" image:[UIImage imageNamed:@"icon_cell_likesmall_a"]];
+    self.commentButton = [[MPTopNameButtonView alloc]initWithFrame:CGRectMake(0, buttonX + buttonHeight, topButtonWidth * 2, buttonHeight) title:@"评论" image:[UIImage imageNamed:@"icon_cell_likesmall_a"]];
+    self.privateLatterButton = [[MPTopNameButtonView alloc]initWithFrame:CGRectMake(topButtonWidth * 2, buttonX + buttonHeight, topButtonWidth * 2, buttonHeight) title:@"私信" image:[UIImage imageNamed:@"icon_cell_likesmall_a"]];
     
     [self addSubview:self.userView];
     [self addSubview:self.meiPaiButton];
