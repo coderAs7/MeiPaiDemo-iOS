@@ -20,8 +20,6 @@
         [self setBackgroundColor:[UIColor clearColor]];
         //设置文本框背景
         [self setSearchFieldBackgroundImage:searchBarBg forState:UIControlStateNormal];
-        //self.translucent= YES;
-       // self.placeholder = @"搜索地点或公交路线";
 
         [self setSearchTextPositionAdjustment:UIOffsetMake(10, 0)];// 设置搜索框中文本框的文本偏移量
     }

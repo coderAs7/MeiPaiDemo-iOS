@@ -15,9 +15,10 @@
 #import "MPMainPopularCollectionView.h"
 #import "MPMainCityCollectionView.h"
 #import "MPMainSearchController.h"
+#import "ScrollImage.h"
 
 
-@interface MPMainViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, MPMainTopViewDelegate, UISearchBarDelegate>
+@interface MPMainViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate, MPMainTopViewDelegate, UISearchBarDelegate, ScrollImageDelegate>
 
 @property (nonatomic, strong) MPMainTopView *topView;
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -47,8 +48,15 @@
     _topView = [[MPMainTopView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 64)];
     [self.view addSubview:_topView];
     _topView.delegate = self;
-    
 }
+
+
+- (void)scrollImage:(ScrollImage *)scrollImage clickedAtIndex:(NSInteger)index
+{
+    NSLog(@"click:%ld",(long)index);
+
+}
+
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return 3;
@@ -59,6 +67,24 @@
     if (indexPath.item == 0) {
         MPMainLiveCollectionView *view = [[MPMainLiveCollectionView alloc] initWithFrame:self.view.bounds];
         [cell.contentView addSubview:view];
+        
+        
+        /** 网络图片 **/
+        NSArray *array = @[@"http://dl.bizhi.sogou.com/images/2012/09/30/44928.jpg",
+                           @"http://www.deskcar.com/desktop/star/world/20081017165318/27.jpg",
+                           @"http://www.0739i.com.cn/data/attachment/portal/201603/09/120156l1yzzn747ji77ugx.jpg",
+                           @"http://image.tianjimedia.com/uploadImages/2012/320/8N5IGLFH4HDY_1920x1080.jpg",
+                           @"http://b.hiphotos.baidu.com/zhidao/pic/item/10dfa9ec8a136327c3f37f95938fa0ec08fac77e.jpg",
+                           @"http://pic15.nipic.com/20110628/7398485_105718357143_2.jpg"];
+        ScrollImage *scrl = [[ScrollImage alloc] initWithCurrentController:self
+                                                                 urlString:array
+                                                                 viewFrame:CGRectMake(0, 54, self.view.bounds.size.width, 200)
+                                                          placeholderImage:[UIImage imageNamed:@"fli311"]];
+        scrl.delegate = self;
+        scrl.timeInterval = 4.0;
+        
+        [view.collectionView addSubview:scrl];
+        
 
     }
     if (indexPath.item == 1) {

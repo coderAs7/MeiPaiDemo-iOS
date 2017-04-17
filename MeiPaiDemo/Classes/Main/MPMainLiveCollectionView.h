@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MPMainLiveCollectionView : UIView
-
+@property (nonatomic, strong) UICollectionView *collectionView;
 @end

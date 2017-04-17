@@ -109,6 +109,7 @@
 		A40ADA531EA0CD1E002D5AE6 /* MPMainSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = A40ADA4A1EA0CD1E002D5AE6 /* MPMainSearchController.m */; };
 		A40ADA541EA0CD1E002D5AE6 /* MPMainTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A40ADA4C1EA0CD1E002D5AE6 /* MPMainTopView.m */; };
 		A40ADA551EA0CD1E002D5AE6 /* MPMainViewCityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A40ADA4E1EA0CD1E002D5AE6 /* MPMainViewCityCell.m */; };
+		A465E9371EA4634F00C63719 /* ScrollImage.m in Sources */ = {isa = PBXBuildFile; fileRef = A465E9361EA4634F00C63719 /* ScrollImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -344,6 +345,8 @@
 		A40ADA4C1EA0CD1E002D5AE6 /* MPMainTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPMainTopView.m; path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/MPMainTopView.m"; sourceTree = "<group>"; };
 		A40ADA4D1EA0CD1E002D5AE6 /* MPMainViewCityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPMainViewCityCell.h; path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/MPMainViewCityCell.h"; sourceTree = "<group>"; };
 		A40ADA4E1EA0CD1E002D5AE6 /* MPMainViewCityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPMainViewCityCell.m; path = "../../../../../../jackli/Desktop/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Main/MPMainViewCityCell.m"; sourceTree = "<group>"; };
+		A465E9351EA4634F00C63719 /* ScrollImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollImage.h; sourceTree = "<group>"; };
+		A465E9361EA4634F00C63719 /* ScrollImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollImage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -623,6 +626,8 @@
 		52B25AD51E9E2BDD006909B0 /* Main(主页) */ = {
 			isa = PBXGroup;
 			children = (
+				A465E9351EA4634F00C63719 /* ScrollImage.h */,
+				A465E9361EA4634F00C63719 /* ScrollImage.m */,
 				52B25ADC1E9E2CC7006909B0 /* MPMainViewController.h */,
 				52B25ADD1E9E2CC7006909B0 /* MPMainViewController.m */,
 				A40ADA411EA0CD1E002D5AE6 /* CustomSearchBar.h */,
@@ -969,6 +974,7 @@
 				52B25A4B1E9E2840006909B0 /* AFNetworkReachabilityManager.m in Sources */,
 				52B25ADB1E9E2C67006909B0 /* MPTabBarController.m in Sources */,
 				52B25B3F1EA0A178006909B0 /* MPUserCenterHeaderTableViewCell.m in Sources */,
+				A465E9371EA4634F00C63719 /* ScrollImage.m in Sources */,
 				52B25ADE1E9E2CC7006909B0 /* MPMainViewController.m in Sources */,
 				52B25A551E9E2840006909B0 /* MASViewAttribute.m in Sources */,
 				98A826D31EA0748100B931F0 /* UIButton+MyButton.m in Sources */,

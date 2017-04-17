@@ -13,7 +13,7 @@
 #import "MPMainViewCell.h"
 
 @interface MPMainLiveCollectionView ()<UICollectionViewDelegate, UICollectionViewDataSource, CollectionViewLayoutDelegate>
-@property (nonatomic, strong) UICollectionView *collectionView;
+
 @property (nonatomic, strong) NSArray *arr;
 
 @end
@@ -28,7 +28,7 @@
         layout.columnCount = 2;
         layout.rowSpacing = 0;
         layout.columnSpacing = 3;
-        layout.sectionInset = UIEdgeInsetsMake(280, 0, 10, 0);
+        layout.sectionInset = UIEdgeInsetsMake(300, 0, 10, 0);
         
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         [self addSubview:_collectionView];
@@ -60,7 +60,7 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    
+
     [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.bottom.mas_equalTo(self);
     }];
