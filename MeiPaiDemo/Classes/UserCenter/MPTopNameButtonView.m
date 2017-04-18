@@ -26,7 +26,7 @@
     self.numberLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 25)];
     self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 25, self.bounds.size.width, 15)];
     
-    self.numberLabel.font = [UIFont systemFontOfSize:22];
+    self.numberLabel.font = [UIFont systemFontOfSize:20];
     self.titleLabel.font = [UIFont systemFontOfSize:12];
     self.numberLabel.textColor = MPColor_Gray;
     self.titleLabel.textColor = MPColor_Gray;
@@ -43,6 +43,10 @@
     
     self.title = title;
     self.number = number;
+    
+    UIView * vLineView = [[UIView alloc]initWithFrame:CGRectMake(self.bounds.size.width - 0.5, 5, 0.5, 30)];
+    vLineView.backgroundColor = MPColor_Gray;
+    [self addSubview:vLineView];
 
     return self;
     
@@ -55,7 +59,10 @@
     self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 20, 20)];
     
     self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(40, 0, self.bounds.size.width - 40, self.bounds.size.height)];
-    self.titleLabel.textColor = MPColor_Gray;
+    self.titleLabel.textColor = [UIColor whiteColor];
+    
+    self.button = [[UIButton alloc]initWithFrame:self.bounds];
+    [self.button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     self.backgroundColor = MPColor_VCForgroundGray;
     

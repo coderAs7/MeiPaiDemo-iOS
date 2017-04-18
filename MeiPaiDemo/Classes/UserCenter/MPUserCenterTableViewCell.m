@@ -8,7 +8,34 @@
 
 #import "MPUserCenterTableViewCell.h"
 
+@interface MPUserCenterTableViewCell ()
+
+//@property(nonatomic,strong)UILabel * titleLabel;
+//@property(nonatomic,strong)UIImageView * leftImageView;
+//@property(nonatomic,strong)UIButton * button;
+
+@end
+
+
 @implementation MPUserCenterTableViewCell
+
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
+    [self insertCell];
+    
+    return self;
+}
+
+-(void)insertCell
+{
+    self.backgroundColor = MPColor_VCForgroundGray;
+    self.textLabel.textColor = [UIColor whiteColor];
+}
+
+
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];
