@@ -9,6 +9,7 @@
 #import "MPShootViewController.h"
 #import "MPShootViewScrollCell.h"
 #import "MPPhotoViewController/MPPhotoViewController.h"
+#import "ShortVideoController.h"
 
 @interface MPShootViewController () <MPShootViewScrollCellDelegate>
 
@@ -40,7 +41,7 @@
     self.bottomView = [[UIView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 150, SCREEN_WIDTH, 150)];
     self.bottomView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.1];
     [self.view addSubview:self.bottomView];
-    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
     UIVisualEffectView *effectview = [[UIVisualEffectView alloc] initWithEffect:blur];
     effectview.frame =self.view.frame;
     [self.bottomView addSubview:effectview];
@@ -48,7 +49,7 @@
     self.closeButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 60)];
     self.closeButton.center = CGPointMake(self.bottomView.bounds.size.width/2, self.bottomView.bounds.size.height - 30);
     //self.closeButton.backgroundColor = [UIColor grayColor];
-    [self.closeButton setImage:[UIImage imageNamed:@"btn_banner_a"] forState:UIControlStateNormal];
+    [self.closeButton setImage:[UIImage imageNamed:@"closeVideo"] forState:UIControlStateNormal];
     [self.closeButton addTarget:self action:@selector(clickedCloseButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.bottomView addSubview:self.closeButton];
     
@@ -94,6 +95,8 @@
     else if (sender == self.shootVideoCell)
     {
         //短视频
+        ShortVideoController *vc = [[ShortVideoController alloc] init];
+        [self presentViewController:vc animated:YES completion:nil];
         
     }
     else if (sender == self.DBChallengeCell)
