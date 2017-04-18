@@ -99,7 +99,7 @@
 
 //完成视频录制时调用
 - (void)finishWithCompletionHandler:(void (^)(void))handler {
-    [_writer finishWritingWithCompletionHandler: handler];
+    [_writer finishWritingWithCompletionHandler:handler];
 }
 
 //通过这个方法写入数据
