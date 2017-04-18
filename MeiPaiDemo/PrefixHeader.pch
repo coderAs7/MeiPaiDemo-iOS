@@ -72,7 +72,9 @@
 #endif
 #define JHLogFunc D_Log(@"%s---%zd", __func__,__LINE__)
 
+#import "MPNavigationBar.h"
 
+#pragma mark -- LH
 
 // 基数屏幕大小
 #define Original_W 375
@@ -95,10 +97,17 @@
 //生成随机色
 #define RANDOM_COLOR RGB(arc4random_uniform(256.0),arc4random_uniform(256.0),arc4random_uniform(256.0))
 
+
+#import "AFNetworking.h"
 #import "LHScaleTool.h"
 #import "UIButton+MyButton.h"
+#import "UIImageView+WebCache.h"
 
+#define HLS_URL @"http://dlhls.cdn.zhanqi.tv/zqlive/"
 
+#define HOME_URL @"http://www.zhanqi.tv/api/static/live.index/recommend-apps.json?"
+
+#define SCROLL_URL @"http://www.zhanqi.tv/api/touch/apps.banner?rand=1455848328344"
 
 
 // Include any system framework and library headers here that should be included in all compilation units.

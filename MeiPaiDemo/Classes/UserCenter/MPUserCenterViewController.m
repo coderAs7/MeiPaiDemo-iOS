@@ -10,7 +10,6 @@
 #import "MPUserCenterHeaderTableViewCell.h"
 #import "MPUserCenterTableViewCell.h"
 #import "MPUserCenterSectionHeaderView.h"
-#import "MPNavigationBar.h"
 
 @interface MPUserCenterViewController () <UITableViewDelegate,UITableViewDataSource>
 
@@ -38,10 +37,6 @@ NSString * MPUserCenterHeaderCellIndetifier = @"MPUserCenterHeaderCellIndetifier
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = MPColor_VCBackgroundGray;
     
-    
-    [MPNavigationBar navigationBarInViewController:self];
-    
-    self.title = @"2";
     self.title = @"我";
     
     
