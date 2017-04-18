@@ -82,7 +82,7 @@
     
     [_prompt mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(_userIcon.mas_left);
-        make.top.mas_equalTo(_userIcon.mas_bottom).offset(6);
+        make.top.mas_equalTo(_userIcon.mas_bottom).offset(8);
     }];
 
     [_number mas_makeConstraints:^(MASConstraintMaker *make) {
