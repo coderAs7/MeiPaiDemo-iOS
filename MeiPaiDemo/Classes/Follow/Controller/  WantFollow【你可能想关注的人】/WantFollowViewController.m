@@ -21,15 +21,34 @@ static NSString *const wantFollowIdentifier = @"wantFollowIdentifier";
 
 @property (nonatomic,copy)NSArray *messageDataArray;
 
+@property (nonatomic,strong)NSMutableArray *scrollViewArray;
+
+//@property (nonatomic,strong)NSMutableArray *blockArray;
+
 @end
 
 @implementation WantFollowViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"btn_bar_back_b"] style:UIBarButtonItemStyleDone target:self action:@selector(action_back)];
+    backItem.tintColor = [UIColor whiteColor];
+    self.navigationItem.leftBarButtonItem = backItem;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = RGB(45, 47, 55);
     self.title = @"你可能想关注的人";
+    self.scrollViewArray = [NSMutableArray array];
     [self loadUI];
+}
+
+- (void)action_back {
+    if (self.backBlock) {
+        self.backBlock(self.scrollViewArray);
+    }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark -- loadUI
@@ -40,12 +59,12 @@ static NSString *const wantFollowIdentifier = @"wantFollowIdentifier";
     self.messageDataArray = @[@"哇塞哇塞",@"哇塞哇塞哇塞哇塞",@"哇塞哇塞",@"哇塞哇塞哇塞哇塞",@"哇塞哇塞",@"哇塞哇塞哇塞哇塞",@"哇塞哇塞哇塞哇塞",@"哇塞哇塞",@"哇塞哇塞哇塞哇塞",@"哇塞哇塞"];
     [self.view addSubview:self.tableView];
     
-    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).offset(0);
-        make.right.equalTo(self.view).offset(0);
-        make.top.equalTo(self.view).offset(64);
-        make.bottom.equalTo(self.view).offset(0);
-    }];
+//    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(self.view).offset(0);
+//        make.right.equalTo(self.view).offset(0);
+//        make.top.equalTo(self.view).offset(0);
+//        make.bottom.equalTo(self.view).offset(0);
+//    }];
     
     
     UIView *tableHeadView = [[UIView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, FN(50))];
@@ -101,13 +120,27 @@ static NSString *const wantFollowIdentifier = @"wantFollowIdentifier";
     }
     cell.backgroundColor = RGB(45, 47, 55);
     [cell dataSource:@[self.imageDataArray,self.titleDataArray,self.messageDataArray] With:indexPath];
+//    __weak typeof(self)weakSelf = self;
+    [cell.followButton backMethod:^{
+        if ([cell.followButton.titleLabel.text isEqualToString:@"关注"]) {
+            [cell.followButton setTitle:@"已关注" forState:UIControlStateNormal];
+            cell.followButton.backgroundColor = [UIColor colorWithWhite:0.8 alpha:1];
+            [self.scrollViewArray addObject:@"1"];
+        }else{
+            [cell.followButton setTitle:@"关注" forState:UIControlStateNormal];
+            cell.followButton.backgroundColor = RGB(84, 151, 90);
+            if (self.scrollViewArray.count > 0) {
+                [self.scrollViewArray removeObjectAtIndex:0];
+            }
+        }
+    }];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         [_tableView registerNib:[UINib nibWithNibName:@"WantTableViewCell" bundle:[NSBundle bundleWithIdentifier:@"WantTableViewCell"]] forCellReuseIdentifier:wantFollowIdentifier];
