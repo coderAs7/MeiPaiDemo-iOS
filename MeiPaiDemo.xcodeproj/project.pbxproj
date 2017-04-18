@@ -117,6 +117,10 @@
 		52B2FF091EA5A15A0065222E /* RecordEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B2FF041EA5A15A0065222E /* RecordEngine.m */; };
 		52B2FF0A1EA5A15A0065222E /* ShortVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B2FF061EA5A15A0065222E /* ShortVideoController.m */; };
 		52B2FF0E1EA5A1820065222E /* MPPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B2FF0D1EA5A1820065222E /* MPPhotoViewController.m */; };
+		52B2FF111EA5BBB00065222E /* MPChannelsHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B2FF101EA5BBB00065222E /* MPChannelsHeaderTableViewCell.m */; };
+		52B2FF141EA5BBC50065222E /* MPChannelsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B2FF131EA5BBC50065222E /* MPChannelsTableViewCell.m */; };
+		52B2FF171EA5BC7C0065222E /* MPTopChannelsButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B2FF161EA5BC7C0065222E /* MPTopChannelsButtonView.m */; };
+		52B2FF1A1EA5DF080065222E /* MPTopChannelsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B2FF191EA5DF080065222E /* MPTopChannelsCollectionViewCell.m */; };
 		98A826AB1EA06DCF00B931F0 /* MPMainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826AA1EA06DCF00B931F0 /* MPMainViewCell.m */; };
 		98A826C41EA0745400B931F0 /* WantFollowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826B41EA0745400B931F0 /* WantFollowTableViewCell.m */; };
 		98A826C51EA0745400B931F0 /* WantFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826B61EA0745400B931F0 /* WantFollowViewController.m */; };
@@ -379,6 +383,14 @@
 		52B2FF061EA5A15A0065222E /* ShortVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShortVideoController.m; sourceTree = "<group>"; };
 		52B2FF0C1EA5A1820065222E /* MPPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPhotoViewController.h; sourceTree = "<group>"; };
 		52B2FF0D1EA5A1820065222E /* MPPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPhotoViewController.m; sourceTree = "<group>"; };
+		52B2FF0F1EA5BBB00065222E /* MPChannelsHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPChannelsHeaderTableViewCell.h; sourceTree = "<group>"; };
+		52B2FF101EA5BBB00065222E /* MPChannelsHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPChannelsHeaderTableViewCell.m; sourceTree = "<group>"; };
+		52B2FF121EA5BBC50065222E /* MPChannelsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPChannelsTableViewCell.h; sourceTree = "<group>"; };
+		52B2FF131EA5BBC50065222E /* MPChannelsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPChannelsTableViewCell.m; sourceTree = "<group>"; };
+		52B2FF151EA5BC7C0065222E /* MPTopChannelsButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTopChannelsButtonView.h; sourceTree = "<group>"; };
+		52B2FF161EA5BC7C0065222E /* MPTopChannelsButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTopChannelsButtonView.m; sourceTree = "<group>"; };
+		52B2FF181EA5DF080065222E /* MPTopChannelsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTopChannelsCollectionViewCell.h; sourceTree = "<group>"; };
+		52B2FF191EA5DF080065222E /* MPTopChannelsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTopChannelsCollectionViewCell.m; sourceTree = "<group>"; };
 		98A826A91EA06DCF00B931F0 /* MPMainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMainViewCell.h; sourceTree = "<group>"; };
 		98A826AA1EA06DCF00B931F0 /* MPMainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMainViewCell.m; sourceTree = "<group>"; };
 		98A826B31EA0745400B931F0 /* WantFollowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WantFollowTableViewCell.h; sourceTree = "<group>"; };
@@ -590,6 +602,14 @@
 			children = (
 				52B25AE21E9F0A5F006909B0 /* MPChannelsViewController.h */,
 				52B25AE31E9F0A5F006909B0 /* MPChannelsViewController.m */,
+				52B2FF0F1EA5BBB00065222E /* MPChannelsHeaderTableViewCell.h */,
+				52B2FF101EA5BBB00065222E /* MPChannelsHeaderTableViewCell.m */,
+				52B2FF151EA5BC7C0065222E /* MPTopChannelsButtonView.h */,
+				52B2FF161EA5BC7C0065222E /* MPTopChannelsButtonView.m */,
+				52B2FF181EA5DF080065222E /* MPTopChannelsCollectionViewCell.h */,
+				52B2FF191EA5DF080065222E /* MPTopChannelsCollectionViewCell.m */,
+				52B2FF121EA5BBC50065222E /* MPChannelsTableViewCell.h */,
+				52B2FF131EA5BBC50065222E /* MPChannelsTableViewCell.m */,
 			);
 			name = "Channels(频道)";
 			path = Channels;
@@ -645,14 +665,14 @@
 		52B25AD71E9E2BDD006909B0 /* UserCenter(个人中心) */ = {
 			isa = PBXGroup;
 			children = (
+				52B25AE51E9F0A73006909B0 /* MPUserCenterViewController.h */,
+				52B25AE61E9F0A73006909B0 /* MPUserCenterViewController.m */,
 				52B25B3B1EA0A178006909B0 /* MPUserCenterHeaderTableViewCell.h */,
 				52B25B3C1EA0A178006909B0 /* MPUserCenterHeaderTableViewCell.m */,
 				52B25B411EA0AFCC006909B0 /* MPTopNameButtonView.h */,
 				52B25B421EA0AFCC006909B0 /* MPTopNameButtonView.m */,
 				52B25B3D1EA0A178006909B0 /* MPUserCenterTableViewCell.h */,
 				52B25B3E1EA0A178006909B0 /* MPUserCenterTableViewCell.m */,
-				52B25AE51E9F0A73006909B0 /* MPUserCenterViewController.h */,
-				52B25AE61E9F0A73006909B0 /* MPUserCenterViewController.m */,
 				52B25B481EA0C34F006909B0 /* MPUserCenterSectionHeaderView.h */,
 				52B25B491EA0C34F006909B0 /* MPUserCenterSectionHeaderView.m */,
 			);
@@ -1109,15 +1129,18 @@
 				52B25B171E9F1CB7006909B0 /* ZFPlayerView.m in Sources */,
 				52B25B131E9F1CB7006909B0 /* ZFBrightnessView.m in Sources */,
 				52B25A611E9E2840006909B0 /* NSObject+MJClass.m in Sources */,
+				52B2FF171EA5BC7C0065222E /* MPTopChannelsButtonView.m in Sources */,
 				52B25A571E9E2840006909B0 /* NSArray+MASAdditions.m in Sources */,
 				52B2FEF01EA5A10F0065222E /* MPMainPopularCollectionView.m in Sources */,
 				98A826C81EA0745400B931F0 /* MPMyFollowViewController.m in Sources */,
+				52B2FF1A1EA5DF080065222E /* MPTopChannelsCollectionViewCell.m in Sources */,
 				52B2FEA01EA5A0AE0065222E /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				52B25B1D1E9F2CC4006909B0 /* MPTabBarButton.m in Sources */,
 				52B25A581E9E2840006909B0 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				52B2FE991EA5A0AE0065222E /* AFURLResponseSerialization.m in Sources */,
 				52B25AE41E9F0A5F006909B0 /* MPChannelsViewController.m in Sources */,
 				52B25A5F1E9E2840006909B0 /* MJPropertyKey.m in Sources */,
+				52B2FF141EA5BBC50065222E /* MPChannelsTableViewCell.m in Sources */,
 				52B25B471EA0B76C006909B0 /* MPDataManager.m in Sources */,
 				52B2FECF1EA5A0DC0065222E /* NSData+ImageContentType.m in Sources */,
 				52B2FEDF1EA5A0DC0065222E /* UIView+WebCacheOperation.m in Sources */,
@@ -1139,6 +1162,7 @@
 				52B25ADE1E9E2CC7006909B0 /* MPMainViewController.m in Sources */,
 				52B25A551E9E2840006909B0 /* MASViewAttribute.m in Sources */,
 				98A826D31EA0748100B931F0 /* UIButton+MyButton.m in Sources */,
+				52B2FF111EA5BBB00065222E /* MPChannelsHeaderTableViewCell.m in Sources */,
 				52B25A541E9E2840006909B0 /* MASLayoutConstraint.m in Sources */,
 				52B25A631E9E2840006909B0 /* NSObject+MJKeyValue.m in Sources */,
 				52B25B4A1EA0C34F006909B0 /* MPUserCenterSectionHeaderView.m in Sources */,
