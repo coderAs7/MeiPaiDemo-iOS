@@ -25,6 +25,10 @@
 @property(nonatomic,strong)MPTopNameButtonView * commentButton;
 @property(nonatomic,strong)MPTopNameButtonView * privateLatterButton;
 
+@property(nonatomic,strong)UIImageView * headerImageView;
+@property(nonatomic,strong)UILabel * nameLabel;
+@property(nonatomic,strong)UILabel * subIDLabel;
+
 @end
 
 @implementation MPUserCenterHeaderTableViewCell
@@ -45,7 +49,22 @@
     
     
     self.userView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, nameHeight)];
-    self.userView.backgroundColor = [UIColor greenColor];
+    self.userView.backgroundColor = MPColor_VCForgroundGray;
+    self.headerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 60, 60)];
+    self.headerImageView.layer.cornerRadius = 30;
+    self.headerImageView.clipsToBounds = YES;
+    self.nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(80, 15, SCREEN_WIDTH - 80, 20)];
+    self.subIDLabel = [[UILabel alloc]initWithFrame:CGRectMake(80, 45, SCREEN_WIDTH - 80, 15)];
+    self.nameLabel.textColor = [UIColor whiteColor];
+    self.subIDLabel.textColor = [UIColor lightGrayColor];
+    self.subIDLabel.font = [UIFont systemFontOfSize:15.0];
+    [self.userView addSubview:self.headerImageView];
+    [self.userView addSubview:self.nameLabel];
+    [self.userView addSubview:self.subIDLabel];
+    
+    self.headerImageView.image = [UIImage imageNamed:@"AppIcon29x29"];
+    self.nameLabel.text = @"董小伟🍚";
+    self.subIDLabel.text = [NSString stringWithFormat:@"美拍ID: 1507546710"];
     
     CGFloat topButtonWidth = SCREEN_WIDTH / 4;
     
@@ -71,8 +90,24 @@
     [self addSubview:self.atMeButton];
     [self addSubview:self.commentButton];
     [self addSubview:self.privateLatterButton];
-    
     [self addSubview:view];
+    
+    UIView * hLineView1 = [[UIView alloc]initWithFrame:CGRectMake(0, 80 - 0.5, SCREEN_WIDTH, 0.5)];
+    hLineView1.backgroundColor = MPColor_Gray;
+    
+    UIView * hLineView2 = [[UIView alloc]initWithFrame:CGRectMake(0, 190 - 0.5, SCREEN_WIDTH, 0.5)];
+    hLineView2.backgroundColor = MPColor_Gray;
+    
+    UIView * vLineView = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH / 2 - 0.5, 150 - 0.5, 0.5, 80)];
+    vLineView.backgroundColor = MPColor_Gray;
+    
+    //[self.userView addSubview:hLineView1];
+    [self.userView addSubview:hLineView2];
+    [self.userView addSubview:vLineView];
+    
+    //[self.userView bringSubviewToFront:hLineView1];
+    [self.userView bringSubviewToFront:hLineView2];
+    [self.userView bringSubviewToFront:vLineView];
     
 }
 
