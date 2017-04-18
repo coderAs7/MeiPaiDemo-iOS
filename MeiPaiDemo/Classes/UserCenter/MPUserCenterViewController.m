@@ -10,7 +10,6 @@
 #import "MPUserCenterHeaderTableViewCell.h"
 #import "MPUserCenterTableViewCell.h"
 #import "MPUserCenterSectionHeaderView.h"
-#import "MPNavigationBar.h"
 
 @interface MPUserCenterViewController () <UITableViewDelegate,UITableViewDataSource>
 
@@ -38,10 +37,6 @@ NSString * MPUserCenterHeaderCellIndetifier = @"MPUserCenterHeaderCellIndetifier
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = MPColor_VCBackgroundGray;
     
-    
-    [MPNavigationBar navigationBarInViewController:self];
-    
-    self.title = @"2";
     self.title = @"我";
     
     
@@ -69,6 +64,66 @@ NSString * MPUserCenterHeaderCellIndetifier = @"MPUserCenterHeaderCellIndetifier
         if (cell == nil)
         {
             cell = [[MPUserCenterTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MPUserCenterCellIndetifier];
+             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            
+            switch (indexPath.section)
+            {
+                case 1:
+                {
+                    if(indexPath.row == 0)
+                    {
+                        cell.imageView.image = [UIImage imageNamed:@"icon_cell_likesmall_a"];
+                        cell.textLabel.text = @"草稿箱";
+                    }
+                    else if (indexPath.row == 1)
+                    {
+                        cell.imageView.image = [UIImage imageNamed:@"icon_cell_likesmall_a"];
+                        cell.textLabel.text = @"我的钱包";
+                    }
+                    else if (indexPath.row == 2)
+                    {
+                        cell.imageView.image = [UIImage imageNamed:@"icon_cell_likesmall_a"];
+                        cell.textLabel.text = @"我的等级";
+                    }
+                }
+                    break;
+                case 2:
+                {
+                    cell.imageView.image = [UIImage imageNamed:@"icon_cell_likesmall_a"];
+                    cell.textLabel.text = @"我的等级";
+                }
+                    break;
+                case 3:
+                {
+                    if(indexPath.row == 0)
+                    {
+                        cell.imageView.image = [UIImage imageNamed:@"icon_cell_likesmall_a"];
+                        cell.textLabel.text = @"找好友";
+                    }
+                    else if (indexPath.row == 1)
+                    {
+                        cell.imageView.image = [UIImage imageNamed:@"icon_cell_likesmall_a"];
+                        cell.textLabel.text = @"我赞过的美拍";
+                    }
+                }
+                    break;
+                case 4:
+                {
+                    cell.imageView.image = [UIImage imageNamed:@"icon_cell_likesmall_a"];
+                    cell.textLabel.text = @"让视频更好玩";
+                }
+                    break;
+                case 5:
+                {
+                    cell.imageView.image = [UIImage imageNamed:@"icon_cell_likesmall_a"];
+                    cell.textLabel.text = @"设置";
+                }
+                    break;
+                    
+                default:
+                    break;
+            }
+            
         }
         
         return cell;

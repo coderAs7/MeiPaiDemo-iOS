@@ -23,7 +23,7 @@
 @property(nonatomic,strong)NSString * title;
 @property(nonatomic,strong)NSString * number;
 
-@property(nonatomic,assign)id <MPTopNameButtonViewDelegate> delegate;
+@property(nonatomic,weak)id <MPTopNameButtonViewDelegate> delegate;
 
 
 @end

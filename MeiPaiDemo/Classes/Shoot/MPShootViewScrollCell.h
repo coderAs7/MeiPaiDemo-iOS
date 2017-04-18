@@ -12,11 +12,14 @@
 
 @protocol MPShootViewScrollCellDelegate <NSObject>
 
+-(void)shootCellClicked:(MPShootViewScrollCell *)sender;
 
 @end
 
 @interface MPShootViewScrollCell : UIView
 
 -(instancetype)initWithFrame:(CGRect)frame image:(UIImage *)image title:(NSString *)title;
+
+@property(nonatomic,weak)id <MPShootViewScrollCellDelegate> delegate;
 
 @end
