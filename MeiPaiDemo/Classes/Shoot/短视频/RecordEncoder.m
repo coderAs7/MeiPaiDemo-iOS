@@ -100,4 +100,11 @@
     return NO;
 }
 
+- (void)dealloc {
+    _writer = nil;
+    _videoInput = nil;
+    _audioInput = nil;
+    _path = nil;
+}
+
 @end
