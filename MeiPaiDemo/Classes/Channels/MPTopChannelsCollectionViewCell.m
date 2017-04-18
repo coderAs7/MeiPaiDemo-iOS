@@ -30,10 +30,11 @@
     self.backgroundColor = MPColor_VCForgroundGray;
     
     //写布局
-    self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(20, 10, 40, 40)];
+    self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake((self.bounds.size.width - 40) / 2, 10, 40, 40)];
     self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 60, self.bounds.size.width, 15)];
     self.titleLabel.textColor = MPColor_Gray;
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    self.titleLabel.font = [UIFont systemFontOfSize:13.0];
     
     [self addSubview:self.imageView];
     [self addSubview:self.titleLabel];
@@ -44,7 +45,7 @@
 -(void)insertCellWithTitle:(NSString *)title image:(UIImage *)image
 {
     self.titleLabel.text = title;
-    self.imageView.image = image;
+    self.imageView.image = title ? [UIImage imageNamed:@"icon_cell_like"] : nil;//image;
 }
 
 @end

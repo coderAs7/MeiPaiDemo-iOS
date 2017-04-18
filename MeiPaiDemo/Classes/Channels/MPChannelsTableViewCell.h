@@ -10,4 +10,6 @@
 
 @interface MPChannelsTableViewCell : UITableViewCell
 
+-(void)insertCellWithTitle:(NSString *)title subTitle:(NSString *)subTitle image:(UIImage *)image;
+
 @end

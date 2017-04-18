@@ -60,6 +60,7 @@ NSString * MPChannelsHeaderTableViewCellIndetifier = @"MPChannelsHeaderTableView
         if (cell == nil)
         {
             cell = [[MPChannelsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MPChannelsTableViewCellIndetifier];
+            [cell insertCellWithTitle:@"#明日之子#" subTitle:@"2582.3万播放" image:[UIImage imageNamed:@"icon_cell_like"]];
         }
         
         return cell;

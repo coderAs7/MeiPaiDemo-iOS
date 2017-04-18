@@ -34,12 +34,15 @@ NSString * topChannelsCollectionViewIdentifire = @"topChannelsCollectionViewIden
 
 -(void)insertCell
 {
+    self.backgroundColor = MPColor_VCForgroundGray;
+    
     UICollectionViewFlowLayout *flowLayout = [UICollectionViewFlowLayout new];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     flowLayout.minimumInteritemSpacing = 1;
     flowLayout.minimumLineSpacing = 1;
     
-    self.topChannelsCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 50, SCREEN_WIDTH, 320) collectionViewLayout:flowLayout];
+    self.topChannelsCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 60, SCREEN_WIDTH, 320) collectionViewLayout:flowLayout];
+    self.topChannelsCollectionView.contentInset = UIEdgeInsetsMake(1, 0, 0, 0);
     
     self.topChannelsCollectionView.delegate = self;
     self.topChannelsCollectionView.dataSource = self;
@@ -51,15 +54,29 @@ NSString * topChannelsCollectionViewIdentifire = @"topChannelsCollectionViewIden
     self.topChannelsCollectionView.showsHorizontalScrollIndicator = NO;
     self.topChannelsCollectionView.showsVerticalScrollIndicator = NO;
     
-    self.videoListButton = [[UIButton alloc]initWithFrame:CGRectMake(10, 10, (SCREEN_WIDTH - 30) / 2, 30)];
+    self.videoListButton = [[UIButton alloc]initWithFrame:CGRectMake(10, 10, (SCREEN_WIDTH - 30) / 2, 40)];
     self.newerReportsButton = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH / 2 + 5, 10, self.videoListButton.frame.size.width, self.videoListButton.frame.size.height)];
     self.videoListButton.backgroundColor = MPColor_Pink;
     self.newerReportsButton.backgroundColor = MPColor_Purple;
     [self.videoListButton setTitle:@"视频排行榜" forState:UIControlStateNormal];
     [self.newerReportsButton setTitle:@"新人报道" forState:UIControlStateNormal];
+    self.videoListButton.layer.cornerRadius = 5;
+    self.newerReportsButton.layer.cornerRadius = 5;
+    self.videoListButton.clipsToBounds = YES;
+    self.newerReportsButton.clipsToBounds = YES;
     [self addSubview:self.videoListButton];
     [self addSubview:self.newerReportsButton];
     
+    
+    UIView * lineView = [[UIView alloc]initWithFrame:CGRectMake(0, 380, SCREEN_WIDTH, 30)];
+    lineView.backgroundColor = MPColor_VCBackgroundGray;
+    [self addSubview:lineView];
+    
+    UILabel * hotLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, lineView.frame.size.width, lineView.frame.size.height)];
+    hotLabel.textColor = MPColor_Gray;
+    hotLabel.text = @"  热门话题";
+    hotLabel.font = [UIFont systemFontOfSize:13.0];
+    [lineView addSubview:hotLabel];
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -133,7 +150,7 @@ NSString * topChannelsCollectionViewIdentifire = @"topChannelsCollectionViewIden
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    return CGSizeMake((SCREEN_WIDTH - 3) / 4 - 1, 79);
+    return CGSizeMake((SCREEN_WIDTH - 3) / 4, 79);
 }
 
 
