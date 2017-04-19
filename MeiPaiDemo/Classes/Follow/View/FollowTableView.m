@@ -9,6 +9,7 @@
 #import "FollowTableView.h"
 #import "FollowTableViewCell.h"
 #import <AVFoundation/AVFoundation.h>
+#import "WantFollowViewController.h"
 static NSString *const followIdentifier = @"followHomeIdentifier";
 
 @interface FollowTableView ()<UITableViewDelegate,UITableViewDataSource>
@@ -19,13 +20,15 @@ static NSString *const followIdentifier = @"followHomeIdentifier";
 
 @property (nonatomic,strong)AVPlayerLayer *avLayer;
 
-//@property (nonatomic,strong)UIView   *playView;
+@property (nonatomic,strong)UIScrollView   *scrollView;//headView 滚动试图
 
 @property (nonatomic ,strong) UIProgressView *videoProgress;
 
 @property (nonatomic,strong)UITableView *tableView;
 
 @property (nonatomic,copy)NSArray *dataSourceArray;
+
+@property (nonatomic,copy)NSArray *scrollViewArray;
 
 @property (nonatomic,assign)NSInteger saveIndexRow;//记录正在播放的cell
 
@@ -39,18 +42,14 @@ static NSString *const followIdentifier = @"followHomeIdentifier";
 
 @implementation FollowTableView
 
-- (instancetype)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame withData:(NSArray *)array{
     self = [super initWithFrame:frame];
     if (self) {
+        self.scrollViewArray = [NSArray arrayWithArray:array];
         self.isPlay = NO;
         self.saveIndexRow = -1;
         [self loadDataSource];
-//        [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.left.equalTo(self).offset(0);
-//            make.right.equalTo(self).offset(0);
-//            make.top.equalTo(self).offset(64);
-//            make.bottom.equalTo(self).offset(0);
-//        }];
+
     }
     return self;
 }
@@ -73,6 +72,34 @@ static NSString *const followIdentifier = @"followHomeIdentifier";
         NSLog(@"%@",error);
         
     }];
+}
+
+#pragma mark -- scrollview
+
+- (void)loadHeadViewBackgroundView:(UIView *)headView data:(NSArray *)dataArray{
+    CGRect rect = CGRectMake(0, 0, SCREEN_WIDTH, FN(80));
+    CGFloat wid = SCREEN_WIDTH;
+    if ((dataArray.count * FN(58)) > SCREEN_WIDTH ) {
+        wid = dataArray.count * FN(55);
+    }
+    self.scrollView = [[UIScrollView alloc]initWithFrame:rect];
+    self.scrollView.contentSize = CGSizeMake(wid, rect.size.height);
+    [headView addSubview:self.scrollView];
+    __weak typeof(self)weakSelf = self;
+    for (int i = 0; i < dataArray.count; i ++) {
+        UIButton *but = [UIButton buttonWithType:UIButtonTypeCustom];
+        but.frame = CGRectMake(10 + i * FN(55), rect.size.height/2 - FN(25), FN(50), FN(50));
+//        [but sd_setImageWithURL:dataArray[i][@"bpic"] forState:UIControlStateNormal];
+        [but setBackgroundImage:[UIImage imageNamed:@"icon_tab_greeting"] forState:UIControlStateNormal];
+        but.layer.masksToBounds = YES;
+        but.layer.cornerRadius = FN(25);
+        [but backMethod:^{
+            if (weakSelf.headButtonBlock) {
+                weakSelf.headButtonBlock();
+            }
+        }];
+        [self.scrollView addSubview:but];
+    }
 }
 
 
@@ -252,6 +279,7 @@ static NSString *const followIdentifier = @"followHomeIdentifier";
     UIView *headerView = [[UIView alloc]init];
     headerView.backgroundColor = RGB(45, 47, 55);
     
+    [self loadHeadViewBackgroundView:headerView data:self.scrollViewArray];
     
     return headerView;
 }

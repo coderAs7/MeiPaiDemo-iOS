@@ -10,4 +10,8 @@
 
 @interface FollowTableView : UIView
 
+@property (nonatomic,copy)void(^headButtonBlock)();
+
+- (instancetype)initWithFrame:(CGRect)frame withData:(NSArray *)array;
+
 @end

@@ -10,4 +10,6 @@
 
 @interface WantFollowViewController : UIViewController
 
+@property (nonatomic,copy)void(^backBlock)(NSArray *);
+
 @end
