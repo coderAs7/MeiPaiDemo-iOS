@@ -117,6 +117,10 @@
 		52B2FF111EA5BBB00065222E /* MPChannelsHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B2FF101EA5BBB00065222E /* MPChannelsHeaderTableViewCell.m */; };
 		52B2FF141EA5BBC50065222E /* MPChannelsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B2FF131EA5BBC50065222E /* MPChannelsTableViewCell.m */; };
 		52B2FF1A1EA5DF080065222E /* MPTopChannelsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B2FF191EA5DF080065222E /* MPTopChannelsCollectionViewCell.m */; };
+		981AB3181EA7314100EA9CEB /* DescribleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 981AB3171EA7314100EA9CEB /* DescribleViewController.m */; };
+		981AB31B1EA7315F00EA9CEB /* DescribleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 981AB31A1EA7315F00EA9CEB /* DescribleView.m */; };
+		981AB31F1EA7337300EA9CEB /* DescribleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 981AB31D1EA7337300EA9CEB /* DescribleTableViewCell.m */; };
+		981AB3201EA7337300EA9CEB /* DescribleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 981AB31E1EA7337300EA9CEB /* DescribleTableViewCell.xib */; };
 		98A826AB1EA06DCF00B931F0 /* MPMainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826AA1EA06DCF00B931F0 /* MPMainViewCell.m */; };
 		98A826C41EA0745400B931F0 /* WantFollowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826B41EA0745400B931F0 /* WantFollowTableViewCell.m */; };
 		98A826C51EA0745400B931F0 /* WantFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826B61EA0745400B931F0 /* WantFollowViewController.m */; };
@@ -382,6 +386,13 @@
 		52B2FF131EA5BBC50065222E /* MPChannelsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPChannelsTableViewCell.m; sourceTree = "<group>"; };
 		52B2FF181EA5DF080065222E /* MPTopChannelsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTopChannelsCollectionViewCell.h; sourceTree = "<group>"; };
 		52B2FF191EA5DF080065222E /* MPTopChannelsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPTopChannelsCollectionViewCell.m; sourceTree = "<group>"; };
+		981AB3161EA7314100EA9CEB /* DescribleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescribleViewController.h; sourceTree = "<group>"; };
+		981AB3171EA7314100EA9CEB /* DescribleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescribleViewController.m; sourceTree = "<group>"; };
+		981AB3191EA7315F00EA9CEB /* DescribleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescribleView.h; sourceTree = "<group>"; };
+		981AB31A1EA7315F00EA9CEB /* DescribleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescribleView.m; sourceTree = "<group>"; };
+		981AB31C1EA7337300EA9CEB /* DescribleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescribleTableViewCell.h; sourceTree = "<group>"; };
+		981AB31D1EA7337300EA9CEB /* DescribleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescribleTableViewCell.m; sourceTree = "<group>"; };
+		981AB31E1EA7337300EA9CEB /* DescribleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DescribleTableViewCell.xib; sourceTree = "<group>"; };
 		98A826A91EA06DCF00B931F0 /* MPMainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMainViewCell.h; sourceTree = "<group>"; };
 		98A826AA1EA06DCF00B931F0 /* MPMainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMainViewCell.m; sourceTree = "<group>"; };
 		98A826B31EA0745400B931F0 /* WantFollowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WantFollowTableViewCell.h; sourceTree = "<group>"; };
@@ -613,8 +624,8 @@
 		52B25AD41E9E2BDD006909B0 /* Follow(关注) */ = {
 			isa = PBXGroup;
 			children = (
-				98A826B11EA0745400B931F0 /* Controller */,
 				98A826BC1EA0745400B931F0 /* View */,
+				98A826B11EA0745400B931F0 /* Controller */,
 			);
 			name = "Follow(关注)";
 			path = Follow;
@@ -926,11 +937,50 @@
 			path = MPPhotoViewController;
 			sourceTree = "<group>";
 		};
+		981AB30F1EA730F500EA9CEB /* DescribleFollow【被关注人首页】 */ = {
+			isa = PBXGroup;
+			children = (
+				981AB3131EA7313600EA9CEB /* Controller */,
+				981AB3141EA7313600EA9CEB /* Model */,
+				981AB3151EA7313600EA9CEB /* View */,
+			);
+			path = "DescribleFollow【被关注人首页】";
+			sourceTree = "<group>";
+		};
+		981AB3131EA7313600EA9CEB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				981AB3161EA7314100EA9CEB /* DescribleViewController.h */,
+				981AB3171EA7314100EA9CEB /* DescribleViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		981AB3141EA7313600EA9CEB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		981AB3151EA7313600EA9CEB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				981AB3191EA7315F00EA9CEB /* DescribleView.h */,
+				981AB31A1EA7315F00EA9CEB /* DescribleView.m */,
+				981AB31C1EA7337300EA9CEB /* DescribleTableViewCell.h */,
+				981AB31D1EA7337300EA9CEB /* DescribleTableViewCell.m */,
+				981AB31E1EA7337300EA9CEB /* DescribleTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		98A826B11EA0745400B931F0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				98A826BA1EA0745400B931F0 /* MPMyFollowViewController.h */,
 				98A826BB1EA0745400B931F0 /* MPMyFollowViewController.m */,
+				981AB30F1EA730F500EA9CEB /* DescribleFollow【被关注人首页】 */,
 				98A826B21EA0745400B931F0 /*   WantFollow【你可能想关注的人】 */,
 			);
 			path = Controller;
@@ -1086,6 +1136,7 @@
 				52B2FE9B1EA5A0AE0065222E /* LICENSE in Resources */,
 				98A826CB1EA0745400B931F0 /* FollowTableViewCell.xib in Resources */,
 				52B258AF1E9DBFD1006909B0 /* LaunchScreen.storyboard in Resources */,
+				981AB3201EA7337300EA9CEB /* DescribleTableViewCell.xib in Resources */,
 				52B2FECD1EA5A0DC0065222E /* LICENSE in Resources */,
 				52B25B141E9F1CB7006909B0 /* ZFPlayer.bundle in Resources */,
 				52B258AC1E9DBFD1006909B0 /* Assets.xcassets in Resources */,
@@ -1139,7 +1190,9 @@
 				52B2FF141EA5BBC50065222E /* MPChannelsTableViewCell.m in Sources */,
 				52B25B471EA0B76C006909B0 /* MPDataManager.m in Sources */,
 				52B2FECF1EA5A0DC0065222E /* NSData+ImageContentType.m in Sources */,
+				981AB31B1EA7315F00EA9CEB /* DescribleView.m in Sources */,
 				52B2FEDF1EA5A0DC0065222E /* UIView+WebCacheOperation.m in Sources */,
+				981AB3181EA7314100EA9CEB /* DescribleViewController.m in Sources */,
 				52B2FE981EA5A0AE0065222E /* AFURLRequestSerialization.m in Sources */,
 				52B25B0F1E9F1CB7006909B0 /* UIView+CustomControlView.m in Sources */,
 				52B25A601E9E2840006909B0 /* MJPropertyType.m in Sources */,
@@ -1171,6 +1224,7 @@
 				52B25A561E9E2840006909B0 /* MASViewConstraint.m in Sources */,
 				52B25B201E9F40B3006909B0 /* MPBadgeView.m in Sources */,
 				52B2FEF31EA5A10F0065222E /* MPMainLiveCollectionView.m in Sources */,
+				981AB31F1EA7337300EA9CEB /* DescribleTableViewCell.m in Sources */,
 				98A826AB1EA06DCF00B931F0 /* MPMainViewCell.m in Sources */,
 				52B25B1A1E9F2BE2006909B0 /* MPTabBar.m in Sources */,
 				52B25B0C1E9F1CB7006909B0 /* UIImageView+ZFCache.m in Sources */,
