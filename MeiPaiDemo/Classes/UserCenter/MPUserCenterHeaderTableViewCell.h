@@ -9,6 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "MPTopNameButtonView.h"
 
+@class MPUserCenterHeaderTableViewCell;
+
+@protocol MPUserCenterHeaderTableViewCellDelegate <NSObject>
+
+-(void)topNameButtonClicked:(MPTopNameButtonView *)sender;
+
+@end
+
+
 @interface MPUserCenterHeaderTableViewCell : UITableViewCell
+
+@property(nonatomic,weak)id <MPUserCenterHeaderTableViewCellDelegate> delegate;
 
 @end
