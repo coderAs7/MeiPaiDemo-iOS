@@ -24,17 +24,22 @@
 @property (nonatomic, strong) MPMainTopView *topView;
 @property (nonatomic, strong) UICollectionView *collectionView;
 
+@property (nonatomic, strong) MPMainLiveCollectionView *liveView;
+@property (nonatomic, strong) MPMainCityCollectionView *cityView;
+@property (nonatomic, strong) MPMainPopularCollectionView *popularView;
+
 @end
 
 @implementation MPMainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.automaticallyAdjustsScrollViewInsets = YES;
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     flow.itemSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT);
     flow.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     flow.minimumLineSpacing = 0;
-    _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:flow];
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
 
     [self.view addSubview:_collectionView];
 
@@ -49,6 +54,60 @@
     _topView = [[MPMainTopView alloc] initWithFrame:CGRectMake(40, 0, SCREEN_WIDTH - 80, 44)];
     self.navigationItem.titleView  = _topView;
     _topView.delegate = self;
+}
+
+- (MPMainLiveCollectionView *)liveView {
+    if (_liveView == nil) {
+        _liveView = [[MPMainLiveCollectionView alloc] initWithFrame:self.view.bounds];
+        _liveView.delegate = self;
+        
+        /** 网络图片 **/
+        NSArray *array = @[@"http://dl.bizhi.sogou.com/images/2012/09/30/44928.jpg",
+                           @"http://www.deskcar.com/desktop/star/world/20081017165318/27.jpg",
+                           @"http://www.0739i.com.cn/data/attachment/portal/201603/09/120156l1yzzn747ji77ugx.jpg",
+                           @"http://image.tianjimedia.com/uploadImages/2012/320/8N5IGLFH4HDY_1920x1080.jpg",
+                           @"http://b.hiphotos.baidu.com/zhidao/pic/item/10dfa9ec8a136327c3f37f95938fa0ec08fac77e.jpg",
+                           @"http://pic15.nipic.com/20110628/7398485_105718357143_2.jpg"];
+        ScrollImage *scrl = [[ScrollImage alloc] initWithCurrentController:self
+                                                                 urlString:array
+                                                                 viewFrame:CGRectMake(0, 60, self.view.bounds.size.width, 200)
+                                                          placeholderImage:[UIImage imageNamed:@"fli311"]];
+        scrl.delegate = self;
+        scrl.timeInterval = 4.0;
+        
+        [_liveView.collectionView addSubview:scrl];
+
+    }
+    return _liveView;
+}
+
+- (MPMainCityCollectionView *)cityView {
+    if (_cityView == nil) {
+        _cityView = [[MPMainCityCollectionView alloc] initWithFrame:self.view.bounds];
+        _cityView.delegate = self;
+        
+    }
+    return _cityView;
+}
+
+- (MPMainPopularCollectionView *)popularView {
+    if (_popularView == nil) {
+        _popularView = [[MPMainPopularCollectionView alloc] initWithFrame:self.view.bounds];
+        _popularView.delegate = self;
+
+        CustomSearchBar *search = [[CustomSearchBar alloc] initWithFrame:CGRectMake(10, 70, SCREEN_WIDTH - 20, 32)];
+        search.delegate = self;
+        search.placeholder = @"哈哈";
+        [_popularView.collectionView addSubview:search];
+    }
+    return _popularView;
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.right.bottom.mas_equalTo(self.view);
+    }];
 }
 
 
@@ -66,42 +125,14 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MPMainViewBigCell" forIndexPath:indexPath];
     if (indexPath.item == 0) {
-        MPMainLiveCollectionView *view = [[MPMainLiveCollectionView alloc] initWithFrame:self.view.bounds];
-        view.delegate = self;
-        [cell.contentView addSubview:view];
-        
-        
-        /** 网络图片 **/
-        NSArray *array = @[@"http://dl.bizhi.sogou.com/images/2012/09/30/44928.jpg",
-                           @"http://www.deskcar.com/desktop/star/world/20081017165318/27.jpg",
-                           @"http://www.0739i.com.cn/data/attachment/portal/201603/09/120156l1yzzn747ji77ugx.jpg",
-                           @"http://image.tianjimedia.com/uploadImages/2012/320/8N5IGLFH4HDY_1920x1080.jpg",
-                           @"http://b.hiphotos.baidu.com/zhidao/pic/item/10dfa9ec8a136327c3f37f95938fa0ec08fac77e.jpg",
-                           @"http://pic15.nipic.com/20110628/7398485_105718357143_2.jpg"];
-        ScrollImage *scrl = [[ScrollImage alloc] initWithCurrentController:self
-                                                                 urlString:array
-                                                                 viewFrame:CGRectMake(0, 60, self.view.bounds.size.width, 200)
-                                                          placeholderImage:[UIImage imageNamed:@"fli311"]];
-        scrl.delegate = self;
-        scrl.timeInterval = 4.0;
-        
-        [view.collectionView addSubview:scrl];
-        
+        [cell.contentView addSubview:self.liveView];
 
     }
     if (indexPath.item == 1) {
-        MPMainPopularCollectionView *popular = [[MPMainPopularCollectionView alloc] initWithFrame:self.view.bounds];
-        popular.delegate = self;
-        CustomSearchBar *search = [[CustomSearchBar alloc] initWithFrame:CGRectMake(10, 70, SCREEN_WIDTH - 20, 32)];
-        search.delegate = self;
-        search.placeholder = @"哈哈";
-        [popular.collectionView addSubview:search];
-        [cell.contentView addSubview:popular];
+        [cell.contentView addSubview:self.popularView];
     }
     if (indexPath.item == 2) {
-        MPMainCityCollectionView *city = [[MPMainCityCollectionView alloc] initWithFrame:self.view.bounds];
-        city.delegate = self;
-        [cell.contentView addSubview:city];
+        [cell.contentView addSubview:self.cityView];
     }
     
     return cell;
