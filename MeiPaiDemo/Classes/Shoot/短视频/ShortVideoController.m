@@ -14,6 +14,7 @@
 #import <AVKit/AVKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "PrefixHeader.pch"
+#import "RecordButton.h"
 
 typedef NS_ENUM(NSUInteger, UploadVieoStyle) {
     VideoRecord = 0,
@@ -26,7 +27,7 @@ typedef NS_ENUM(NSUInteger, UploadVieoStyle) {
 @property (strong, nonatomic) UIButton *flashLightBT;
 @property (strong, nonatomic)  UIButton *changeCameraBT;
 @property (strong, nonatomic)  UIButton *recordNextBT;
-@property (strong, nonatomic)  UIButton *recordBt;
+@property (strong, nonatomic)  RecordButton *recordBt;
 @property (strong, nonatomic)  UIButton *locationVideoBT;
 @property (strong, nonatomic) RecordProgressView *progressView;
 
@@ -36,7 +37,6 @@ typedef NS_ENUM(NSUInteger, UploadVieoStyle) {
 @property (strong, nonatomic) UIImagePickerController *moviePicker;//视频选择器
 @property (strong, nonatomic) AVPlayerViewController *playerVC;
 @property (nonatomic, strong) AVPlayer *player;
-@property (nonatomic, strong) UIView *topView;
 
 @end
 
@@ -46,21 +46,15 @@ typedef NS_ENUM(NSUInteger, UploadVieoStyle) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
-    _topView = [[UIView alloc] initWithFrame:CGRectZero];
-    [self.view addSubview:_topView];
-    _topView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
-    [_topView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.top.mas_equalTo(self.view);
-        make.height.mas_equalTo(48);
-    }];
+
     
     _flashLightBT = [[UIButton alloc] init];
-    [_topView addSubview:_flashLightBT];
+    [self.view addSubview:_flashLightBT];
     [_flashLightBT mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(40);
         make.height.mas_equalTo(24);
-        make.centerY.mas_equalTo(_topView.mas_centerY);
-        make.centerX.mas_equalTo(_topView.mas_centerX).offset(-80);
+        make.top.mas_equalTo(self.view.mas_top).offset(20);
+        make.centerX.mas_equalTo(self.view.mas_centerX).offset(-80);
     }];
     [_flashLightBT setImage:[UIImage imageNamed:@"flashlightOn"] forState:UIControlStateNormal];
     [_flashLightBT setImage:[UIImage imageNamed:@"flashlightOff"] forState:UIControlStateSelected];
@@ -68,7 +62,7 @@ typedef NS_ENUM(NSUInteger, UploadVieoStyle) {
     
     
     _changeCameraBT = [[UIButton alloc] init];
-    [_topView addSubview:_changeCameraBT];
+    [self.view addSubview:_changeCameraBT];
     [_changeCameraBT mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(40);
         make.height.mas_equalTo(24);
@@ -80,62 +74,50 @@ typedef NS_ENUM(NSUInteger, UploadVieoStyle) {
     
     
     _recordNextBT = [[UIButton alloc] init];
-    [_topView addSubview:_recordNextBT];
+    [self.view addSubview:_recordNextBT];
     [_recordNextBT mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.mas_equalTo(24);
         make.centerY.mas_equalTo(_flashLightBT.mas_centerY);
-        make.right.mas_equalTo(_topView.mas_right).offset(-20);
+        make.right.mas_equalTo(self.view.mas_right).offset(-20);
     }];
     [_recordNextBT setImage:[UIImage imageNamed:@"videoNext"] forState:UIControlStateNormal];
     [_recordNextBT addTarget:self action:@selector(recordNextAction:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *closeBtn = [[UIButton alloc] init];
 
-    [_topView addSubview:closeBtn];
+    [self.view addSubview:closeBtn];
     [closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.mas_equalTo(24);
         make.centerY.mas_equalTo(_flashLightBT.mas_centerY);
-        make.left.mas_equalTo(_topView.mas_left).offset(20);
+        make.left.mas_equalTo(self.view.mas_left).offset(20);
     }];
 
     [closeBtn setImage:[UIImage imageNamed:@"closeVideo"] forState:UIControlStateNormal];
     [closeBtn addTarget:self action:@selector(dismissAction:) forControlEvents:UIControlEventTouchUpInside];
     
     
-    UIView *bottomView = [[UIView alloc] init];
-    [self.view addSubview:bottomView];
-    [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.bottom.right.mas_equalTo(self.view);
-        make.height.mas_equalTo(100);
-    }];
-    bottomView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.4];
-    
-    _progressView = [[RecordProgressView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - 104, self.view.bounds.size.width, 4)];
-    [self.view addSubview:_progressView];
-    _recordBt = [[UIButton alloc] init];
-    [bottomView addSubview:_recordBt];
-    [_recordBt mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(60);
-        make.height.mas_equalTo(60);
-        make.centerY.mas_equalTo(bottomView.mas_centerY);
-        make.centerX.mas_equalTo(bottomView.mas_centerX);
-    }];
 
-    [_recordBt setImage:[UIImage imageNamed:@"videoRecord"] forState:UIControlStateNormal];
-    [_recordBt setImage:[UIImage imageNamed:@"videoPause"] forState:UIControlStateSelected];
-    [_recordBt addTarget:self action:@selector(recordAction:) forControlEvents:UIControlEventTouchUpInside];
+    _progressView = [[RecordProgressView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - 4, self.view.bounds.size.width, 4)];
+    [self.view addSubview:_progressView];
     
+    _recordBt = [[RecordButton alloc] initWithFrame:CGRectMake(170, 20, 80, 80)];
+    [self.view addSubview:_recordBt];
+    _recordBt.center = CGPointMake(self.view.center.x, self.view.bounds.size.height - 80);
+    _recordBt.type = LeafButtonTypeVideo;
+    __weak typeof(self) weakSelf = self;
+    _recordBt.clickedBlock = ^(RecordButton *button) {
+        [weakSelf recordAction:weakSelf.recordBt];
+    };
     
     _locationVideoBT = [[UIButton alloc] init];
-    [bottomView addSubview:_locationVideoBT];
+    [self.view addSubview:_locationVideoBT];
     [_locationVideoBT mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(40);
-        make.height.mas_equalTo(40);
-        make.centerY.mas_equalTo(bottomView.mas_centerY);
-        make.centerX.mas_equalTo(bottomView.mas_centerX).offset(80);
+        make.width.mas_equalTo(44);
+        make.height.mas_equalTo(44);
+        make.centerY.mas_equalTo(_recordBt.mas_centerY);
+        make.centerX.mas_equalTo(self.view.mas_centerX).offset(self.view.bounds.size.width / 4);
     }];
     
-
     [_locationVideoBT setImage:[UIImage imageNamed:@"locationVideo"] forState:UIControlStateNormal];
     
     [_locationVideoBT addTarget:self action:@selector(locationVideoAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -172,22 +154,6 @@ typedef NS_ENUM(NSUInteger, UploadVieoStyle) {
     }
     [self.recordEngine startUp];
 }
-
-//根据状态调整view的展示情况
-//- (void)adjustViewFrame {
-//    //[self.view layoutIfNeeded];
-//    [UIView animateWithDuration:0.4 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-//        if (self.recordBt.selected) {
-//            _topView.frame = CGRectMake(0, -48, self.view.bounds.size.width, 48);
-//        }else {
-//            _topView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 48);
-//        }
-//        if (self.videoStyle == VideoRecord) {
-//            self.locationVideoBT.hidden = YES;
-//        }
-//        [self.view layoutIfNeeded];
-//    } completion:nil];
-//}
 
 #pragma mark - set、get方法
 - (RecordEngine *)recordEngine {
@@ -324,17 +290,23 @@ typedef NS_ENUM(NSUInteger, UploadVieoStyle) {
 
 //本地视频点击视频
 - (void)locationVideoAction:(id)sender {
+//    if (self.recordBt.state == LeafButtonStateSelected) {
+//        self.recordBt.state = LeafButtonStateNormal;
+//        if (!self.recordEngine.isPaused) {
+//            [self.recordEngine pauseCapture];
+//        }
+//    }
     self.videoStyle = VideoLocation;
     [self.recordEngine shutdown];
     [self presentViewController:self.moviePicker animated:YES completion:nil];
 }
 
 //开始和暂停录制事件
-- (void)recordAction:(UIButton *)sender {
+
+- (void)recordAction:(RecordButton *)sender {
     if (self.allowRecord) {
         self.videoStyle = VideoRecord;
-        self.recordBt.selected = !self.recordBt.selected;
-        if (self.recordBt.selected) {
+        if (self.recordBt.state == LeafButtonStateSelected) {
             if (self.recordEngine.isCapturing) {
                 [self.recordEngine resumeCapture];
             }else {
@@ -343,7 +315,7 @@ typedef NS_ENUM(NSUInteger, UploadVieoStyle) {
         }else {
             [self.recordEngine pauseCapture];
         }
-       // [self adjustViewFrame];
+        
     }
 }
 

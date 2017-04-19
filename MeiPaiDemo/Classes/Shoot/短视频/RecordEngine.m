@@ -11,6 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <Photos/Photos.h>
 
+
 @interface RecordEngine ()<AVCaptureAudioDataOutputSampleBufferDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, CAAnimationDelegate> {
     
     CMTime _timeOffset;//录制的偏移CMTime
@@ -142,7 +143,12 @@
                     [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
                         [PHAssetChangeRequest creationRequestForAssetFromVideoAtFileURL:url];
                     } completionHandler:^(BOOL success, NSError * _Nullable error) {
-                        NSLog(@"保存成功");
+                        if (!error && success) {
+                            NSLog(@"保存相册成功!");
+                        }
+                        else {
+                            NSLog(@"保存相册失败! :%@",error);
+                        }
                     }];
                     [self movieToImageHandler:handler];
                 }];
