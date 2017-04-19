@@ -7,7 +7,7 @@
 //
 
 #import "MPUserCenterHeaderTableViewCell.h"
-#import "MPTopNameButtonView.h"
+
 #import "MPDataManager.h"
 #import "MPUserCenterSectionHeaderView.h"
 

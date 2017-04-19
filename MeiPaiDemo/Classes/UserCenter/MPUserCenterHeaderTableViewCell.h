@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MPTopNameButtonView.h"
 
 @interface MPUserCenterHeaderTableViewCell : UITableViewCell
 
