@@ -27,6 +27,53 @@
             endingLineNumber = "90"
             landmarkName = "-changeHidden"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__35-[FollowTableViewCell awakeFromNib]_block_invoke.84"
+                  moduleName = "MeiPaiDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuhu/Desktop/%E7%BE%8E%E6%8B%8Dgit/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Follow/View/FollowTableViewCell.m"
+                  timestampString = "514287090.967478"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "660">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_.87"
+                  moduleName = "MeiPaiDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuhu/Desktop/%E7%BE%8E%E6%8B%8Dgit/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Follow/View/FollowTableViewCell.m"
+                  timestampString = "514287090.968838"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "51">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.88"
+                  moduleName = "MeiPaiDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuhu/Desktop/%E7%BE%8E%E6%8B%8Dgit/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Follow/View/FollowTableViewCell.m"
+                  timestampString = "514287090.970244"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "29">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -52,7 +99,7 @@
                   moduleName = "MeiPaiDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/liuhu/Desktop/%E7%BE%8E%E6%8B%8Dgit/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Follow/View/FollowTableView.m"
-                  timestampString = "514199677.400082"
+                  timestampString = "514287090.97628"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "61"
@@ -67,7 +114,7 @@
                   moduleName = "MeiPaiDemo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/liuhu/Desktop/%E7%BE%8E%E6%8B%8Dgit/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Follow/View/FollowTableView.m"
-                  timestampString = "514199677.401293"
+                  timestampString = "514287090.977686"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "63"
