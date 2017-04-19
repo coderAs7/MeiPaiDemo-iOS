@@ -29,6 +29,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *shareButton;
 
+@property (weak, nonatomic) IBOutlet UILabel *describeLabel;
 
 @end
 
@@ -56,44 +57,49 @@
 
 - (void)dataSourceArray:(NSArray *)array withIndex:(NSIndexPath *)index {
     self.headImage.image = [UIImage imageNamed:@"Effects10"];
-    self.nameLabel.text = array[index.row][@"title"];
-    self.messageLabel.text = @"04-12 19:28";
+    self.nameLabel.text = array[index.row][@"nickname"];
+    self.messageLabel.text = @"04-17 09:55";
+    self.describeLabel.text = array[index.row][@"title"];
     [self.giftButton setBackgroundImage:[UIImage imageNamed:@"bg_directMessage_alertview"] forState:UIControlStateNormal];
     self.backImage.contentMode = UIViewContentModeScaleToFill;
     [self.backImage sd_setImageWithURL:array[index.row][@"bpic"] placeholderImage:[UIImage imageNamed:@""]];
     
+//    [self.loveButton setImage:[UIImage imageNamed:@"icon_cell_likesmall_a"] forState:UIControlStateNormal];
+    [self.loveButton setBackgroundImage:[UIImage imageNamed:@"icon_cell_likesmall_a"] forState:UIControlStateNormal];
+    [self.messageButton setBackgroundImage:[UIImage imageNamed:@"icon_cell_nomusic"] forState:UIControlStateNormal];
+    [self.shareButton setBackgroundImage:[UIImage imageNamed:@"icon_cell_share_a"] forState:UIControlStateNormal];
     
     
-    CGFloat wid = (SCREEN_WIDTH/4 - FN(15));
+    CGFloat wid = (SCREEN_WIDTH/3.2 - FN(15));
     [self.loveButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(wid);
-        make.top.equalTo(self.backImage.mas_bottom).offset(5);
-        make.size.mas_equalTo(CGSizeMake(FN(30), FN(30)));
+        make.top.equalTo(self.describeLabel.mas_bottom).offset(5);
+        make.size.mas_equalTo(CGSizeMake(FN(20), FN(20)));
     }];
     
     
     [self.separateView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.loveButton.mas_right).offset(FN(20));
+        make.left.equalTo(self.loveButton.mas_right).offset(FN(40));
         make.top.equalTo(self.loveButton.mas_top);
-        make.size.mas_equalTo(CGSizeMake(5, FN(30)));
+        make.size.mas_equalTo(CGSizeMake(1, FN(20)));
     }];
     
     [self.messageButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(wid * 2);
-        make.top.equalTo(self.backImage.mas_bottom).offset(5);
-        make.size.mas_equalTo(CGSizeMake(FN(30), FN(30)));
+        make.top.equalTo(self.describeLabel.mas_bottom).offset(5);
+        make.size.mas_equalTo(CGSizeMake(FN(20), FN(20)));
     }];
     
     [self.separateNextView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.messageButton.mas_right).offset(FN(20));
+        make.left.equalTo(self.messageButton.mas_right).offset(FN(40));
         make.top.equalTo(self.messageButton.mas_top);
-        make.size.mas_equalTo(CGSizeMake(5, FN(30)));
+        make.size.mas_equalTo(CGSizeMake(1, FN(20)));
     }];
     
     [self.shareButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(wid * 3);
-        make.top.equalTo(self.backImage.mas_bottom).offset(5);
-        make.size.mas_equalTo(CGSizeMake(FN(30), FN(30)));
+        make.top.equalTo(self.describeLabel.mas_bottom).offset(5);
+        make.size.mas_equalTo(CGSizeMake(FN(20), FN(20)));
     }];
     
 }

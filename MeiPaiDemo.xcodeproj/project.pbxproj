@@ -136,9 +136,10 @@
 		98A826D21EA0748100B931F0 /* LHScaleTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826CF1EA0748100B931F0 /* LHScaleTool.m */; };
 		98A826D31EA0748100B931F0 /* UIButton+MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826D11EA0748100B931F0 /* UIButton+MyButton.m */; };
 		A47E17201EA4A13900809A33 /* VideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E171F1EA4A13900809A33 /* VideoController.m */; };
-		A47E173C1EA5EC8400809A33 /* RecordEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E17371EA5EC8400809A33 /* RecordEncoder.m */; };
-		A47E173D1EA5EC8400809A33 /* RecordEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E17391EA5EC8400809A33 /* RecordEngine.m */; };
 		A47E173E1EA5EC8400809A33 /* RecordProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E173B1EA5EC8400809A33 /* RecordProgressView.m */; };
+		A4D465B31EA6F9FF00F63107 /* RecordButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D465B21EA6F9FF00F63107 /* RecordButton.m */; };
+		A4D465B81EA70C7800F63107 /* RecordEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D465B51EA70C7800F63107 /* RecordEncoder.m */; };
+		A4D465B91EA70C7800F63107 /* RecordEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D465B71EA70C7800F63107 /* RecordEngine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -592,12 +593,14 @@
 		98A826D11EA0748100B931F0 /* UIButton+MyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+MyButton.m"; sourceTree = "<group>"; };
 		A47E171E1EA4A13900809A33 /* VideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoController.h; sourceTree = "<group>"; };
 		A47E171F1EA4A13900809A33 /* VideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoController.m; sourceTree = "<group>"; };
-		A47E17361EA5EC8400809A33 /* RecordEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordEncoder.h; sourceTree = "<group>"; };
-		A47E17371EA5EC8400809A33 /* RecordEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordEncoder.m; sourceTree = "<group>"; };
-		A47E17381EA5EC8400809A33 /* RecordEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordEngine.h; sourceTree = "<group>"; };
-		A47E17391EA5EC8400809A33 /* RecordEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordEngine.m; sourceTree = "<group>"; };
 		A47E173A1EA5EC8400809A33 /* RecordProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordProgressView.h; sourceTree = "<group>"; };
 		A47E173B1EA5EC8400809A33 /* RecordProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordProgressView.m; sourceTree = "<group>"; };
+		A4D465B11EA6F9FF00F63107 /* RecordButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordButton.h; sourceTree = "<group>"; };
+		A4D465B21EA6F9FF00F63107 /* RecordButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordButton.m; sourceTree = "<group>"; };
+		A4D465B41EA70C7800F63107 /* RecordEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordEncoder.h; sourceTree = "<group>"; };
+		A4D465B51EA70C7800F63107 /* RecordEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordEncoder.m; sourceTree = "<group>"; };
+		A4D465B61EA70C7800F63107 /* RecordEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordEngine.h; sourceTree = "<group>"; };
+		A4D465B71EA70C7800F63107 /* RecordEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordEngine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1099,14 +1102,16 @@
 		52B2FEFE1EA5A15A0065222E /* 短视频 */ = {
 			isa = PBXGroup;
 			children = (
-				A47E17361EA5EC8400809A33 /* RecordEncoder.h */,
-				A47E17371EA5EC8400809A33 /* RecordEncoder.m */,
-				A47E17381EA5EC8400809A33 /* RecordEngine.h */,
-				A47E17391EA5EC8400809A33 /* RecordEngine.m */,
+				A4D465B41EA70C7800F63107 /* RecordEncoder.h */,
+				A4D465B51EA70C7800F63107 /* RecordEncoder.m */,
+				A4D465B61EA70C7800F63107 /* RecordEngine.h */,
+				A4D465B71EA70C7800F63107 /* RecordEngine.m */,
 				A47E173A1EA5EC8400809A33 /* RecordProgressView.h */,
 				A47E173B1EA5EC8400809A33 /* RecordProgressView.m */,
 				52B2FF051EA5A15A0065222E /* ShortVideoController.h */,
 				52B2FF061EA5A15A0065222E /* ShortVideoController.m */,
+				A4D465B11EA6F9FF00F63107 /* RecordButton.h */,
+				A4D465B21EA6F9FF00F63107 /* RecordButton.m */,
 			);
 			path = "短视频";
 			sourceTree = "<group>";
@@ -1512,13 +1517,13 @@
 			files = (
 				98A826C51EA0745400B931F0 /* WantFollowViewController.m in Sources */,
 				52B25B3A1EA0A12D006909B0 /* MPNavigationController.m in Sources */,
+				A4D465B91EA70C7800F63107 /* RecordEngine.m in Sources */,
 				52B2FEDE1EA5A0DC0065222E /* UIView+WebCache.m in Sources */,
 				52B2FED61EA5A0DC0065222E /* SDWebImageDownloaderOperation.m in Sources */,
 				98A826D21EA0748100B931F0 /* LHScaleTool.m in Sources */,
 				52B25B431EA0AFCC006909B0 /* MPTopNameButtonView.m in Sources */,
 				52B2FE651EA48A2C0065222E /* UIViewController+MPExtension.m in Sources */,
 				52B2FED51EA5A0DC0065222E /* SDWebImageDownloader.m in Sources */,
-				A47E173D1EA5EC8400809A33 /* RecordEngine.m in Sources */,
 				52B25B171E9F1CB7006909B0 /* ZFPlayerView.m in Sources */,
 				52B25B131E9F1CB7006909B0 /* ZFBrightnessView.m in Sources */,
 				52B25A611E9E2840006909B0 /* NSObject+MJClass.m in Sources */,
@@ -1572,6 +1577,7 @@
 				52B25B0C1E9F1CB7006909B0 /* UIImageView+ZFCache.m in Sources */,
 				52B2FE9D1EA5A0AE0065222E /* AFAutoPurgingImageCache.m in Sources */,
 				A47E173E1EA5EC8400809A33 /* RecordProgressView.m in Sources */,
+				A4D465B31EA6F9FF00F63107 /* RecordButton.m in Sources */,
 				52B2FEFC1EA5A1200065222E /* MPMainTopView.m in Sources */,
 				52B25B161E9F1CB7006909B0 /* ZFPlayerModel.m in Sources */,
 				52B25B0A1E9F1CB7006909B0 /* ASValueTrackingSlider.m in Sources */,
@@ -1590,6 +1596,7 @@
 				52B2FEA11EA5A0AE0065222E /* UIButton+AFNetworking.m in Sources */,
 				52B2FEA41EA5A0AE0065222E /* UIRefreshControl+AFNetworking.m in Sources */,
 				52B25B261EA062FE006909B0 /* CollectionViewLayout.m in Sources */,
+				A4D465B81EA70C7800F63107 /* RecordEncoder.m in Sources */,
 				52B25B091E9F1CB7006909B0 /* ASValuePopUpView.m in Sources */,
 				52B25A5E1E9E2840006909B0 /* MJProperty.m in Sources */,
 				98A826C41EA0745400B931F0 /* WantFollowTableViewCell.m in Sources */,
@@ -1604,7 +1611,6 @@
 				52B2FED81EA5A0DC0065222E /* SDWebImagePrefetcher.m in Sources */,
 				52B2FED11EA5A0DC0065222E /* SDImageCache.m in Sources */,
 				52B2FE971EA5A0AE0065222E /* AFSecurityPolicy.m in Sources */,
-				A47E173C1EA5EC8400809A33 /* RecordEncoder.m in Sources */,
 				98A826C91EA0745400B931F0 /* FollowTableView.m in Sources */,
 				52B2FEDD1EA5A0DC0065222E /* UIImageView+WebCache.m in Sources */,
 				98A826C61EA0745400B931F0 /* WantTableViewCell.m in Sources */,

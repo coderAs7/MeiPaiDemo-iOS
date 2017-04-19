@@ -10,6 +10,11 @@
 
 @interface WantTableViewCell : UITableViewCell
 
+//@property (nonatomic,copy)void(^arrayBlock)(NSArray *);
+
 - (void)dataSource:(NSArray *)dataArray With:(NSIndexPath *)index;
+
+//- (NSArray *)getDataSourceArray;
+@property (weak, nonatomic) IBOutlet UIButton *followButton;
 
 @end

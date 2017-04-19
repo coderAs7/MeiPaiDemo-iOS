@@ -116,7 +116,7 @@
         }
         //写入失败
         if (_writer.status == AVAssetWriterStatusFailed) {
-return NO;
+//
         }
         //判断是否是视频
         if (isVideo) {

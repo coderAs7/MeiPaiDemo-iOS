@@ -18,7 +18,9 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *sexImage;
 
-@property (weak, nonatomic) IBOutlet UIButton *followButton;
+//@property (weak, nonatomic) IBOutlet UIButton *followButton;
+
+@property (nonatomic,strong)NSMutableArray *dataArray;
 
 @end
 
@@ -27,11 +29,6 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.headImage.layer.masksToBounds = YES;
-//    [self.headImage mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(self).offset(10);
-//        make.top.equalTo(self).offset(10);
-//        make.size.mas_equalTo(CGSizeMake(FN(50), FN(50)));
-//    }];
     self.headImage.layer.cornerRadius = FN(25);
 }
 
@@ -40,9 +37,19 @@
     self.nameLabel.text = dataArray[1][index.row];
     self.messageLabel.text = dataArray[2][index.row];
     self.sexImage.image = [UIImage imageNamed:@"icon_woman_mini"];
-    [self.followButton setBackgroundImage:[UIImage imageNamed:@"followImage"] forState:UIControlStateNormal];
+    [self.followButton setTitle:@"关注" forState:UIControlStateNormal];
+//    if (!self.dataArray) {
+//        self.dataArray = [NSMutableArray array];
+//    }
     
     
+}
+
+- (NSMutableArray *)dataArray {
+    if (!_dataArray) {
+        _dataArray = [NSMutableArray array];
+    }
+    return _dataArray;
 }
 
 

@@ -102,6 +102,7 @@
 #import "LHScaleTool.h"
 #import "UIButton+MyButton.h"
 #import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
 
 #define HLS_URL @"http://dlhls.cdn.zhanqi.tv/zqlive/"
 
