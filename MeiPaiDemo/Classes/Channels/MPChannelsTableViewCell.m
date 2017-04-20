@@ -11,8 +11,7 @@
 @interface MPChannelsTableViewCell ()
 
 @property(nonatomic,strong)UIImageView * leftImageView;
-@property(nonatomic,strong)UILabel * titleLabel;
-@property(nonatomic,strong)UILabel * subTitleLabel;
+
 
 @end
 

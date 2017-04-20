@@ -31,7 +31,10 @@
     [closeButton setImage:[UIImage imageNamed:@"btn_banner_a"] forState:UIControlStateNormal];
     [self.view addSubview:closeButton];
     
-    [super viewDidLoad];
+    UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH - 100, SCREEN_HEIGHT - 100, 30, 30)];
+    button.backgroundColor = MPColor_Pink;
+    [button addTarget:self action:@selector(clickedImageButton:) forControlEvents:UIControlEventTouchUpInside];
+    
     UIImage * inputImage = [UIImage imageNamed:@"btn_record_big_b"];
     //使用黑白素描滤镜
     GPUImageSketchFilter *disFilter = [[GPUImageSketchFilter alloc] init];
@@ -59,6 +62,14 @@
 -(void)clickedCloseButton:(UIButton *)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)clickedImageButton:(UIButton *)sender
+{
+    UIViewController * VC = [[UIViewController alloc]init];
+    VC.title = sender.titleLabel.text;
+    VC.view.backgroundColor = MPColor_VCBackgroundGray;
+    [self.navigationController pushViewController:VC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

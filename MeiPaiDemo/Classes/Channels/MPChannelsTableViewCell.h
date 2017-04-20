@@ -12,4 +12,7 @@
 
 -(void)insertCellWithTitle:(NSString *)title subTitle:(NSString *)subTitle image:(UIImage *)image;
 
+@property(nonatomic,strong)UILabel * titleLabel;
+@property(nonatomic,strong)UILabel * subTitleLabel;
+
 @end
