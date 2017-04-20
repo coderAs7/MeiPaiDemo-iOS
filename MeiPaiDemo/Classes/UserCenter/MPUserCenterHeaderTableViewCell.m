@@ -7,11 +7,11 @@
 //
 
 #import "MPUserCenterHeaderTableViewCell.h"
-#import "MPTopNameButtonView.h"
+
 #import "MPDataManager.h"
 #import "MPUserCenterSectionHeaderView.h"
 
-@interface MPUserCenterHeaderTableViewCell ()
+@interface MPUserCenterHeaderTableViewCell () <MPTopNameButtonViewDelegate>
 
 @property(nonatomic,strong)UIView * userView;
 
@@ -81,6 +81,15 @@
     self.commentButton = [[MPTopNameButtonView alloc]initWithFrame:CGRectMake(0, buttonX + buttonHeight, topButtonWidth * 2, buttonHeight) title:@"评论" image:[UIImage imageNamed:@"icon_cell_likesmall_a"]];
     self.privateLatterButton = [[MPTopNameButtonView alloc]initWithFrame:CGRectMake(topButtonWidth * 2, buttonX + buttonHeight, topButtonWidth * 2, buttonHeight) title:@"私信" image:[UIImage imageNamed:@"icon_cell_likesmall_a"]];
     
+    self.meiPaiButton.delegate = self;
+    self.relayButton.delegate = self;
+    self.followButton.delegate = self;
+    self.fansButton.delegate = self;
+    self.upvoteButton.delegate = self;
+    self.atMeButton.delegate = self;
+    self.commentButton.delegate = self;
+    self.privateLatterButton.delegate = self;
+    
     [self addSubview:self.userView];
     [self addSubview:self.meiPaiButton];
     [self addSubview:self.relayButton];
@@ -109,6 +118,11 @@
     [self.userView bringSubviewToFront:hLineView2];
     [self.userView bringSubviewToFront:vLineView];
     
+}
+
+-(void)buttonClicked:(MPTopNameButtonView *)sender
+{
+    [self.delegate topNameButtonClicked:sender];
 }
 
 - (void)awakeFromNib {

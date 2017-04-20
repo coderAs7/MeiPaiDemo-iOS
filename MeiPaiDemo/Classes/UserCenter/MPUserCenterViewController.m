@@ -1,4 +1,4 @@
-//
+ //
 //  MPUserCenterViewController.m
 //  MeiPaiDemo
 //
@@ -11,7 +11,7 @@
 #import "MPUserCenterTableViewCell.h"
 #import "MPUserCenterSectionHeaderView.h"
 
-@interface MPUserCenterViewController () <UITableViewDelegate,UITableViewDataSource>
+@interface MPUserCenterViewController () <UITableViewDelegate,UITableViewDataSource,MPUserCenterHeaderTableViewCellDelegate>
 
 @property(nonatomic,strong)UITableView * tableView;
 
@@ -54,6 +54,7 @@ NSString * MPUserCenterHeaderCellIndetifier = @"MPUserCenterHeaderCellIndetifier
         if (cell == nil)
         {
             cell = [[MPUserCenterHeaderTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MPUserCenterHeaderCellIndetifier];
+            cell.delegate = self;
         }
         
         return cell;
@@ -185,6 +186,14 @@ NSString * MPUserCenterHeaderCellIndetifier = @"MPUserCenterHeaderCellIndetifier
             break;
     }
     return number;
+}
+
+-(void)topNameButtonClicked:(MPTopNameButtonView *)sender
+{
+    UIViewController * VC = [[UIViewController alloc]init];
+    VC.title = sender.title;
+    VC.view.backgroundColor = MPColor_VCBackgroundGray;
+    [self.navigationController pushViewController:VC animated:YES];
 }
 
 

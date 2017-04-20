@@ -96,6 +96,27 @@
                         <rect key="frame" x="271" y="218" width="30" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4za-Oa-hTn">
+                        <rect key="frame" x="185" y="223" width="42" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRz-eZ-83O">
+                        <rect key="frame" x="328" y="220" width="42" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sed-9E-lND">
+                        <rect key="frame" x="88" y="223" width="34" height="15"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" red="0.23238193046861366" green="0.23238193046861366" blue="0.23238193046861366" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 <constraints>
@@ -124,12 +145,14 @@
             <connections>
                 <outlet property="backImage" destination="MmY-pG-uAY" id="ZpA-8t-1im"/>
                 <outlet property="backView" destination="7wu-1W-48N" id="2kv-EE-psi"/>
+                <outlet property="buttonMessageLabel" destination="4za-Oa-hTn" id="INv-6C-KXX"/>
+                <outlet property="buttonShareLabel" destination="MRz-eZ-83O" id="qCg-Ox-Z8X"/>
                 <outlet property="describeLabel" destination="SOm-h8-6Xy" id="oje-Tf-I24"/>
                 <outlet property="giftButton" destination="A27-LC-oZ3" id="Aik-au-mBG"/>
                 <outlet property="headImage" destination="FfI-W1-5uM" id="v7h-AE-Mhq"/>
                 <outlet property="loveButton" destination="Ej7-R3-WfX" id="icn-8A-IDz"/>
+                <outlet property="loveLabel" destination="sed-9E-lND" id="d1Y-kH-ImV"/>
                 <outlet property="messageButton" destination="SaO-pE-nHK" id="eKM-jg-JmD"/>
-                <outlet property="messageLabel" destination="4NM-SI-2E2" id="4zo-AG-q2G"/>
                 <outlet property="nameLabel" destination="lZe-3C-wXK" id="LVB-YV-35E"/>
                 <outlet property="separateNextView" destination="eow-b6-d0s" id="q4u-PO-xpo"/>
                 <outlet property="separateView" destination="ZZX-UH-Pr4" id="qmL-ya-fhF"/>

@@ -40,6 +40,7 @@
     
     [self addSubview:self.numberLabel];
     [self addSubview:self.titleLabel];
+    [self addSubview:self.button];
     
     self.title = title;
     self.number = number;
@@ -68,6 +69,7 @@
     
     [self addSubview:self.imageView];
     [self addSubview:self.titleLabel];
+    [self addSubview:self.button];
     
     self.title = title;
     self.imageView.image = image;
