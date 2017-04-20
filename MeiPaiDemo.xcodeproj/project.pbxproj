@@ -135,6 +135,10 @@
 		98A826CC1EA0745400B931F0 /* NotFollowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826C31EA0745400B931F0 /* NotFollowView.m */; };
 		98A826D21EA0748100B931F0 /* LHScaleTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826CF1EA0748100B931F0 /* LHScaleTool.m */; };
 		98A826D31EA0748100B931F0 /* UIButton+MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826D11EA0748100B931F0 /* UIButton+MyButton.m */; };
+		98A928CE1EA8739A0067717B /* DescribleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A928C61EA8739A0067717B /* DescribleViewController.m */; };
+		98A928CF1EA8739A0067717B /* DescribleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A928CA1EA8739A0067717B /* DescribleTableViewCell.m */; };
+		98A928D01EA8739A0067717B /* DescribleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98A928CB1EA8739A0067717B /* DescribleTableViewCell.xib */; };
+		98A928D11EA8739A0067717B /* DescribleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A928CD1EA8739A0067717B /* DescribleView.m */; };
 		A47E17201EA4A13900809A33 /* VideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E171F1EA4A13900809A33 /* VideoController.m */; };
 		A47E173E1EA5EC8400809A33 /* RecordProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E173B1EA5EC8400809A33 /* RecordProgressView.m */; };
 		A4D465B31EA6F9FF00F63107 /* RecordButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D465B21EA6F9FF00F63107 /* RecordButton.m */; };
@@ -591,6 +595,13 @@
 		98A826CF1EA0748100B931F0 /* LHScaleTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHScaleTool.m; sourceTree = "<group>"; };
 		98A826D01EA0748100B931F0 /* UIButton+MyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+MyButton.h"; sourceTree = "<group>"; };
 		98A826D11EA0748100B931F0 /* UIButton+MyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+MyButton.m"; sourceTree = "<group>"; };
+		98A928C51EA8739A0067717B /* DescribleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescribleViewController.h; sourceTree = "<group>"; };
+		98A928C61EA8739A0067717B /* DescribleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescribleViewController.m; sourceTree = "<group>"; };
+		98A928C91EA8739A0067717B /* DescribleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescribleTableViewCell.h; sourceTree = "<group>"; };
+		98A928CA1EA8739A0067717B /* DescribleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescribleTableViewCell.m; sourceTree = "<group>"; };
+		98A928CB1EA8739A0067717B /* DescribleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DescribleTableViewCell.xib; sourceTree = "<group>"; };
+		98A928CC1EA8739A0067717B /* DescribleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescribleView.h; sourceTree = "<group>"; };
+		98A928CD1EA8739A0067717B /* DescribleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescribleView.m; sourceTree = "<group>"; };
 		A47E171E1EA4A13900809A33 /* VideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoController.h; sourceTree = "<group>"; };
 		A47E171F1EA4A13900809A33 /* VideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoController.m; sourceTree = "<group>"; };
 		A47E173A1EA5EC8400809A33 /* RecordProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordProgressView.h; sourceTree = "<group>"; };
@@ -1333,6 +1344,7 @@
 				98A826BA1EA0745400B931F0 /* MPMyFollowViewController.h */,
 				98A826BB1EA0745400B931F0 /* MPMyFollowViewController.m */,
 				98A826B21EA0745400B931F0 /*   WantFollow【你可能想关注的人】 */,
+				98A928C31EA8739A0067717B /* DescribleFollow【被关注人首页】 */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1375,6 +1387,44 @@
 			);
 			name = Tool;
 			path = Classes/Tool;
+			sourceTree = "<group>";
+		};
+		98A928C31EA8739A0067717B /* DescribleFollow【被关注人首页】 */ = {
+			isa = PBXGroup;
+			children = (
+				98A928C41EA8739A0067717B /* Controller */,
+				98A928C71EA8739A0067717B /* Model */,
+				98A928C81EA8739A0067717B /* View */,
+			);
+			path = "DescribleFollow【被关注人首页】";
+			sourceTree = "<group>";
+		};
+		98A928C41EA8739A0067717B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				98A928C51EA8739A0067717B /* DescribleViewController.h */,
+				98A928C61EA8739A0067717B /* DescribleViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		98A928C71EA8739A0067717B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		98A928C81EA8739A0067717B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				98A928C91EA8739A0067717B /* DescribleTableViewCell.h */,
+				98A928CA1EA8739A0067717B /* DescribleTableViewCell.m */,
+				98A928CB1EA8739A0067717B /* DescribleTableViewCell.xib */,
+				98A928CC1EA8739A0067717B /* DescribleView.h */,
+				98A928CD1EA8739A0067717B /* DescribleView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1487,6 +1537,7 @@
 				52B2FE9B1EA5A0AE0065222E /* LICENSE in Resources */,
 				98A826CB1EA0745400B931F0 /* FollowTableViewCell.xib in Resources */,
 				52B258AF1E9DBFD1006909B0 /* LaunchScreen.storyboard in Resources */,
+				98A928D01EA8739A0067717B /* DescribleTableViewCell.xib in Resources */,
 				52B2FECD1EA5A0DC0065222E /* LICENSE in Resources */,
 				52B25B141E9F1CB7006909B0 /* ZFPlayer.bundle in Resources */,
 				52B258AC1E9DBFD1006909B0 /* Assets.xcassets in Resources */,
@@ -1574,6 +1625,7 @@
 				52B2FEF31EA5A10F0065222E /* MPMainLiveCollectionView.m in Sources */,
 				98A826AB1EA06DCF00B931F0 /* MPMainViewCell.m in Sources */,
 				52B25B1A1E9F2BE2006909B0 /* MPTabBar.m in Sources */,
+				98A928CF1EA8739A0067717B /* DescribleTableViewCell.m in Sources */,
 				52B25B0C1E9F1CB7006909B0 /* UIImageView+ZFCache.m in Sources */,
 				52B2FE9D1EA5A0AE0065222E /* AFAutoPurgingImageCache.m in Sources */,
 				A47E173E1EA5EC8400809A33 /* RecordProgressView.m in Sources */,
@@ -1599,6 +1651,7 @@
 				A4D465B81EA70C7800F63107 /* RecordEncoder.m in Sources */,
 				52B25B091E9F1CB7006909B0 /* ASValuePopUpView.m in Sources */,
 				52B25A5E1E9E2840006909B0 /* MJProperty.m in Sources */,
+				98A928CE1EA8739A0067717B /* DescribleViewController.m in Sources */,
 				98A826C41EA0745400B931F0 /* WantFollowTableViewCell.m in Sources */,
 				52B25B0D1E9F1CB7006909B0 /* UINavigationController+ZFPlayerRotation.m in Sources */,
 				52B25A5A1E9E2840006909B0 /* ViewController+MASAdditions.m in Sources */,
@@ -1619,6 +1672,7 @@
 				52B25B0E1E9F1CB7006909B0 /* UITabBarController+ZFPlayerRotation.m in Sources */,
 				52B25B151E9F1CB7006909B0 /* ZFPlayerControlView.m in Sources */,
 				52B25B101E9F1CB7006909B0 /* UIViewController+ZFPlayerRotation.m in Sources */,
+				98A928D11EA8739A0067717B /* DescribleView.m in Sources */,
 				52B2FED91EA5A0DC0065222E /* UIButton+WebCache.m in Sources */,
 				52B2FE9F1EA5A0AE0065222E /* AFNetworkActivityIndicatorManager.m in Sources */,
 				52B2FE961EA5A0AE0065222E /* AFNetworkReachabilityManager.m in Sources */,
