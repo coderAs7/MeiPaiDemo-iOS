@@ -64,6 +64,8 @@ NSString * topChannelsCollectionViewIdentifire = @"topChannelsCollectionViewIden
     self.newerReportsButton.layer.cornerRadius = 5;
     self.videoListButton.clipsToBounds = YES;
     self.newerReportsButton.clipsToBounds = YES;
+    [self.videoListButton addTarget:self action:@selector(topButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.newerReportsButton addTarget:self action:@selector(topButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.videoListButton];
     [self addSubview:self.newerReportsButton];
     
@@ -153,7 +155,15 @@ NSString * topChannelsCollectionViewIdentifire = @"topChannelsCollectionViewIden
     return CGSizeMake((SCREEN_WIDTH - 3) / 4, 79);
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.delegate channelsHeaderTableViewCellDidSelected:(MPTopChannelsCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath]];
+}
 
+-(void)topButtonClicked:(UIButton *)button
+{
+    [self.delegate channelsHeaderTopbuttonDidClicked:button];
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];

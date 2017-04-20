@@ -843,7 +843,7 @@
 		52B25AD61E9E2BDD006909B0 /* Shoot(拍摄) */ = {
 			isa = PBXGroup;
 			children = (
-				52B2FF0B1EA5A1820065222E /* MPPhotoViewController */,
+				52B2FF0B1EA5A1820065222E /* MPPhotoViewController(照片) */,
 				52B2FEFE1EA5A15A0065222E /* 短视频 */,
 				52B25B211E9F6185006909B0 /* MPShootViewController.h */,
 				52B25B221E9F6185006909B0 /* MPShootViewController.m */,
@@ -1116,12 +1116,13 @@
 			path = "短视频";
 			sourceTree = "<group>";
 		};
-		52B2FF0B1EA5A1820065222E /* MPPhotoViewController */ = {
+		52B2FF0B1EA5A1820065222E /* MPPhotoViewController(照片) */ = {
 			isa = PBXGroup;
 			children = (
 				52B2FF0C1EA5A1820065222E /* MPPhotoViewController.h */,
 				52B2FF0D1EA5A1820065222E /* MPPhotoViewController.m */,
 			);
+			name = "MPPhotoViewController(照片)";
 			path = MPPhotoViewController;
 			sourceTree = "<group>";
 		};
