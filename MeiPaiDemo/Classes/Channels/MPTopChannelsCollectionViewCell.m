@@ -46,6 +46,7 @@
 {
     self.titleLabel.text = title;
     self.imageView.image = title ? [UIImage imageNamed:@"icon_cell_like"] : nil;//image;
+    self.title = title;
 }
 
 @end

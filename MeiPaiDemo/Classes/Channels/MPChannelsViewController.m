@@ -10,7 +10,7 @@
 #import "MPChannelsHeaderTableViewCell.h"
 #import "MPChannelsTableViewCell.h"
 
-@interface MPChannelsViewController () <UITableViewDelegate,UITableViewDataSource>
+@interface MPChannelsViewController () <UITableViewDelegate,UITableViewDataSource,MPChannelsHeaderTableViewCellDelegate>
 
 @property(nonatomic,strong)UITableView * tableView;
 
@@ -49,6 +49,7 @@ NSString * MPChannelsHeaderTableViewCellIndetifier = @"MPChannelsHeaderTableView
         if (cell == nil)
         {
             cell = [[MPChannelsHeaderTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MPChannelsHeaderTableViewCellIndetifier];
+            cell.delegate = self;
         }
         
         return cell;
@@ -88,6 +89,32 @@ NSString * MPChannelsHeaderTableViewCellIndetifier = @"MPChannelsHeaderTableView
     return 33;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MPChannelsTableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    UIViewController * VC = [[UIViewController alloc]init];
+    VC.title = cell.titleLabel.text;
+    VC.view.backgroundColor = MPColor_VCBackgroundGray;
+    [self.navigationController pushViewController:VC animated:YES];
+}
+
+-(void)channelsHeaderTableViewCellDidSelected:(MPTopChannelsCollectionViewCell *)sender
+{
+    UIViewController * VC = [[UIViewController alloc]init];
+    VC.title = sender.title;
+    VC.view.backgroundColor = MPColor_VCBackgroundGray;
+    [self.navigationController pushViewController:VC animated:YES];
+
+}
+
+-(void)channelsHeaderTopbuttonDidClicked:(UIButton *)sender
+{
+    UIViewController * VC = [[UIViewController alloc]init];
+    VC.title = sender.titleLabel.text;
+    VC.view.backgroundColor = MPColor_VCBackgroundGray;
+    [self.navigationController pushViewController:VC animated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
