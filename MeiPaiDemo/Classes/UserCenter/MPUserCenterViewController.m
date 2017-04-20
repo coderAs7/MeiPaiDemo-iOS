@@ -196,6 +196,16 @@ NSString * MPUserCenterHeaderCellIndetifier = @"MPUserCenterHeaderCellIndetifier
     [self.navigationController pushViewController:VC animated:YES];
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    UIViewController * VC = [[UIViewController alloc]init];
+    VC.title = indexPath.section == 0 ? @"个人设置" : cell.textLabel.text;
+    VC.view.backgroundColor = MPColor_VCBackgroundGray;
+    [self.navigationController pushViewController:VC animated:YES];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -23,6 +23,8 @@
 @property(nonatomic,strong)MPShootViewScrollCell * tenSPosterCell;
 @property(nonatomic,strong)MPShootViewScrollCell * photoCell;
 
+@property(nonatomic,assign)BOOL pushOtherVC;
+
 @end
 
 @implementation MPShootViewController
@@ -34,6 +36,13 @@
     [self insertViewController];
     
     
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    if (self.pushOtherVC) {
+        [self dismissViewControllerAnimated:NO completion:nil];
+    }
 }
 
 -(void)insertViewController
@@ -112,7 +121,8 @@
         //照片
         MPPhotoViewController * photoVC = [[MPPhotoViewController alloc]init];
         [self presentViewController:photoVC animated:YES completion:^{
-            
+            self.pushOtherVC = YES;
+            self.view.hidden = YES;
         }];
     }
     else
