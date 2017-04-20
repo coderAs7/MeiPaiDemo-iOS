@@ -25,7 +25,7 @@
         self.clipsToBounds = YES;
         self.backgroundColor = [UIColor colorWithWhite:0.2 alpha:0.2];
         _progressView = [[CALayer alloc] init];
-        _progressView.backgroundColor = [UIColor blackColor].CGColor;
+        _progressView.backgroundColor = [UIColor purpleColor].CGColor;
         [self.layer addSublayer:_progressView];
         
         self.rect_progressView = CGRectMake(0, 0, 0, frame.size.height);

@@ -27,7 +27,6 @@
 - (instancetype)initWithCurrentController:(UIViewController *)viewcontroller urlString:(NSArray *)urls viewFrame:(CGRect)frame placeholderImage:(UIImage *)image
 {
     if (self = [super init]) {
-       // [viewcontroller addChildViewController:self];
         _timeInterval     = 4.0;
         _imageCount       = urls.count;
         _frame            = frame;
@@ -70,7 +69,6 @@
 - (instancetype)initWithCurrentController:(UIViewController *)viewcontroller imageNames:(NSArray *)images viewFrame:(CGRect)frame placeholderImage:(UIImage *)image
 {
     if (self = [super init]) {
-        //[viewcontroller addChildViewController:self];
         _timeInterval     = 4.0;
         _imageArray       = [images copy];
         _imageCount       = images.count;
@@ -78,7 +76,6 @@
         _imageWidth       = frame.size.width;
         _imageHeight      = frame.size.height;
         _placeholderImage = image;
-      //  self.view.frame   = frame;
         [self addSubview:self.scrollview];
         [self addSubview:self.pageControl];
         [self getLocalImages];
