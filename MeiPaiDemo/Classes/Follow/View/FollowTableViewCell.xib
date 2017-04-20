@@ -153,6 +153,7 @@
                 <outlet property="loveButton" destination="Ej7-R3-WfX" id="icn-8A-IDz"/>
                 <outlet property="loveLabel" destination="sed-9E-lND" id="d1Y-kH-ImV"/>
                 <outlet property="messageButton" destination="SaO-pE-nHK" id="eKM-jg-JmD"/>
+                <outlet property="messageLabel" destination="4NM-SI-2E2" id="Dht-Gh-yLV"/>
                 <outlet property="nameLabel" destination="lZe-3C-wXK" id="LVB-YV-35E"/>
                 <outlet property="separateNextView" destination="eow-b6-d0s" id="q4u-PO-xpo"/>
                 <outlet property="separateView" destination="ZZX-UH-Pr4" id="qmL-ya-fhF"/>
