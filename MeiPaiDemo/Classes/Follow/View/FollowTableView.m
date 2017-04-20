@@ -9,7 +9,7 @@
 #import "FollowTableView.h"
 #import "FollowTableViewCell.h"
 #import <AVFoundation/AVFoundation.h>
-#import "WantFollowViewController.h"
+//#import "WantFollowViewController.h"
 static NSString *const followIdentifier = @"followHomeIdentifier";
 
 @interface FollowTableView ()<UITableViewDelegate,UITableViewDataSource>

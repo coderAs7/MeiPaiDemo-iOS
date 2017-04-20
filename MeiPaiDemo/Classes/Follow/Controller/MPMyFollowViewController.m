@@ -10,6 +10,7 @@
 #import "NotFollowView.h"
 #import "WantFollowViewController.h"
 #import "FollowTableView.h"
+#import "DescribleViewController.h"
 @interface MPMyFollowViewController () {
     FollowTableView *followView;
     NotFollowView  *notView;
@@ -73,7 +74,9 @@
     }
     followView = [[FollowTableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 44 - 64) withData:array];
     followView.headButtonBlock = ^(){
-        [weakSelf loadWantVC];
+        DescribleViewController *vc = [[DescribleViewController alloc]init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     };
     [self.view addSubview:followView];
 }
