@@ -15,6 +15,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "PrefixHeader.pch"
 #import "RecordButton.h"
+#import "VideoCameraView.h"
 
 typedef NS_ENUM(NSUInteger, UploadVieoStyle) {
     VideoRecord = 0,
@@ -29,6 +30,9 @@ typedef NS_ENUM(NSUInteger, UploadVieoStyle) {
 @property (strong, nonatomic)  UIButton *recordNextBT;
 @property (strong, nonatomic)  RecordButton *recordBt;
 @property (strong, nonatomic)  UIButton *locationVideoBT;
+@property (nonatomic, strong) UILabel *timeLabel;
+@property (nonatomic, strong) UIButton *closeBtn;
+
 @property (strong, nonatomic) RecordProgressView *progressView;
 
 @property (strong, nonatomic) RecordEngine         *recordEngine;
@@ -37,8 +41,7 @@ typedef NS_ENUM(NSUInteger, UploadVieoStyle) {
 @property (strong, nonatomic) UIImagePickerController *moviePicker;//视频选择器
 @property (strong, nonatomic) AVPlayerViewController *playerVC;
 @property (nonatomic, strong) AVPlayer *player;
-@property (nonatomic, strong) UILabel *timeLabel;
-@property (nonatomic, strong) UIButton *closeBtn;
+
 
 @end
 
@@ -47,106 +50,20 @@ typedef NS_ENUM(NSUInteger, UploadVieoStyle) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blackColor];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
 
-    
-    _flashLightBT = [[UIButton alloc] init];
-    [self.view addSubview:_flashLightBT];
-    [_flashLightBT mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(40);
-        make.height.mas_equalTo(24);
-        make.top.mas_equalTo(self.view.mas_top).offset(20);
-        make.centerX.mas_equalTo(self.view.mas_centerX).offset(-80);
-    }];
-    [_flashLightBT setImage:[UIImage imageNamed:@"flashlightOn"] forState:UIControlStateNormal];
-    [_flashLightBT setImage:[UIImage imageNamed:@"flashlightOff"] forState:UIControlStateSelected];
-    [_flashLightBT addTarget:self action:@selector(flashLightAction:) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-    _changeCameraBT = [[UIButton alloc] init];
-    [self.view addSubview:_changeCameraBT];
-    [_changeCameraBT mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(40);
-        make.height.mas_equalTo(24);
-        make.centerY.mas_equalTo(_flashLightBT.mas_centerY);
-        make.left.mas_equalTo(_flashLightBT.mas_right).offset(60);
-    }];
-    [_changeCameraBT setImage:[UIImage imageNamed:@"changeCamera"] forState:UIControlStateNormal];
-    [_changeCameraBT addTarget:self action:@selector(changeCameraAction:) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-    _recordNextBT = [[UIButton alloc] init];
-    [self.view addSubview:_recordNextBT];
-    [_recordNextBT mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.mas_equalTo(24);
-        make.centerY.mas_equalTo(_flashLightBT.mas_centerY);
-        make.right.mas_equalTo(self.view.mas_right).offset(-20);
-    }];
-    [_recordNextBT setImage:[UIImage imageNamed:@"videoNext"] forState:UIControlStateNormal];
-    [_recordNextBT addTarget:self action:@selector(recordNextAction:) forControlEvents:UIControlEventTouchUpInside];
-    
-    _closeBtn = [[UIButton alloc] init];
-
-    [self.view addSubview:_closeBtn];
-    [_closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.mas_equalTo(24);
-        make.centerY.mas_equalTo(_flashLightBT.mas_centerY);
-        make.left.mas_equalTo(self.view.mas_left).offset(20);
-    }];
-
-    [_closeBtn setImage:[UIImage imageNamed:@"closeVideo"] forState:UIControlStateNormal];
-    [_closeBtn addTarget:self action:@selector(dismissAction:) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-
-    _progressView = [[RecordProgressView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - 4, self.view.bounds.size.width, 4)];
-    [self.view addSubview:_progressView];
-    
-    _recordBt = [[RecordButton alloc] initWithFrame:CGRectMake(170, 20, 80, 80)];
-    [self.view addSubview:_recordBt];
-    _recordBt.center = CGPointMake(self.view.center.x, self.view.bounds.size.height - 80);
-    _recordBt.type = LeafButtonTypeVideo;
-    __weak typeof(self) weakSelf = self;
-    _recordBt.clickedBlock = ^(RecordButton *button) {
-        [weakSelf recordAction:weakSelf.recordBt];
-    };
-    
-    _locationVideoBT = [[UIButton alloc] init];
-    [self.view addSubview:_locationVideoBT];
-    [_locationVideoBT mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(44);
-        make.height.mas_equalTo(44);
-        make.centerY.mas_equalTo(_recordBt.mas_centerY);
-        make.centerX.mas_equalTo(self.view.mas_centerX).offset(self.view.bounds.size.width / 4);
-    }];
-    
-    [_locationVideoBT setImage:[UIImage imageNamed:@"locationVideo"] forState:UIControlStateNormal];
-    
-    [_locationVideoBT addTarget:self action:@selector(locationVideoAction:) forControlEvents:UIControlEventTouchUpInside];
-    
-    self.allowRecord = YES;
-    
-    _timeLabel = [[UILabel alloc] init];
-    [self.view addSubview:_timeLabel];
-    _timeLabel.layer.cornerRadius = 6;
-    _timeLabel.textColor = [UIColor whiteColor];
-    _timeLabel.clipsToBounds = YES;
-    _timeLabel.textAlignment = NSTextAlignmentCenter;
-    _timeLabel.font = [UIFont systemFontOfSize:10];
-    [_timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self.view.mas_right).offset(-20);
-        make.bottom.mas_equalTo(self.view.mas_bottom).offset(-20);
-        make.height.mas_equalTo(24);
-        make.width.mas_equalTo(40);
-    }];
+    CGRect frame = [[UIScreen mainScreen] bounds];
+    VideoCameraView *view = [[VideoCameraView alloc] initWithFrame:frame];
+    [self.view addSubview:view];
+    [view.closeBtn addTarget:self action:@selector(dismissAction:) forControlEvents:UIControlEventTouchUpInside];
 }
 
-
-- (void)dealloc {
-    _recordEngine = nil;
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:self.player];
-}
-
+//- (void)dealloc {
+//    _recordEngine = nil;
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:self.player];
+//}
+//
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
@@ -156,21 +73,21 @@ typedef NS_ENUM(NSUInteger, UploadVieoStyle) {
     [super viewWillDisappear:animated];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
 }
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    [self.recordEngine shutdown];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    if (_recordEngine == nil) {
-        [self.recordEngine previewLayer].frame = self.view.bounds;
-        [self.view.layer insertSublayer:[self.recordEngine previewLayer] atIndex:0];
-    }
-    [self.recordEngine startUp];
-}
-
+//
+//- (void)viewDidDisappear:(BOOL)animated {
+//    [super viewDidDisappear:animated];
+//    [self.recordEngine shutdown];
+//}
+//
+//- (void)viewDidAppear:(BOOL)animated {
+//    [super viewDidAppear:animated];
+//    if (_recordEngine == nil) {
+//        [self.recordEngine previewLayer].frame = self.view.bounds;
+//        [self.view.layer insertSublayer:[self.recordEngine previewLayer] atIndex:0];
+//    }
+//    [self.recordEngine startUp];
+//}
+//
 #pragma mark - set、get方法
 - (RecordEngine *)recordEngine {
     if (_recordEngine == nil) {
@@ -241,24 +158,24 @@ typedef NS_ENUM(NSUInteger, UploadVieoStyle) {
 #pragma mark - 各种点击事件
 //返回点击事件
 - (void)dismissAction:(id)sender {
-    if (_recordEngine.videoPath.length > 0) {
-
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"确定放弃这段视频吗?" message:nil preferredStyle:UIAlertControllerStyleAlert];
-        
-    UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
+//    if (_recordEngine.videoPath.length > 0) {
+//
+//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"确定放弃这段视频吗?" message:nil preferredStyle:UIAlertControllerStyleAlert];
+//        
+//    UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        
+//        [self dismissViewControllerAnimated:YES completion:nil];
+//
+//    }];
+//    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+//        
+//    }];
+//        [alert addAction:action1];
+//        [alert addAction:action];
+//        [self presentViewController:alert animated:YES completion:nil];
+//    } else {
         [self dismissViewControllerAnimated:YES completion:nil];
-
-    }];
-    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-        [alert addAction:action1];
-        [alert addAction:action];
-        [self presentViewController:alert animated:YES completion:nil];
-    } else {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
+    //}
 }
 
 //开关闪光灯
@@ -293,19 +210,21 @@ typedef NS_ENUM(NSUInteger, UploadVieoStyle) {
         
         [self.recordEngine stopCaptureHandler:^(UIImage *movieImage) {
             weakSelf.playerVC = [[AVPlayerViewController alloc] init];
+                AVPlayerItem *item = [[AVPlayerItem alloc] initWithURL:[NSURL fileURLWithPath:weakSelf.recordEngine.videoPath]];
+                [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playVideoFinished:) name:AVPlayerItemDidPlayToEndTimeNotification object:self.player];
+                weakSelf.player = [[AVPlayer alloc] initWithPlayerItem:item];
+                AVPlayerLayer *layer = [AVPlayerLayer playerLayerWithPlayer:_player];
+                
+                layer.frame = self.view.bounds;
+                layer.backgroundColor = [UIColor blackColor].CGColor;
+                layer.videoGravity = AVLayerVideoGravityResize;
+                weakSelf.playerVC.view.translatesAutoresizingMaskIntoConstraints = YES;
+                weakSelf.playerVC.player = self.player;
+                [weakSelf presentViewController:self.playerVC animated:YES completion:nil];
+                [self.player play];
+    
             
-            AVPlayerItem *item = [[AVPlayerItem alloc] initWithURL:[NSURL fileURLWithPath:weakSelf.recordEngine.videoPath]];
-            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playVideoFinished:) name:AVPlayerItemDidPlayToEndTimeNotification object:self.player];
-            weakSelf.player = [[AVPlayer alloc] initWithPlayerItem:item];
-            AVPlayerLayer *layer = [AVPlayerLayer playerLayerWithPlayer:_player];
             
-            layer.frame = self.view.bounds;
-            layer.backgroundColor = [UIColor blackColor].CGColor;
-            layer.videoGravity = AVLayerVideoGravityResize;
-            weakSelf.playerVC.view.translatesAutoresizingMaskIntoConstraints = YES;
-            weakSelf.playerVC.player = self.player;
-            [weakSelf presentViewController:self.playerVC animated:YES completion:nil];
-            [self.player play];
             
         }];
         
@@ -339,7 +258,6 @@ typedef NS_ENUM(NSUInteger, UploadVieoStyle) {
                 [self.recordEngine resumeCapture];
             }else {
                 [self.recordEngine startCapture];
-                self.timeLabel.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.4];
             }
             [self hiddenButton:YES];
 

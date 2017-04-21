@@ -11,6 +11,8 @@
 #import "MPPhotoViewController/MPPhotoViewController.h"
 #import "ShortVideoController.h"
 
+
+
 @interface MPShootViewController () <MPShootViewScrollCellDelegate>
 
 @property(nonatomic,strong)UIButton * closeButton;
