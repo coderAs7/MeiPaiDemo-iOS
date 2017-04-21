@@ -123,6 +123,7 @@
 		52F39C391EA7178C00669682 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F39C381EA7178C00669682 /* AVFoundation.framework */; };
 		52F39C3B1EA7179A00669682 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F39C3A1EA7179A00669682 /* QuartzCore.framework */; };
 		52F39CEB1EA72E3000669682 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F39CEA1EA72E3000669682 /* libGPUImage.a */; };
+		52F39D9D1EA889F500669682 /* MPPhotoImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F39D9C1EA889F500669682 /* MPPhotoImagePickerViewController.m */; };
 		98A826AB1EA06DCF00B931F0 /* MPMainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826AA1EA06DCF00B931F0 /* MPMainViewCell.m */; };
 		98A826C41EA0745400B931F0 /* WantFollowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826B41EA0745400B931F0 /* WantFollowTableViewCell.m */; };
 		98A826C51EA0745400B931F0 /* WantFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826B61EA0745400B931F0 /* WantFollowViewController.m */; };
@@ -569,6 +570,8 @@
 		52F39D981EA7310000669682 /* GPUImageWhiteBalanceFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageWhiteBalanceFilter.h; sourceTree = "<group>"; };
 		52F39D991EA7310000669682 /* GPUImageXYDerivativeFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageXYDerivativeFilter.h; sourceTree = "<group>"; };
 		52F39D9A1EA7310000669682 /* GPUImageZoomBlurFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageZoomBlurFilter.h; sourceTree = "<group>"; };
+		52F39D9B1EA889F500669682 /* MPPhotoImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPPhotoImagePickerViewController.h; sourceTree = "<group>"; };
+		52F39D9C1EA889F500669682 /* MPPhotoImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPPhotoImagePickerViewController.m; sourceTree = "<group>"; };
 		98A826A91EA06DCF00B931F0 /* MPMainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMainViewCell.h; sourceTree = "<group>"; };
 		98A826AA1EA06DCF00B931F0 /* MPMainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMainViewCell.m; sourceTree = "<group>"; };
 		98A826B31EA0745400B931F0 /* WantFollowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WantFollowTableViewCell.h; sourceTree = "<group>"; };
@@ -1121,6 +1124,8 @@
 			children = (
 				52B2FF0C1EA5A1820065222E /* MPPhotoViewController.h */,
 				52B2FF0D1EA5A1820065222E /* MPPhotoViewController.m */,
+				52F39D9B1EA889F500669682 /* MPPhotoImagePickerViewController.h */,
+				52F39D9C1EA889F500669682 /* MPPhotoImagePickerViewController.m */,
 			);
 			name = "MPPhotoViewController(照片)";
 			path = MPPhotoViewController;
@@ -1616,6 +1621,7 @@
 				52B2FEDD1EA5A0DC0065222E /* UIImageView+WebCache.m in Sources */,
 				98A826C61EA0745400B931F0 /* WantTableViewCell.m in Sources */,
 				98A826CA1EA0745400B931F0 /* FollowTableViewCell.m in Sources */,
+				52F39D9D1EA889F500669682 /* MPPhotoImagePickerViewController.m in Sources */,
 				52B258A11E9DBFD1006909B0 /* main.m in Sources */,
 				52B25B0E1E9F1CB7006909B0 /* UITabBarController+ZFPlayerRotation.m in Sources */,
 				52B25B151E9F1CB7006909B0 /* ZFPlayerControlView.m in Sources */,

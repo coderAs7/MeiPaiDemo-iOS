@@ -7,7 +7,7 @@
 //
 
 #import "MPPhotoViewController.h"
-
+#import "MPPhotoImagePickerViewController.h"
 #import "GPUImage.h"
 
 @interface MPPhotoViewController ()
@@ -31,9 +31,10 @@
     [closeButton setImage:[UIImage imageNamed:@"btn_banner_a"] forState:UIControlStateNormal];
     [self.view addSubview:closeButton];
     
-    UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH - 100, SCREEN_HEIGHT - 100, 30, 30)];
-    button.backgroundColor = MPColor_Pink;
-    [button addTarget:self action:@selector(clickedImageButton:) forControlEvents:UIControlEventTouchUpInside];
+    UIButton * imagePickerButton = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH - 100, SCREEN_HEIGHT - 100, 30, 30)];
+    imagePickerButton.backgroundColor = MPColor_Pink;
+    [imagePickerButton addTarget:self action:@selector(clickedImageButton:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:imagePickerButton];
     
     UIImage * inputImage = [UIImage imageNamed:@"btn_record_big_b"];
     //使用黑白素描滤镜
@@ -66,10 +67,10 @@
 
 -(void)clickedImageButton:(UIButton *)sender
 {
-    UIViewController * VC = [[UIViewController alloc]init];
-    VC.title = sender.titleLabel.text;
-    VC.view.backgroundColor = MPColor_VCBackgroundGray;
-    [self.navigationController pushViewController:VC animated:YES];
+    MPPhotoImagePickerViewController * imagePickerVC = [[MPPhotoImagePickerViewController alloc]init];
+    imagePickerVC.title = sender.titleLabel.text;
+    imagePickerVC.view.backgroundColor = MPColor_VCBackgroundGray;
+    [self.navigationController pushViewController:imagePickerVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
