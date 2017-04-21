@@ -11,6 +11,8 @@
 #import "WantFollowViewController.h"
 #import "FollowTableView.h"
 #import "DescribleViewController.h"
+#import <AVFoundation/AVFoundation.h>
+#import "PlayViewController.h"
 @interface MPMyFollowViewController () {
     FollowTableView *followView;
     NotFollowView  *notView;
@@ -22,7 +24,16 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    
+    for (id view in followView.subviews) {
+        if ([view isKindOfClass:[UITableView class]]) {
+            [(UITableView *)view reloadData];
+        }
+        if ([view isKindOfClass:[AVPlayer class]]) {
+            [(AVPlayer *)view pause];
+            [[(AVPlayer *)view currentItem]cancelPendingSeeks];
+            [[(AVPlayer *)view currentItem].asset cancelLoading];
+        }
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -84,6 +95,12 @@
     followView = [[FollowTableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 44 - 64) withData:array];
     followView.headButtonBlock = ^(){
         DescribleViewController *vc = [[DescribleViewController alloc]init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+    followView.comeinCellPlayBlock = ^(NSString *string){
+        PlayViewController *vc = [[PlayViewController alloc]init];
+        vc.videoString = string;
         vc.hidesBottomBarWhenPushed = YES;
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
