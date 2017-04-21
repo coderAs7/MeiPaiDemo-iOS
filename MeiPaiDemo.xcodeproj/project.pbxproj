@@ -141,9 +141,11 @@
 		98A928D11EA8739A0067717B /* DescribleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A928CD1EA8739A0067717B /* DescribleView.m */; };
 		A47E17201EA4A13900809A33 /* VideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E171F1EA4A13900809A33 /* VideoController.m */; };
 		A47E173E1EA5EC8400809A33 /* RecordProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = A47E173B1EA5EC8400809A33 /* RecordProgressView.m */; };
+		A493322F1EA9E1C200256A0C /* VideoCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = A493322E1EA9E1C200256A0C /* VideoCameraView.m */; };
 		A4D465B31EA6F9FF00F63107 /* RecordButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D465B21EA6F9FF00F63107 /* RecordButton.m */; };
 		A4D465B81EA70C7800F63107 /* RecordEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D465B51EA70C7800F63107 /* RecordEncoder.m */; };
 		A4D465B91EA70C7800F63107 /* RecordEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D465B71EA70C7800F63107 /* RecordEngine.m */; };
+		A4EF517D1EA9E6AF0079D55A /* GPUImageBeautifyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EF517B1EA9E6AF0079D55A /* GPUImageBeautifyFilter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -606,12 +608,16 @@
 		A47E171F1EA4A13900809A33 /* VideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoController.m; sourceTree = "<group>"; };
 		A47E173A1EA5EC8400809A33 /* RecordProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordProgressView.h; sourceTree = "<group>"; };
 		A47E173B1EA5EC8400809A33 /* RecordProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordProgressView.m; sourceTree = "<group>"; };
+		A493322D1EA9E1C200256A0C /* VideoCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCameraView.h; sourceTree = "<group>"; };
+		A493322E1EA9E1C200256A0C /* VideoCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCameraView.m; sourceTree = "<group>"; };
 		A4D465B11EA6F9FF00F63107 /* RecordButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordButton.h; sourceTree = "<group>"; };
 		A4D465B21EA6F9FF00F63107 /* RecordButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordButton.m; sourceTree = "<group>"; };
 		A4D465B41EA70C7800F63107 /* RecordEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordEncoder.h; sourceTree = "<group>"; };
 		A4D465B51EA70C7800F63107 /* RecordEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordEncoder.m; sourceTree = "<group>"; };
 		A4D465B61EA70C7800F63107 /* RecordEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordEngine.h; sourceTree = "<group>"; };
 		A4D465B71EA70C7800F63107 /* RecordEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordEngine.m; sourceTree = "<group>"; };
+		A4EF517B1EA9E6AF0079D55A /* GPUImageBeautifyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageBeautifyFilter.m; sourceTree = "<group>"; };
+		A4EF517C1EA9E6AF0079D55A /* GPUImageBeautifyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageBeautifyFilter.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1112,6 +1118,10 @@
 		52B2FEFE1EA5A15A0065222E /* 短视频 */ = {
 			isa = PBXGroup;
 			children = (
+				A4EF517C1EA9E6AF0079D55A /* GPUImageBeautifyFilter.h */,
+				A4EF517B1EA9E6AF0079D55A /* GPUImageBeautifyFilter.m */,
+				A493322D1EA9E1C200256A0C /* VideoCameraView.h */,
+				A493322E1EA9E1C200256A0C /* VideoCameraView.m */,
 				A4D465B41EA70C7800F63107 /* RecordEncoder.h */,
 				A4D465B51EA70C7800F63107 /* RecordEncoder.m */,
 				A4D465B61EA70C7800F63107 /* RecordEngine.h */,
@@ -1595,6 +1605,7 @@
 				52B2FECF1EA5A0DC0065222E /* NSData+ImageContentType.m in Sources */,
 				52B2FEDF1EA5A0DC0065222E /* UIView+WebCacheOperation.m in Sources */,
 				52B2FE981EA5A0AE0065222E /* AFURLRequestSerialization.m in Sources */,
+				A493322F1EA9E1C200256A0C /* VideoCameraView.m in Sources */,
 				52B25B0F1E9F1CB7006909B0 /* UIView+CustomControlView.m in Sources */,
 				52B25A601E9E2840006909B0 /* MJPropertyType.m in Sources */,
 				52B2FED01EA5A0DC0065222E /* NSImage+WebCache.m in Sources */,
@@ -1647,6 +1658,7 @@
 				52B2FED41EA5A0DC0065222E /* SDWebImageDecoder.m in Sources */,
 				52B2FECE1EA5A0DC0065222E /* README.md in Sources */,
 				52B25B231E9F6185006909B0 /* MPShootViewController.m in Sources */,
+				A4EF517D1EA9E6AF0079D55A /* GPUImageBeautifyFilter.m in Sources */,
 				52B2FEA11EA5A0AE0065222E /* UIButton+AFNetworking.m in Sources */,
 				52B2FEA41EA5A0AE0065222E /* UIRefreshControl+AFNetworking.m in Sources */,
 				52B25B261EA062FE006909B0 /* CollectionViewLayout.m in Sources */,

@@ -11,6 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <Photos/Photos.h>
 
+#import "GPUImage.h"
 
 @interface RecordEngine ()<AVCaptureAudioDataOutputSampleBufferDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, CAAnimationDelegate> {
     
@@ -375,6 +376,8 @@
 //            return device;
 //        }
 //    }
+    
+    //GPUImageVideoCamera *videoCamera = [[GPUImageVideoCamera alloc] inputCamera];
     
     AVCaptureDeviceDiscoverySession *devicesIOS10 = [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:@[AVCaptureDeviceTypeBuiltInWideAngleCamera] mediaType:AVMediaTypeVideo position:position];
     NSArray *deviceIOS10 = devicesIOS10.devices;
