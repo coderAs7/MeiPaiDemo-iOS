@@ -10,6 +10,7 @@
 #import "NotFollowView.h"
 #import "WantFollowViewController.h"
 #import "FollowTableView.h"
+#import "DescribleViewController.h"
 @interface MPMyFollowViewController () {
     FollowTableView *followView;
     NotFollowView  *notView;
@@ -19,6 +20,10 @@
 
 @implementation MPMyFollowViewController
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -38,6 +43,11 @@
 
     self.view.backgroundColor = RGB(45, 47, 55);
     
+    [self notView];
+    
+}
+
+- (void)notView {
     __weak typeof(self)weakSelf = self;
     notView = [[NotFollowView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 44 - 64)];
     
@@ -49,7 +59,6 @@
         });
     };
     [self.view addSubview:notView];
-    
 }
 
 - (void)loadWantVC {
@@ -67,13 +76,16 @@
 - (void)loadAnother:(NSArray *)array {
     __weak typeof(self)weakSelf = self;
     [notView removeFromSuperview];
+    notView = nil;
     if (followView) {
         [followView removeFromSuperview];
         followView = nil;
     }
     followView = [[FollowTableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 44 - 64) withData:array];
     followView.headButtonBlock = ^(){
-        [weakSelf loadWantVC];
+        DescribleViewController *vc = [[DescribleViewController alloc]init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     };
     [self.view addSubview:followView];
 }

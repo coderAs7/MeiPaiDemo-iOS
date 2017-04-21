@@ -38,6 +38,8 @@ static NSString *const wantFollowIdentifier = @"wantFollowIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.navigationController.navigationBar.translucent = NO;
     self.view.backgroundColor = RGB(45, 47, 55);
     self.title = @"你可能想关注的人";
     self.scrollViewArray = [NSMutableArray array];
@@ -140,7 +142,7 @@ static NSString *const wantFollowIdentifier = @"wantFollowIdentifier";
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 64) style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         [_tableView registerNib:[UINib nibWithNibName:@"WantTableViewCell" bundle:[NSBundle bundleWithIdentifier:@"WantTableViewCell"]] forCellReuseIdentifier:wantFollowIdentifier];

@@ -6,9 +6,9 @@
 //  Copyright © 2017年 UTOUU. All rights reserved.
 //
 
-#import "FollowTableViewCell.h"
+#import "DescribleTableViewCell.h"
 
-@interface FollowTableViewCell ()
+@interface DescribleTableViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel *loveLabel;
 @property (weak, nonatomic) IBOutlet UILabel *buttonMessageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *buttonShareLabel;
@@ -37,7 +37,7 @@
 
 @end
 
-@implementation FollowTableViewCell
+@implementation DescribleTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

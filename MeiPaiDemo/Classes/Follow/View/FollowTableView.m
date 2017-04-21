@@ -9,7 +9,7 @@
 #import "FollowTableView.h"
 #import "FollowTableViewCell.h"
 #import <AVFoundation/AVFoundation.h>
-#import "WantFollowViewController.h"
+//#import "WantFollowViewController.h"
 static NSString *const followIdentifier = @"followHomeIdentifier";
 
 @interface FollowTableView ()<UITableViewDelegate,UITableViewDataSource>
@@ -350,13 +350,14 @@ static NSString *const followIdentifier = @"followHomeIdentifier";
 }
 
 - (void)dealloc {
+    [self.playItem removeObserver:self forKeyPath:@"status"];
+    [self.playItem removeObserver:self forKeyPath:@"loadedTimeRange"];
     [self.avLayer removeFromSuperlayer];
     self.player = nil;
     self.playItem = nil;
     self.avLayer = nil;
-    
-    [self.playItem removeObserver:self forKeyPath:@"status"];
-    [self.playItem removeObserver:self forKeyPath:@"loadedTimeRange"];
 }
+
+
 
 @end

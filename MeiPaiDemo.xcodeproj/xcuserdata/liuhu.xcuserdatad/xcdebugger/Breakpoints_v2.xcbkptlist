@@ -4,28 +4,18 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            scope = "0"
-            stopOnStyle = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MeiPaiDemo/Classes/Follow/View/FollowTableViewCell.m"
-            timestampString = "513854194.723803"
+            filePath = "MeiPaiDemo/Classes/Follow/Controller/DescribleFollow&#x3010;&#x88ab;&#x5173;&#x6ce8;&#x4eba;&#x9996;&#x9875;&#x3011;/View/DescribleView.m"
+            timestampString = "514370240.192846"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "-changeHidden"
+            startingLineNumber = "326"
+            endingLineNumber = "326"
+            landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -35,46 +25,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MeiPaiDemo/Classes/Follow/View/FollowTableView.m"
-            timestampString = "513854900.262089"
+            filePath = "MeiPaiDemo/Classes/Follow/Controller/DescribleFollow&#x3010;&#x88ab;&#x5173;&#x6ce8;&#x4eba;&#x9996;&#x9875;&#x3011;/View/DescribleView.m"
+            timestampString = "514370243.770756"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "-loadDataSource"
+            startingLineNumber = "334"
+            endingLineNumber = "334"
+            landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[FollowTableView loadDataSource]"
-                  moduleName = "MeiPaiDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/liuhu/Desktop/%E7%BE%8E%E6%8B%8Dgit/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Follow/View/FollowTableView.m"
-                  timestampString = "514199677.400082"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "41">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__33-[FollowTableView loadDataSource]_block_invoke"
-                  moduleName = "MeiPaiDemo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/liuhu/Desktop/%E7%BE%8E%E6%8B%8Dgit/MeiPaiDemo-iOS/MeiPaiDemo/Classes/Follow/View/FollowTableView.m"
-                  timestampString = "514199677.401293"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "51">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeiPaiDemo/Classes/Follow/Controller/DescribleFollow&#x3010;&#x88ab;&#x5173;&#x6ce8;&#x4eba;&#x9996;&#x9875;&#x3011;/View/DescribleView.m"
+            timestampString = "514370245.60453"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "343"
+            endingLineNumber = "343"
+            landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeiPaiDemo/Classes/Follow/Controller/DescribleFollow&#x3010;&#x88ab;&#x5173;&#x6ce8;&#x4eba;&#x9996;&#x9875;&#x3011;/View/DescribleView.m"
+            timestampString = "514370258.452632"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "338"
+            endingLineNumber = "338"
+            landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
