@@ -111,9 +111,9 @@ static NSString *const followIdentifier = @"followHomeIdentifier";
     NSURL *videoUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@.m3u8",HLS_URL,urlString]];
     self.playItem = [AVPlayerItem playerItemWithURL:videoUrl];
     //监听status
-    [self.playItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
+    [self.playItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     //监听loadedTimeRanges属性
-    [self.playItem addObserver:self forKeyPath:@"loadedTimeRange" options:NSKeyValueObservingOptionNew context:nil];
+    [self.playItem addObserver:self forKeyPath:@"loadedTimeRange" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     
 //    self.player = [AVPlayer playerWithPlayerItem:self.playItem];
     
@@ -217,8 +217,56 @@ static NSString *const followIdentifier = @"followHomeIdentifier";
     }
     [cell dataSourceArray:self.dataSourceArray[indexPath.section][@"lists"] withIndex:indexPath];
     [cell computeCellHeight];
+    [cell.playButton addTarget:self action:@selector(cellBtnClicked:event:) forControlEvents:UIControlEventTouchUpInside];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
+}
+
+- (void)cellBtnClicked:(id)sender event:(id)event
+{
+    NSSet *touches =[event allTouches];
+    UITouch *touch =[touches anyObject];
+    CGPoint currentTouchPosition = [touch locationInView:self.tableView];
+    NSIndexPath *indexPath= [self.tableView indexPathForRowAtPoint:currentTouchPosition];
+    if (indexPath!= nil)
+    {
+        [self.tableView reloadData];
+        FollowTableViewCell *cell = [self.tableView cellForRowAtIndexPath: indexPath];
+        
+        //加载动画
+        self.loadView = [LHScaleTool backLoadingView:cell.contentView];
+        
+        self.loadView.hidden = NO;
+        if (self.saveIndexRow == indexPath.row) {
+            if (self.isPlay) {
+                [self.player pause];
+                self.loadView.hidden = YES;
+                cell.playButton.hidden = NO;
+                self.isPlay = NO;
+            }else {
+                [self.player play];
+                self.loadView.hidden = NO;
+                cell.playButton.hidden = YES;
+                self.isPlay = YES;
+            }
+        }else{
+            if (self.player) {
+                [self.player pause];
+                
+                self.player = nil;
+                self.playItem = nil;
+                self.avLayer = nil;
+                [self.avLayer removeFromSuperlayer];
+            }
+            self.isPlay = NO;
+            self.saveIndexRow = indexPath.row;
+            cell.backView.hidden = NO;
+            NSString *videoString = [NSString stringWithFormat:@"%@",self.dataSourceArray[indexPath.section][@"lists"][indexPath.row][@"videoId"]];
+            cell.playButton.hidden = YES;
+            [self avfoundtion:cell.backView url:videoString];
+        }
+
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -227,41 +275,47 @@ static NSString *const followIdentifier = @"followHomeIdentifier";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.tableView reloadData];
-    FollowTableViewCell *cell = [self.tableView cellForRowAtIndexPath: indexPath];
-    
-    //加载动画
-    self.loadView = [LHScaleTool backLoadingView:cell.contentView];
-    
-    self.loadView.hidden = NO;
-    if (self.saveIndexRow == indexPath.row) {
-        if (self.isPlay) {
-            [self.player pause];
-            self.loadView.hidden = YES;
-            cell.playImage.hidden = NO;
-            self.isPlay = NO;
-        }else {
-            [self.player play];
-            self.loadView.hidden = NO;
-            cell.playImage.hidden = YES;
-            self.isPlay = YES;
-        }
-    }else{
-        if (self.player) {
-            [self.player pause];
-            
-            self.player = nil;
-            self.playItem = nil;
-            self.avLayer = nil;
-            [self.avLayer removeFromSuperlayer];
-        }
-        self.isPlay = NO;
-        self.saveIndexRow = indexPath.row;
-        cell.backView.hidden = NO;
-        NSString *videoString = [NSString stringWithFormat:@"%@",self.dataSourceArray[indexPath.section][@"lists"][indexPath.row][@"videoId"]];
-        cell.playImage.hidden = YES;
-        [self avfoundtion:cell.backView url:videoString];
+    NSString *videoString = [NSString stringWithFormat:@"%@",self.dataSourceArray[indexPath.section][@"lists"][indexPath.row][@"videoId"]];
+    if (self.comeinCellPlayBlock) {
+        self.comeinCellPlayBlock(videoString);
     }
+    
+//    [self.tableView reloadData];
+//    FollowTableViewCell *cell = [self.tableView cellForRowAtIndexPath: indexPath];
+//    
+//    //加载动画
+//    self.loadView = [LHScaleTool backLoadingView:cell.contentView];
+//    
+//    self.loadView.hidden = NO;
+//    if (self.saveIndexRow == indexPath.row) {
+//        if (self.isPlay) {
+//            [self.player pause];
+//            self.loadView.hidden = YES;
+//            cell.playImage.hidden = NO;
+//            self.isPlay = NO;
+//        }else {
+//            [self.player play];
+//            self.loadView.hidden = NO;
+//            cell.playImage.hidden = YES;
+//            self.isPlay = YES;
+//        }
+//    }else{
+//        if (self.player) {
+//            [self.player pause];
+//            
+//            self.player = nil;
+//            self.playItem = nil;
+//            self.avLayer = nil;
+//            [self.avLayer removeFromSuperlayer];
+//        }
+//        self.isPlay = NO;
+//        self.saveIndexRow = indexPath.row;
+//        cell.backView.hidden = NO;
+//        NSString *videoString = [NSString stringWithFormat:@"%@",self.dataSourceArray[indexPath.section][@"lists"][indexPath.row][@"videoId"]];
+//        cell.playImage.hidden = YES;
+//        [self avfoundtion:cell.backView url:videoString];
+//    }
+    NSLog(@"点击cell");
     
 }
 
@@ -352,6 +406,8 @@ static NSString *const followIdentifier = @"followHomeIdentifier";
 - (void)dealloc {
     [self.playItem removeObserver:self forKeyPath:@"status"];
     [self.playItem removeObserver:self forKeyPath:@"loadedTimeRange"];
+    [[self.player currentItem]cancelPendingSeeks];
+    [[self.player currentItem].asset cancelLoading];
     [self.avLayer removeFromSuperlayer];
     self.player = nil;
     self.playItem = nil;

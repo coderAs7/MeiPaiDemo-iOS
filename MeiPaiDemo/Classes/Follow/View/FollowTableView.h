@@ -12,6 +12,8 @@
 
 @property (nonatomic,copy)void(^headButtonBlock)();
 
+@property (nonatomic,copy)void(^comeinCellPlayBlock)(NSString *);
+
 - (instancetype)initWithFrame:(CGRect)frame withData:(NSArray *)array;
 
 @end
