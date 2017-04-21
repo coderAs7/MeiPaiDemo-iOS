@@ -123,6 +123,8 @@
 		52F39C391EA7178C00669682 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F39C381EA7178C00669682 /* AVFoundation.framework */; };
 		52F39C3B1EA7179A00669682 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F39C3A1EA7179A00669682 /* QuartzCore.framework */; };
 		52F39CEB1EA72E3000669682 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F39CEA1EA72E3000669682 /* libGPUImage.a */; };
+		9823D3E71EA9A61F00027C1D /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9823D3E51EA9A61F00027C1D /* PlayViewController.m */; };
+		9823D3E81EA9A61F00027C1D /* PlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9823D3E61EA9A61F00027C1D /* PlayViewController.xib */; };
 		98A826AB1EA06DCF00B931F0 /* MPMainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826AA1EA06DCF00B931F0 /* MPMainViewCell.m */; };
 		98A826C41EA0745400B931F0 /* WantFollowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826B41EA0745400B931F0 /* WantFollowTableViewCell.m */; };
 		98A826C51EA0745400B931F0 /* WantFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A826B61EA0745400B931F0 /* WantFollowViewController.m */; };
@@ -575,6 +577,9 @@
 		52F39D981EA7310000669682 /* GPUImageWhiteBalanceFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageWhiteBalanceFilter.h; sourceTree = "<group>"; };
 		52F39D991EA7310000669682 /* GPUImageXYDerivativeFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageXYDerivativeFilter.h; sourceTree = "<group>"; };
 		52F39D9A1EA7310000669682 /* GPUImageZoomBlurFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageZoomBlurFilter.h; sourceTree = "<group>"; };
+		9823D3E41EA9A61F00027C1D /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
+		9823D3E51EA9A61F00027C1D /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
+		9823D3E61EA9A61F00027C1D /* PlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayViewController.xib; sourceTree = "<group>"; };
 		98A826A91EA06DCF00B931F0 /* MPMainViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPMainViewCell.h; sourceTree = "<group>"; };
 		98A826AA1EA06DCF00B931F0 /* MPMainViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPMainViewCell.m; sourceTree = "<group>"; };
 		98A826B31EA0745400B931F0 /* WantFollowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WantFollowTableViewCell.h; sourceTree = "<group>"; };
@@ -1348,6 +1353,25 @@
 			path = header;
 			sourceTree = "<group>";
 		};
+		9823D3E21EA9A61F00027C1D /* CellPlayViewController 【点击cell视频播放】 */ = {
+			isa = PBXGroup;
+			children = (
+				9823D3E31EA9A61F00027C1D /* Controller */,
+			);
+			name = "CellPlayViewController 【点击cell视频播放】";
+			path = "DescribleFollow【被关注人首页】/CellPlayViewController 【点击cell视频播放】";
+			sourceTree = "<group>";
+		};
+		9823D3E31EA9A61F00027C1D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9823D3E41EA9A61F00027C1D /* PlayViewController.h */,
+				9823D3E51EA9A61F00027C1D /* PlayViewController.m */,
+				9823D3E61EA9A61F00027C1D /* PlayViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		98A826B11EA0745400B931F0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -1355,6 +1379,7 @@
 				98A826BA1EA0745400B931F0 /* MPMyFollowViewController.h */,
 				98A826BB1EA0745400B931F0 /* MPMyFollowViewController.m */,
 				98A826B21EA0745400B931F0 /*   WantFollow【你可能想关注的人】 */,
+				9823D3E21EA9A61F00027C1D /* CellPlayViewController 【点击cell视频播放】 */,
 				98A928C31EA8739A0067717B /* DescribleFollow【被关注人首页】 */,
 			);
 			path = Controller;
@@ -1548,6 +1573,7 @@
 			files = (
 				52B2FE9B1EA5A0AE0065222E /* LICENSE in Resources */,
 				98A826CB1EA0745400B931F0 /* FollowTableViewCell.xib in Resources */,
+				9823D3E81EA9A61F00027C1D /* PlayViewController.xib in Resources */,
 				52B258AF1E9DBFD1006909B0 /* LaunchScreen.storyboard in Resources */,
 				98A928D01EA8739A0067717B /* DescribleTableViewCell.xib in Resources */,
 				52B2FECD1EA5A0DC0065222E /* LICENSE in Resources */,
@@ -1657,6 +1683,7 @@
 				52B2FEA31EA5A0AE0065222E /* UIProgressView+AFNetworking.m in Sources */,
 				52B2FED41EA5A0DC0065222E /* SDWebImageDecoder.m in Sources */,
 				52B2FECE1EA5A0DC0065222E /* README.md in Sources */,
+				9823D3E71EA9A61F00027C1D /* PlayViewController.m in Sources */,
 				52B25B231E9F6185006909B0 /* MPShootViewController.m in Sources */,
 				A4EF517D1EA9E6AF0079D55A /* GPUImageBeautifyFilter.m in Sources */,
 				52B2FEA11EA5A0AE0065222E /* UIButton+AFNetworking.m in Sources */,

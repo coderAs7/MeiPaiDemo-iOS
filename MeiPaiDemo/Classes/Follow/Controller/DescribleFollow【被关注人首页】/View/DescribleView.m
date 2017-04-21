@@ -393,9 +393,58 @@ static NSString *const descrbileIdentifier = @"descrbileIdentifier";
     }
     [cell dataSourceArray:self.dataSourceArray[indexPath.section][@"lists"] withIndex:indexPath];
     [cell computeCellHeight];
+    [cell.playButton addTarget:self action:@selector(cellDescrilbeBtnClicked:event:) forControlEvents:UIControlEventTouchUpInside];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
+
+- (void)cellDescrilbeBtnClicked:(id)sender event:(id)event
+{
+    NSSet *touches =[event allTouches];
+    UITouch *touch =[touches anyObject];
+    CGPoint currentTouchPosition = [touch locationInView:self.tableView];
+    NSIndexPath *indexPath= [self.tableView indexPathForRowAtPoint:currentTouchPosition];
+    if (indexPath!= nil)
+    {
+        [self.tableView reloadData];
+        DescribleTableViewCell *cell = [self.tableView cellForRowAtIndexPath: indexPath];
+        
+        //加载动画
+        self.loadView = [LHScaleTool backLoadingView:cell.contentView];
+        
+        self.loadView.hidden = NO;
+        if (self.saveIndexRow == indexPath.row) {
+            if (self.isPlay) {
+                [self.player pause];
+                self.loadView.hidden = YES;
+                cell.playButton.hidden = NO;
+                self.isPlay = NO;
+            }else {
+                [self.player play];
+                self.loadView.hidden = NO;
+                cell.playButton.hidden = YES;
+                self.isPlay = YES;
+            }
+        }else{
+            if (self.player) {
+                [self.player pause];
+                
+                self.player = nil;
+                self.playItem = nil;
+                self.avLayer = nil;
+                [self.avLayer removeFromSuperlayer];
+            }
+            self.isPlay = NO;
+            self.saveIndexRow = indexPath.row;
+            cell.backView.hidden = NO;
+            NSString *videoString = [NSString stringWithFormat:@"%@",self.dataSourceArray[indexPath.section][@"lists"][indexPath.row][@"videoId"]];
+            cell.playButton.hidden = YES;
+            [self avfoundtion:cell.backView url:videoString];
+        }
+        
+    }
+}
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     DescribleTableViewCell *cell = (DescribleTableViewCell *)[self tableView:self.tableView cellForRowAtIndexPath:indexPath];
@@ -403,41 +452,41 @@ static NSString *const descrbileIdentifier = @"descrbileIdentifier";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.tableView reloadData];
-    DescribleTableViewCell *cell = [self.tableView cellForRowAtIndexPath: indexPath];
-    
-    //加载动画
-    self.loadView = [LHScaleTool backLoadingView:cell.contentView];
-    
-    self.loadView.hidden = NO;
-    if (self.saveIndexRow == indexPath.row) {
-        if (self.isPlay) {
-            [self.player pause];
-            self.loadView.hidden = YES;
-            cell.playImage.hidden = NO;
-            self.isPlay = NO;
-        }else {
-            [self.player play];
-            self.loadView.hidden = NO;
-            cell.playImage.hidden = YES;
-            self.isPlay = YES;
-        }
-    }else{
-        if (self.player) {
-            [self.player pause];
-            
-            self.player = nil;
-            self.playItem = nil;
-            self.avLayer = nil;
-            [self.avLayer removeFromSuperlayer];
-        }
-        self.isPlay = NO;
-        self.saveIndexRow = indexPath.row;
-        cell.backView.hidden = NO;
-        NSString *videoString = [NSString stringWithFormat:@"%@",self.dataSourceArray[indexPath.section][@"lists"][indexPath.row][@"videoId"]];
-        cell.playImage.hidden = YES;
-        [self avfoundtion:cell.backView url:videoString];
-    }
+//    [self.tableView reloadData];
+//    DescribleTableViewCell *cell = [self.tableView cellForRowAtIndexPath: indexPath];
+//    
+//    //加载动画
+//    self.loadView = [LHScaleTool backLoadingView:cell.contentView];
+//    
+//    self.loadView.hidden = NO;
+//    if (self.saveIndexRow == indexPath.row) {
+//        if (self.isPlay) {
+//            [self.player pause];
+//            self.loadView.hidden = YES;
+//            cell.playButton.hidden = NO;
+//            self.isPlay = NO;
+//        }else {
+//            [self.player play];
+//            self.loadView.hidden = NO;
+//            cell.playButton.hidden = YES;
+//            self.isPlay = YES;
+//        }
+//    }else{
+//        if (self.player) {
+//            [self.player pause];
+//            
+//            self.player = nil;
+//            self.playItem = nil;
+//            self.avLayer = nil;
+//            [self.avLayer removeFromSuperlayer];
+//        }
+//        self.isPlay = NO;
+//        self.saveIndexRow = indexPath.row;
+//        cell.backView.hidden = NO;
+//        NSString *videoString = [NSString stringWithFormat:@"%@",self.dataSourceArray[indexPath.section][@"lists"][indexPath.row][@"videoId"]];
+//        cell.playButton.hidden = YES;
+//        [self avfoundtion:cell.backView url:videoString];
+//    }
     
 }
 
@@ -531,6 +580,8 @@ static NSString *const descrbileIdentifier = @"descrbileIdentifier";
 - (void)dealloc {
     [self.playItem removeObserver:self forKeyPath:@"describleStatus"];
     [self.playItem removeObserver:self forKeyPath:@"describleLoadedTimeRange"];
+    [[self.player currentItem]cancelPendingSeeks];
+    [[self.player currentItem].asset cancelLoading];
     [self.avLayer removeFromSuperlayer];
     self.player = nil;
     self.playItem = nil;

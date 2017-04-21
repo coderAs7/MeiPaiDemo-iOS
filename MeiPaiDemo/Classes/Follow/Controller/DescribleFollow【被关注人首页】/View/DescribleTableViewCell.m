@@ -43,9 +43,9 @@
     [super awakeFromNib];
     self.backView.hidden = YES;
     self.backView.backgroundColor = [UIColor blackColor];
-    [self.contentView addSubview:self.playImage];
+    [self.contentView addSubview:self.playButton];
     
-    [self.playImage mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.playButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.mas_centerX);
         make.centerY.equalTo(self.mas_centerY);
     }];
@@ -100,12 +100,12 @@
     }];
 }
 
-- (UIImageView *)playImage {
-    if (!_playImage) {
-        _playImage = [[UIImageView alloc]init];
-        _playImage.image = [UIImage imageNamed:@"btn_play_bg_b"];
+- (UIButton *)playButton {
+    if (!_playButton) {
+        _playButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_playButton setBackgroundImage:[UIImage imageNamed:@"btn_play_bg_b"] forState:UIControlStateNormal];
     }
-    return _playImage;
+    return _playButton;
 }
 
 - (void)dataSourceArray:(NSArray *)array withIndex:(NSIndexPath *)index {
