@@ -8,12 +8,39 @@
 
 #import "DescribleView.h"
 #import "DescribleTableViewCell.h"
+#import <AVFoundation/AVFoundation.h>
+
+static NSString *const descrbileIdentifier = @"descrbileIdentifier";
+
 @interface DescribleView ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong)UITableView *tableView;
 
 @property (nonatomic,strong)UIView *butView;
 
+
+@property (nonatomic,strong)AVPlayer *player;
+
+@property (nonatomic,strong)AVPlayerItem *playItem;
+
+@property (nonatomic,strong)AVPlayerLayer *avLayer;
+
+@property (nonatomic,strong)UIScrollView   *scrollView;//headView 滚动试图
+
+@property (nonatomic ,strong) UIProgressView *videoProgress;
+
+
+@property (nonatomic,copy)NSArray *dataSourceArray;
+
+@property (nonatomic,copy)NSArray *scrollViewArray;
+
+@property (nonatomic,assign)NSInteger saveIndexRow;//记录正在播放的cell
+
+@property (nonatomic,assign)BOOL isPlay;//记录是否暂停
+
+@property (nonatomic,strong)UIView *loadView;//加载动画
+
+@property (nonatomic,assign)CGFloat scrStartY;//scroll开始的位置
 @end
 
 @implementation DescribleView
@@ -21,7 +48,10 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self loadUI];
+        self.backgroundColor = RGB(45, 47, 55);
+        self.isPlay = NO;
+        self.saveIndexRow = -1;
+        [self loadDataSource];
     }
     return self;
 }
@@ -31,17 +61,38 @@
     [self addSubview:self.tableView];
     
     
-    [self tableHeadView];
+//    [self tableHeadView];
 }
 
 
+#pragma mark -- 数据请求
+
+- (void)loadDataSource {
+    
+    [LHScaleTool GET:HOME_URL dict:nil succeed:^(id data) {
+        
+        if ([data[@"data"] isKindOfClass:[NSArray class]]) {
+            self.dataSourceArray = data[@"data"];
+            [self loadUI];
+        }else{
+            NSLog(@"%@",data);
+        }
+        
+    } failure:^(NSError *error) {
+        
+        NSLog(@"%@",error);
+        
+    }];
+}
+
 #pragma mark -- headView 
 
-- (void)tableHeadView {
-    
-    UIView *backgroundView = [[UIView alloc]init];
+- (UIView *)tableHeadView {
+    NSString *labelString = @"这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述";
+    CGFloat heiY = [self calculateRowHeight:labelString fontSize:FN(13)] + FN(365);
+    UIView *backgroundView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, heiY)];
     backgroundView.backgroundColor = [UIColor colorWithWhite:0.3 alpha:1];
-    self.tableView.tableHeaderView = backgroundView;
+//    self.tableView.tableHeaderView = backgroundView;
     
     UIImageView *backgroundImage = [[UIImageView alloc]init];
     backgroundImage.image = [UIImage imageNamed:@"mv10"];
@@ -91,28 +142,28 @@
     silkButton.titleLabel.font = [UIFont systemFontOfSize:FN(15)];
     [headView addSubview:silkButton];
     
-    NSString *labelString = @"这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述";
     
-    CGFloat heiY = [self calculateRowHeight:labelString fontSize:FN(13)] + FN(365);
     
-    [backgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).offset(0);
-        make.right.equalTo(self).offset(0);
-        make.top.equalTo(self).offset(0);
-        make.height.offset(FN(heiY));
-    }];
+    
+    
+//    [backgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(self).offset(0);
+//        make.right.equalTo(self).offset(0);
+//        make.top.equalTo(self).offset(0);
+//        make.height.offset(FN(heiY));
+//    }];
     
     [backgroundImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).offset(0);
-        make.right.equalTo(self).offset(0);
-        make.top.equalTo(self).offset(0);
+        make.left.equalTo(backgroundView).offset(0);
+        make.right.equalTo(backgroundView).offset(0);
+        make.top.equalTo(backgroundView).offset(0);
         make.height.offset(FN(260));
     }];
     
     [headView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).offset(0);
-        make.right.equalTo(self).offset(0);
-        make.top.equalTo(self).offset(0);
+        make.left.equalTo(backgroundView).offset(0);
+        make.right.equalTo(backgroundView).offset(0);
+        make.top.equalTo(backgroundView).offset(0);
         make.height.offset(FN(260));
     }];
     
@@ -214,7 +265,8 @@
         make.top.equalTo(describleLabel.mas_bottom).offset(FN(42));
         make.size.mas_equalTo(CGSizeMake(FN(wid), FN(3)));
     }];
-
+    
+    return backgroundView;
 }
 
 
@@ -222,38 +274,267 @@
     NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:fontSize]};//指定字号
     CGRect rect = [string boundingRectWithSize:CGSizeMake(SCREEN_WIDTH - FN(20), 0)/*计算高度要先指定宽度*/ options:NSStringDrawingUsesLineFragmentOrigin |
                    NSStringDrawingUsesFontLeading attributes:dic context:nil];
-    return rect.size.height;
+    return FN(rect.size.height);
 }
-#pragma mark -- tableView and delegate
 
+
+#pragma mark -- avfoundtion
+
+- (void)avfoundtion:(UIView *)backView url:(NSString *)urlString{
+    
+    
+    NSURL *videoUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@.m3u8",HLS_URL,urlString]];
+    self.playItem = [AVPlayerItem playerItemWithURL:videoUrl];
+    //监听status
+    [self.playItem addObserver:self forKeyPath:@"describleStatus" options:NSKeyValueObservingOptionNew context:nil];
+    //监听loadedTimeRanges属性
+    [self.playItem addObserver:self forKeyPath:@"describleLoadedTimeRange" options:NSKeyValueObservingOptionNew context:nil];
+    
+    
+    //    self.player = [AVPlayer playerWithPlayerItem:self.playItem];
+    
+    
+    self.avLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
+    self.avLayer.frame = CGRectMake(0, 0, SCREEN_WIDTH, FN(130));
+    //    //    self.layer.videoGravity = AVLayerVideoGravityResizeAspect;
+    [backView.layer addSublayer:self.avLayer];
+    
+    //添加视频播放结束通知
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(moviePlayDidEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:self.playItem];
+}
+
+- (AVPlayer *)player {
+    if (!_player) {
+        _player = [AVPlayer playerWithPlayerItem:self.playItem];
+    }
+    return _player;
+}
+
+- (void)moviePlayDidEnd:(NSNotification *)notification {
+    NSLog(@"播放结束");
+    
+    __weak typeof(self)weakSelf = self;
+    [self.player seekToTime:kCMTimeZero completionHandler:^(BOOL finished) {
+        
+    }];
+}
+
+
+//KVO 方法
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    AVPlayerItem *playerItem = (AVPlayerItem *)object;
+    if ([keyPath isEqualToString:@"describleStatus"]) {
+        if ([playerItem status] == AVPlayerStatusReadyToPlay) {
+            NSLog(@"准备播放");
+            //            CMTime duration = self.playItem.duration;//获取视频总长度
+            //            CGFloat totalSecond = playerItem.duration.value / playerItem.duration.timescale;//转换成秒
+            [self.player play];
+            self.isPlay = YES;
+            
+            [self.loadView removeFromSuperview];
+            self.loadView = nil;
+        }else if ([playerItem status] == AVPlayerStatusFailed){
+            NSLog(@"播放失败");
+            [self.loadView removeFromSuperview];
+            self.loadView = nil;
+        }
+    }else if ([keyPath isEqualToString:@"describleLoadedTimeRange"]){
+        [self.loadView removeFromSuperview];
+        self.loadView = nil;
+        //缓存进度
+        NSTimeInterval timeInterval = [self availabelDuration];
+        CMTime duration = self.playItem.duration;
+        CGFloat totalDuration = CMTimeGetSeconds(duration);
+        [self.videoProgress setProgress:timeInterval / totalDuration animated:YES];
+    }
+}
+
+- (UIProgressView *)videoProgress {
+    if (!_videoProgress) {
+        _videoProgress = [[UIProgressView alloc]initWithFrame:CGRectMake(100, 500, 100, 20)];
+        _videoProgress.backgroundColor = [UIColor orangeColor];
+        _videoProgress.tintColor = [UIColor greenColor];
+    }
+    return _videoProgress;
+}
+
+- (NSTimeInterval)availabelDuration {
+    NSArray *loadedTimeRanges = [[self.player currentItem] loadedTimeRanges];
+    //获取缓存区域
+    CMTimeRange timeRange = [loadedTimeRanges.firstObject CMTimeRangeValue];
+    
+    CGFloat startSecond = CMTimeGetSeconds(timeRange.start);
+    CGFloat durationSeconds = CMTimeGetSeconds(timeRange.duration);
+    //计算缓存总进度
+    NSTimeInterval result = startSecond + durationSeconds;
+    return result;
+}
+
+
+
+
+#pragma mark -- tableView  with delegate
+
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//    return 1;
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 6;
+    NSArray *array = self.dataSourceArray[section][@"lists"];
+    return array.count;;
 }
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 200;
-}
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    DescribleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@""];
+    //    self.indexString = [NSString stringWithFormat:@"%ld",indexPath.row];
+    DescribleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:descrbileIdentifier];
     if (!cell) {
-        cell = [[DescribleTableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@""];
+        cell = [[DescribleTableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:descrbileIdentifier];
     }
+    [cell dataSourceArray:self.dataSourceArray[indexPath.section][@"lists"] withIndex:indexPath];
+    [cell computeCellHeight];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    DescribleTableViewCell *cell = (DescribleTableViewCell *)[self tableView:self.tableView cellForRowAtIndexPath:indexPath];
+    return CGRectGetHeight(cell.frame);
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tableView reloadData];
+    DescribleTableViewCell *cell = [self.tableView cellForRowAtIndexPath: indexPath];
+    
+    //加载动画
+    self.loadView = [LHScaleTool backLoadingView:cell.contentView];
+    
+    self.loadView.hidden = NO;
+    if (self.saveIndexRow == indexPath.row) {
+        if (self.isPlay) {
+            [self.player pause];
+            self.loadView.hidden = YES;
+            cell.playImage.hidden = NO;
+            self.isPlay = NO;
+        }else {
+            [self.player play];
+            self.loadView.hidden = NO;
+            cell.playImage.hidden = YES;
+            self.isPlay = YES;
+        }
+    }else{
+        if (self.player) {
+            [self.player pause];
+            
+            self.player = nil;
+            self.playItem = nil;
+            self.avLayer = nil;
+            [self.avLayer removeFromSuperlayer];
+        }
+        self.isPlay = NO;
+        self.saveIndexRow = indexPath.row;
+        cell.backView.hidden = NO;
+        NSString *videoString = [NSString stringWithFormat:@"%@",self.dataSourceArray[indexPath.section][@"lists"][indexPath.row][@"videoId"]];
+        cell.playImage.hidden = YES;
+        [self avfoundtion:cell.backView url:videoString];
+    }
+    
+}
+
+//加载动画
+- (void)loadingAnimation {
+    //    UIView *loadView = [LHScaleTool backLoadingView];
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    NSString *labelString = @"这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述这是我的描述";
+    CGFloat heiY = [self calculateRowHeight:labelString fontSize:FN(13)] + FN(365);
+    return heiY;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    UIView *headerView = [[UIView alloc]init];
+//    headerView.backgroundColor = RGB(45, 47, 5/5);
+
+    UIView *headerView = [self tableHeadView];
+    return headerView;
+}
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:self.frame style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc]initWithFrame:self.frame style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.backgroundColor = RGB(45, 47, 55);
+        [_tableView registerNib:[UINib nibWithNibName:@"FollowTableViewCell" bundle:[NSBundle bundleWithIdentifier:@"FollowTableViewCell"]] forCellReuseIdentifier:descrbileIdentifier];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _tableView;
 }
 
+#pragma mark -UIScrollView delegate
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView
+                  willDecelerate:(BOOL)decelerate {
+    NSUInteger num = 0;
+    if (self.saveIndexRow > -1) {
+        num = self.saveIndexRow;
+    }
+    NSIndexPath *index = [NSIndexPath indexPathForRow:num inSection:1];
+    //    FollowTableViewCell *cell = (FollowTableViewCell *)[self tableView:self.tableView cellForRowAtIndexPath:index];
+    //    FollowTableViewCell *cell = [self.tableView cellForRowAtIndexPath:index];
+    
+    
+    CGRect rectInTableView = [self.tableView rectForRowAtIndexPath:index];
+    
+    
+    CGRect rect = [self.tableView convertRect:rectInTableView toView:[self.tableView superview]];
+    //    NSLog(@"%f      ----------   X:::%f",rect.origin.y,rect.origin.x);
+    if (num == 0) {
+        num = 1;
+    }
+    CGFloat cellY = (-30 - (FN(216) * num));
+    CGFloat scrY = scrollView.contentOffset.y;
+    if (rect.origin.y < cellY  && self.playItem) {
+        [self.player pause];
+        self.player = nil;
+        self.playItem = nil;
+        self.avLayer = nil;
+        [self.avLayer removeFromSuperlayer];
+        [self.tableView reloadData];
+    }else if (self.scrStartY - scrY > cellY && self.playItem){
+        [self.player pause];
+        self.player = nil;
+        self.playItem = nil;
+        self.avLayer = nil;
+        [self.avLayer removeFromSuperlayer];
+        [self.tableView reloadData];
+    }
+    
+    
+    
+    //    if (self.scrStartY - scrY > cellY) {
+    //        [self.player pause];
+    //        self.player = nil;
+    //        self.playItem = nil;
+    //        self.avLayer = nil;
+    //        [self.avLayer removeFromSuperlayer];
+    //        [self.tableView reloadData];
+    //    }
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    self.scrStartY = scrollView.contentOffset.y;
+}
+
+
+- (void)dealloc {
+    [self.playItem removeObserver:self forKeyPath:@"describleStatus"];
+    [self.playItem removeObserver:self forKeyPath:@"describleLoadedTimeRange"];
+    [self.avLayer removeFromSuperlayer];
+    self.player = nil;
+    self.playItem = nil;
+    self.avLayer = nil;
+    
+}
 @end

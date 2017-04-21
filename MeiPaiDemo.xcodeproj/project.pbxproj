@@ -828,7 +828,6 @@
 			isa = PBXGroup;
 			children = (
 				98A826B11EA0745400B931F0 /* Controller */,
-				98A826BC1EA0745400B931F0 /* View */,
 			);
 			name = "Follow(关注)";
 			path = Follow;
@@ -1352,6 +1351,7 @@
 		98A826B11EA0745400B931F0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				98A826BC1EA0745400B931F0 /* View */,
 				98A826BA1EA0745400B931F0 /* MPMyFollowViewController.h */,
 				98A826BB1EA0745400B931F0 /* MPMyFollowViewController.m */,
 				98A826B21EA0745400B931F0 /*   WantFollow【你可能想关注的人】 */,
@@ -1385,7 +1385,8 @@
 				98A826C21EA0745400B931F0 /* NotFollowView.h */,
 				98A826C31EA0745400B931F0 /* NotFollowView.m */,
 			);
-			path = View;
+			name = View;
+			path = ../View;
 			sourceTree = "<group>";
 		};
 		98A826CD1EA0748100B931F0 /* Tool */ = {
