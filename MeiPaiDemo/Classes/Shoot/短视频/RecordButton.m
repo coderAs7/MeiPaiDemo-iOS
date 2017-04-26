@@ -139,10 +139,5 @@
     }
 }
 
--(void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
-    if(flag && self.clickedBlock){
-        self.clickedBlock(self);
-    }
-}
 
 @end
